@@ -674,7 +674,7 @@ highway=path										[0x11012 resolution 22-22 continue with_actions]
 #highway=path & sac_scale=difficult_alpine_hiking					[0x3f    resolution 24-23 road_class=0 road_speed=0]
 
 highway=path & (mtb:scale<2)                            				[0x12 resolution 24-23 road_class=0 road_speed=1]
-highway=path                                            				[0x12 resolution 24-23 road_class=0 road_speed=0]
+highway=path                                            				[0x12 resolution 24-23]
 
 #------------------------------------------------------------------------------
 # mop up any unrecognised highway types but keep areas like pedestrian for polygons!
