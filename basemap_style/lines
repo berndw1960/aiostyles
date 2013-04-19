@@ -286,46 +286,46 @@ highway=motorway_link
 
 (highway=motorway_link | highway=trunk_link) & mkgmap:exit_hint=true & mkgmap:dest_hint=true
    { delete mkgmap:display_name;
-     name 'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } ${destination:ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } ${ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } ${destination:ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${ref|subst: =>} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } ${destination:ref|subst:=>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } ${ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } (${destination|subst:;=>|subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } ${destination:ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } ${ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${destination:ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${ref|subst: =>} (${destination|subst:;=> |subst:/=> })' |
-          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
+     name 'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } ${destination:ref|subst: =>}' |
+          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> } ${ref|subst: =>}' |
+          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } ${destination:ref|subst: =>}' |
+          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> } ${ref|subst: =>}' |
           'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> }' |
+          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
+          'Exit ${mkgmap:exit_hint_ref} ${destination|subst:;=> |subst:/=> } ${destination:ref|subst: =>}' |
+          'Exit ${mkgmap:exit_hint_ref} ${destination|subst:;=> |subst:/=> } ${ref|subst: =>}' |
+          'Exit ${mkgmap:exit_hint_ref} ${destination|subst:;=> |subst:/=> }' |
+          'Exit ${destination:ref|subst: =>} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> }' |
+          'Exit ${ref|subst: =>} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> }' |
+          'Exit ${destination:ref|subst: =>} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
+          'Exit ${ref|subst: =>} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
           'Exit ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> }' |
           'Exit ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
+          'Exit ${destination:ref|subst: =>} ${destination|subst:;=> |subst:/=> }' |
+          'Exit ${ref|subst: =>} ${destination|subst:;=> |subst:/=> }' |
           'Exit ${mkgmap:exit_hint_ref}' |
-          '${destination:ref|subst: =>} ${destination|subst:;=> |subst:/=> }' |
-          '${ref|subst: =>} ${destination|subst:;=> |subst:/=> }' |
-          '${destination|subst:;=> |subst:/=> }'
+          '${destination|subst:;=> |subst:/=> }' |
+          '${destination:ref|subst: =>}' |
+          '${ref|subst: =>}'
         }
 
 (highway=motorway_link | highway=trunk_link) &
       mkgmap:exit_hint!=* &
       mkgmap:dest_hint=true
       { delete mkgmap:display_name;
-        name '${destination:ref|subst: =>} ${destination|subst:;=>
-|subst:/=> }' |
+        name '${destination:ref|subst: =>} ${destination|subst:;=> |subst:/=> }' |
          '${ref|subst: =>} ${destination|subst:;=> |subst:/=> }' |
-         '${destination|subst:;=> |subst:/=> }'
+         '${destination|subst:;=> |subst:/=> }' |
+         '${destination:ref|subst: =>}' |
+         '${ref|subst: =>}'
             }
 
 (highway=motorway_link | highway=trunk_link) &
       mkgmap:exit_hint=true &
       mkgmap:dest_hint!=*
       { delete mkgmap:display_name;
-    name  'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
-          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> }' |
+        name  'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> }' |
+          'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
           'Exit ${mkgmap:exit_hint_exit_to|subst:;=> |subst:/=> }' |
           'Exit ${mkgmap:exit_hint_name|subst:;=> |subst:/=> }' |
           'Exit ${mkgmap:exit_hint_ref}'
