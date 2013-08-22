@@ -3364,7 +3364,7 @@ LineWidth=2
 BorderWidth=1
 Xpm="0 0 2 0"
 "1 c #FFFFFF"
-"2 c #838383"
+"2 c #232323"
 String1=0x02,Wohn-/Gemeinde-/Nebenstraﬂe
 String2=0x04,Residential/Unclassified
 ExtendedLabels=N
@@ -3680,7 +3680,7 @@ Type=0x12006
 UseOrientation=Y
 LineWidth=1
 Xpm="0 0 1 0"
-"1 c #A4A4A4"
+"1 c #232323"
 String1=0x02,Wohn-/Gemeinde-/Nebenstraﬂe
 String2=0x04,Residential/Unclassified
 ExtendedLabels=N
