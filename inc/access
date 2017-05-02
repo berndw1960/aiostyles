@@ -68,7 +68,7 @@ highway=* & motorcycle=no {delete motorcycle}
 
 highway=* & disused=yes
                 {
-                  add access=no;
+                  addaccess 'no';
                 }
 
 highway=* 
@@ -81,14 +81,14 @@ highway=*
     & highway!=bridleway
     & (maxwidth<2.0 | width<2.0)
                 {
-                  set mkgmap:throughroute=no
+                  set mkgmap:throughroute=no 
                 }
                 
 highway=* 
     & (maxwidth<1.0 | width<1.0)
                 {
-                  add foot=yes;
-                  add access=no;
+                  add foot=yes ;
+                  addaccess 'no' ;
                 }
  
 highway=track
@@ -96,8 +96,8 @@ highway=track
             & (tracktype~'grade[4-6]' |
                tracktype!=*)
                 {
-                  add foot=yes;
-                  add access=no;
+                  add foot=yes ;
+                  addaccess 'no' ;
                 }
 
 highway=path
@@ -106,23 +106,23 @@ highway=path
               mtb:scale>0 |
               mtb:scale:imba>0)
                 {
-                  add foot=yes;
-                  add bicycle=no;
-                  add access=no;
+                  add foot=yes ;
+                  add bicycle=no ;
+                  addaccess 'no' ;
                   }
 
 highway=path
-                { add foot=yes;
-                  add bicycle=yes;
-                  add access=no
+                { add foot=yes ;
+                  add bicycle=yes ;
+                  addaccess 'no' ,
                   }
 
 highway=steps|
   highway=footway |
   railway=platform
                 {
-                  add foot=yes;
-                  add access=no
+                  add foot=yes ;
+                  addaccess 'no' ;
                   }
 
 highway=pedestrian & area!=*
@@ -133,20 +133,20 @@ highway=pedestrian & area!=*
 
 highway=bridleway
                 { 
-                  add access=no
+                  addaccess 'no'
                   }
 
 highway=cycleway
                 {
-                  add bicycle=yes;
-                  add access=no
+                  add bicycle=yes ;
+                  addaccess 'no' ;
                   }
 
 # some access rules with exceptions
 access ~ '.*(agricultural|forestry).*' 
                 { 
-                  add foot=yes;
-                  add access=no;
+                  add foot=yes ;
+                  addaccess 'no' ;
                   
                   }
 
