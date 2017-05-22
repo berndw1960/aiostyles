@@ -98,43 +98,6 @@ highway=emergency_access_point
              '${ref}';
         }
 
-# Both operator and brand given
-operator=* & brand=* 
-      {
-       name '${brand}: ${ref} ${name} (${operator})' |
-            '${brand}: ${ref} (${operator})' |
-            '${brand}: ${name} (${operator})' |
-            '${brand}: (${operator})' 
-      }
-
-# One of operator or brand given
-operator=* & brand!=* & 
-   (highway=bus_stop | railway=tram_stop | railway=halt | railway=station) 
-      {
-       name '${name} ${ref} ${operator}' |
-            '${name} ${operator}' |
-            '${ref} ${operator}' |
-            '${operator}' 
-       }
-
-operator=* & brand!=* 
-      {
-       name '${operator}: ${ref} ${name}' |
-            '${operator}: ${name}' |
-            '${operator}: ${ref}' |
-            '${operator}' |
-            '${ref}' 
-      }
-      
-brand=* & operator!=* 
-     {
-       name '${brand}: ${ref} ${name}' |
-            '${brand}: ${name}' | 
-            '${brand}: ${ref}' |
-            '${brand}' |
-            '${ref}' 
-     }
-
 # remove unneeded tags 
 amenity=parking & access=private            { delete amenity }
 amenity=parking & capacity=unknown          { delete capacity ; }
@@ -289,6 +252,43 @@ power=*
         delete brand;
         delete name ;
         }
+
+# Both operator and brand given
+operator=* & brand=* 
+      {
+       name '${brand}: ${ref} ${name} (${operator})' |
+            '${brand}: ${ref} (${operator})' |
+            '${brand}: ${name} (${operator})' |
+            '${brand}: (${operator})' 
+      }
+
+# One of operator or brand given
+operator=* & brand!=* & 
+   (highway=bus_stop | railway=tram_stop | railway=halt | railway=station) 
+      {
+       name '${name} ${ref} ${operator}' |
+            '${name} ${operator}' |
+            '${ref} ${operator}' |
+            '${operator}' 
+       }
+
+operator=* & brand!=* 
+      {
+       name '${operator}: ${ref} ${name}' |
+            '${operator}: ${name}' |
+            '${operator}: ${ref}' |
+            '${operator}' |
+            '${ref}' 
+      }
+      
+brand=* & operator!=* 
+     {
+       name '${brand}: ${ref} ${name}' |
+            '${brand}: ${name}' | 
+            '${brand}: ${ref}' |
+            '${brand}' |
+            '${ref}' 
+     }
 
 leisure=* & sport=* & name=*  { name '${name} (${sport})' }
 leisure=* & sport=* & name!=* { add name = '${sport}' }
