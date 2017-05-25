@@ -150,12 +150,11 @@ tourism=motel |
 amenity=restaurant
 
         {
-        set label_temp='${name} (${stars} *)' |
-                        '${name}' |
-                        '${stars} *' |
-                        '${amenity|subst:_=> }' |
-                        '${tourism|subst:_=> }' ;
-        set mkgmap:label:3='${label_temp}' ;
+        set mkgmap:label:3='${name} (${stars} *)' |
+                           '${name}' |
+                           '${stars} *' |
+                           '${amenity|subst:_=> }' |
+                           '${tourism|subst:_=> }' ;
         delete operator;
         delete brand;
         delete name ;
@@ -167,8 +166,7 @@ amenity=atm |
 amenity=pub |
 amenity=bureau_de_change
         {
-        set label_temp='${name}' |'${operator}' | '${brand}' ;
-        set mkgmap:label:3='${label_temp}' ;
+        set mkgmap:label:3='${name}' |'${operator}' | '${brand}' ;
         delete operator;
         delete brand;
         delete name ;
@@ -187,12 +185,11 @@ amenity=car_sharing |
 amenity=casino |
 waterway=bootyard
         {
-        set label_temp='${name}' |
-                        '${brand}' |
-                        '${operator}' |
-                        '${amenity|subst:_=> }' |
-                        '${waterway|subst:_=> }' ;
-        set mkgmap:label:3='${label_temp}' ;
+        set mkgmap:label:3='${name}' |
+                           '${brand}' |
+                           '${operator}' |
+                           '${amenity|subst:_=> }' |
+                           '${waterway|subst:_=> }' ;
         delete operator;
         delete brand;
         delete name ;
@@ -200,15 +197,12 @@ waterway=bootyard
 
 amenity=fuel
         {
-        set label_temp='${brand}' |
-                        '${operator}' |
-                        '${name}' |
-                        '${amenity|subst:_=> }' ;
-        set mkgmap:label:3='${label_temp}';
-        set mkgmap:label:1='${brand}';
+        name '${brand}' |
+             '${operator}' |
+             '${name}' |
+             '${amenity|subst:_=> }' ;
         delete operator;
-        delete brand;
-        delete name ;
+        delete brand;  
         }
 
 amenity=place_of_worship & denomination=unknown { delete denomination }
@@ -218,11 +212,11 @@ amenity=place_of_worship & building=yes         { delete building }
 amenity=place_of_worship & name!=*
 	{
 	set temp_religion='${denomination} ${building}' |
-                          '${denomination}' |
-                          '${religion} ${building}' |
-                          '${religion}' |
-                          '${building}' |
-                          'religious' ;
+                      '${denomination}' |
+                      '${religion} ${building}' |
+                      '${religion}' |
+                      '${building}' |
+                      'religious' ;
 	add name = '${temp_religion|subst:_=> }' ;
 	}
 
