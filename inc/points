@@ -11,7 +11,7 @@
 #To set the city, region and country values for all elements with housenumbers
 addr:housenumber=* {set mkgmap:execute_finalize_rules=true}
 
-include '../inc/access_points';
+include '../inc/access';
 include '../inc/name';
 
 # make key/value usable, if values are separated with ';'
