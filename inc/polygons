@@ -186,7 +186,8 @@ building=church |
   building=public |
   building=school                                 [0x10f1b resolution 23]
 
-building!=no &
+building=* &  
+  building!=no &
   building!=public &
   building!=school &
   building!=church &
@@ -194,4 +195,6 @@ building!=no &
   building!=chapel &
   building!=proposed &
   mkgmap:residential!=*                          [0x13 resolution 24]
+  
 
+  
