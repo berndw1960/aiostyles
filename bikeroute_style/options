@@ -34,7 +34,7 @@ merge-lines
 #index
 transparent
 #route
-#latin1
-unicode
+latin1
+#unicode
 
 

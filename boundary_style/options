@@ -21,5 +21,5 @@ reduce-point-density=4
 reduce-point-density-polygon=8
 merge-lines
 transparent
-#latin1
-unicode
+latin1
+#unicode
