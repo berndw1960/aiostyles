@@ -82,22 +82,22 @@ landuse=commercial 				                [0x0f resolution 18]
 landuse=industrial				                [0x0c resolution 18]
 landuse=retail 					                [0x08 resolution 18]
 
-landuse=landfill                                                [0x10f07 resolution 18]
+landuse=landfill                                [0x10f07 resolution 18]
 
-landuse=conservation                                            [0x10f0a resolution 18]
+landuse=conservation                            [0x10f0a resolution 18]
 
 landuse=brownfield				                [0x0e resolution 20]
 landuse=greenfield				                [0x10 resolution 20]
-landuse=construction                                            [0x11 resolution 20]
+landuse=construction                            [0x11 resolution 20]
 
 landuse=village_green |
 landuse=grass					                [0x10f11 resolution 22]
 
 landuse=allotments 				                [0x10f08 resolution 22]
-landuse=orchard                                                 [0x4e resolution 22]
+landuse=orchard                                 [0x4e resolution 22]
 
 landuse=farmland |
-landuse=plant_nursery                                           [0x2a resolution 21]
+landuse=plant_nursery                           [0x2a resolution 21]
 
 landuse=farmyard 				                [0x2b resolution 22]
 landuse=vineyard 				                [0x2c resolution 22]

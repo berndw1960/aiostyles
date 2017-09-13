@@ -4,7 +4,11 @@
 #------------------------------------------------------------------------------
 
 highway=raceway                                           [0x12007 resolution 24-23]
-highway=platform                                          [0x10f0d resolution 24]
+
+highway=platform |
+highway=bus_stop |
+highway=tram_stop |
+highway=elevator                                          [0x10f0d resolution 24]
 
 # aeroway
 aeroway=runway                                            [0x27 resolution 20]
@@ -49,7 +53,7 @@ railway=tram |
 railway=subway |
 railway=funicular |
 railway=preserved |
-railway=monorail                                                                        [0x10e0f resolution 24]
+railway=monorail                                           [0x10e0f resolution 24]
 
-railway=turntable | railway=traverser                                                   [0x10106 resolution 24-23]
+railway=turntable | railway=traverser                      [0x10106 resolution 24-23]
  

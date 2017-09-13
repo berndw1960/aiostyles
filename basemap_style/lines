@@ -14,13 +14,15 @@ include '../inc/exit_dest' ;
 include '../inc/lines';
 include '../inc/non_motorcar_ways_lines';
 include '../inc/track_path_lines';
-include '../inc/unknown_ways_lines';
 
 # rendering options of nonroutable ways
 include '../inc/boundary_lines' ;
 include '../inc/non_route_ways_lines' ;
 include '../inc/water_lines' ;
 include '../inc/barrier_lines';
+
+# possible routable ways 
+include '../inc/unknown_ways_lines';
 
 # last line is the finalize section!
 include '../inc/finalize_lines';

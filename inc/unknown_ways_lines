@@ -3,11 +3,12 @@
 
 # road = way typ not defined/unknown
 # unknown roads = 0x0b(routable) and 0x2c(overlay)
-highway=road                                                                            [0x2c resolution 24 continue]
-highway=road                                                                            [0x0b resolution 24 road_class=0 road_speed=0]
+highway=road                                                            [0x2c resolution 24 continue]
+highway=road                                                            [0x0b resolution 24 road_class=0 road_speed=0]
 
-highway=* & (mkgmap:unpaved=1)                                                          [0x0b resolution 24 road_class=0 road_speed=0]
-highway=* & (area!=yes & area!=true & area!=1)                                          [0x1b resolution 24 road_class=0 road_speed=0]
-highway=* & junction=roundabout                                                         [0x0c resolution 24 road_class=0 road_speed=0]
+highway=* & (mkgmap:unpaved=1)                                          [0x0b resolution 24 road_class=0 road_speed=0 continue]
+highway=* & junction=roundabout                                         [0x0c resolution 24 road_class=0 road_speed=0 continue]
+highway=* & (area!=yes & area!=true & area!=1)                          [0x1b resolution 24 road_class=0 road_speed=0]
+
 
 

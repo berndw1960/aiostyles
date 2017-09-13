@@ -20,6 +20,9 @@ highway=* & mkgmap:mp_created=true {add area=yes}
 # Hide removed ways
 (highway=razed | 
   highway=dismantled)               {deletealltags}
+  
+#Hide historic ways
+highway=historic                    {deletealltags}
 
 # Hide abandoned ways. Abandoned highways have some evidence of their former 
 # existence but are no longer used. These
@@ -88,7 +91,25 @@ highway=corridor
                   add tunnel=yes;
                   add covered=yes;
                   }
+# Flag paved roads
+highway=* & 
+  (surface=asphalt | 
+    surface=paved | 
+    surface=sett | 
+    surface=concrete | 
+    surface=concrete:lanes | 
+    surface=concrete:plates | 
+    surface=paving_stones  | 
+    surface=cobblestone  | 
+   	surface=cobblestone:flattened  | 
+   	surface=metal  | 
+   	surface=wood)               
+      { set mkgmap:unpaved=0 }
 
+highway=* & tracktype=grade1 & surface!=* 
+      { set mkgmap:unpaved=0 }
+
+# Flag unpaved roads
 highway=*
            & (
               surface=cobblestone |
@@ -107,6 +128,7 @@ highway=*
               mtb:scale=* |
               tracktype~'grade[2-6]' |
               smoothness~'.*(bad|horrible|impassable)' |
+              trail_visibility~'.*(bad|horrible|no)' |
               sac_scale~'.*(mountain|alpine)_hiking' |
               sport=via_ferrata
               )
@@ -114,8 +136,8 @@ highway=*
               add mkgmap:unpaved=1;
             }
 
-(highway=bridleway | 
-      highway=trail | 
+(highway=bridleway |
+      highway=trail |
       highway=unsurfaced | 
       highway=byway)
             & surface!=*
@@ -125,13 +147,21 @@ highway=*
             {
               add mkgmap:unpaved=1;
             }
-
+## highway=path are handled in inc/track_path_lines to allow bicycle routing
 
 man_made=pier & area!=yes
               {
                 add highway=footway;
                 add bicycle=dismount
                 }
+
+## highway=services with amenity=* should use the amenity tag
+(highway=services | highway= rest_area) & 
+    amenity=*                                {delete highway}
+
+## highway=services should have the area tag, to prevent routing errors
+(highway=services | highway= rest_area) &
+    area!=* & is_closed() = true              {add area=yes}
 
 #------------------------------------------------------------------------------
 # Convert some rules
@@ -203,12 +233,16 @@ bridge=yes & ( highway=* | railway=* )                                          
              highway=footway |
              highway=cycleway)                                                          [0x10f00 resolution 24 continue]
 
+highway=ramp {set highway=footway}                                                      [0x10f00 resolution 24 continue]
+
 # cutting overlay
 (cutting=yes)
           & (highway=track |
              highway=path |
              highway=footway |
              highway=cycleway)                                                          [0x10f01 resolution 24 continue]
+             
+highway=escalator {set highway=footway;}                                                [0x10f01 resolution 24 continue]
 
 # tram overlay
 highway=* & railway=tram                                                                [0x10e0d resolution 24-23 continue]
@@ -218,5 +252,6 @@ highway=* & horse=designated                                                    
 
 # path with bad conditions
 highway=path
-           & smoothness~'.*(bad|horrible|impassable)'                                   [0x10e0c resolution 24 continue]
+           & (smoothness~'.*(bad|horrible|impassable)' |
+             trail_visibility~'.*(bad|horrible|no)' )                                   [0x10e0c resolution 24 continue]
               

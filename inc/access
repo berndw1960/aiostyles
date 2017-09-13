@@ -18,6 +18,9 @@ highway=* & motorroad=yes
     highway ~ 'trunk.*' )
         & mkgmap:country=DEU            { add bicycle=no; add foot=no }
 
+highway=bus_guideway 
+        & mkgmap:country=DEU            { add bus=yes; add taxi=yes; addaccess 'no' ; }
+
 # Belgium (BEL)
 
 highway=trunk & mkgmap:country=BEL      { add bicycle=no; add foot=no }
