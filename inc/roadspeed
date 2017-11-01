@@ -2,6 +2,12 @@
 # Sets the road speed based on the maxspeed tag.
 #
 
+# filter parts after ';', no way to use this values
+maxspeed~'.*;.*'
+                {
+                set maxspeed='${maxspeed|part:}';
+                }
+
 maxspeed=walk                   { set maxspeed=10 }
 maxspeed~'.*:living_street'     { set maxspeed=10 }
 
@@ -15,6 +21,7 @@ maxspeed~'.*:rural'             { set maxspeed=90 }
 
 maxspeed~'.*:trunk'             { set maxspeed=100 }
 maxspeed~'.*:motorway'          { set maxspeed=130 }
+maxspeed=none					{ set maxspeed=130 }
 
 # delete maxspeed if we still cannot convert it to km/h
 maxspeed=* & maxspeedkmh()!=*   { delete maxspeed }
