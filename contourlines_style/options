@@ -22,3 +22,9 @@ reduce-point-density=20
 transparent
 latin1
 
+## if you want to integrate the DEM data in the counterlines layer
+## uncomment the following lines 
+## and maybe you will have to adjust the path to the hgt files
+#x-dem=./hgt/VIEW3
+#x-dem-dists=3314,6628,24512,53024,106048,212096
+
