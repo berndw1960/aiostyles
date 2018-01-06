@@ -12,10 +12,11 @@ levels = 0:24, 1:23, 2:22, 3:21, 4:20, 5:18, 6:17, 7:16
 #levels = 0:24, 1:22, 2:21, 3:20, 4:18, 5:17, 6:16
 
 ## experimental options
-x-split-name-index
+
 
 
 ## official and documented options
+split-name-index
 add-pois-to-areas
 pois-to-areas-placement=entrance=main;entrance=yes;building=entrance
 link-pois-to-ways
