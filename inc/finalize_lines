@@ -2,9 +2,9 @@
 <finalize>
 # The finalizer section is executed for each element when a rule with an element type matches
 
+include '../inc/address' ;
 include '../inc/access' ;
 include '../inc/roadspeed' ;
-include '../inc/address' ;
 include '../inc/phone';
 
 #limit artificial cycleways to resolution 24

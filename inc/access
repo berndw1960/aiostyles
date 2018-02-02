@@ -21,8 +21,8 @@ highway=* & motorroad=yes
 # don't allow routing for bicycles and pedestrians if
 # motorroad isn't set on trunk roads
 
-highway=trunk & (motorroad !=* | motorroad != no)
-        & mkgmap:country=DEU            { echotags ''; add bicycle=no; add foot=no }
+highway=trunk & motorroad !=*
+        & mkgmap:country=DEU            { add bicycle=no; add foot=no }
         
 highway=bus_guideway 
         & mkgmap:country=DEU            { add bus=yes; add taxi=yes; addaccess 'no' ; }
