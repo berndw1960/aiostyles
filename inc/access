@@ -10,14 +10,20 @@
 # A class is not allowed to use the way if its tag is set to 'no'
 
 # Germany (DEU)
+        
+highway ~ 'motorway.*' 
+        & mkgmap:country=DEU            { add bicycle=no; add foot=no }
 
 highway=* & motorroad=yes
         & mkgmap:country=DEU            { add bicycle=no; add foot=no }
 
-(highway ~ 'motorway.*' |
-    highway ~ 'trunk.*' )
-        & mkgmap:country=DEU            { add bicycle=no; add foot=no }
+# highway=trunk != motorroad=yes, but for security reasons
+# don't allow routing for bicycles and pedestrians if
+# motorroad isn't set on trunk roads
 
+highway=trunk & (motorroad !=* | motorroad != no)
+        & mkgmap:country=DEU            { echotags ''; add bicycle=no; add foot=no }
+        
 highway=bus_guideway 
         & mkgmap:country=DEU            { add bus=yes; add taxi=yes; addaccess 'no' ; }
 
@@ -41,9 +47,7 @@ highway=bridleway & mkgmap:country=ESP  { add bicycle=yes; add foot=yes }
 # other
 
 highway=* & motorroad=yes               { add bicycle=no; add foot=no }
-
-(highway ~ 'motorway.*' |
-    highway ~ 'trunk.*' )               { add bicycle=no; add foot=no }
+highway ~ 'motorway.*'                  { add bicycle=no; add foot=no }
                         
 #-----------------------------------------------------------------------------
 # Next line is needed, because 'motorcycle=no' makes

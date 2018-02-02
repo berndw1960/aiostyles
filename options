@@ -36,5 +36,4 @@ ignore-fixme-values
 merge-lines
 index
 route
-latin1
-#unicode
+
