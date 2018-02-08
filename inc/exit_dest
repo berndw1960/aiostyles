@@ -21,6 +21,6 @@ mkgmap:exit_hint=true
   
 # use destination hint and/or exit hint to build name              
 (mkgmap:exit_hint=true | mkgmap:dest_hint=*)
-  { set name = '${exit_hint} ${dest_hint}' | '${dest_hint}' | '${exit_hint}''}
+  { set name = '${exit_hint} ${dest_hint}' | '${dest_hint}' | '${exit_hint}'}
   
 # end of rules for process-exits and process-destination options	
