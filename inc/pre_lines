@@ -193,10 +193,6 @@ highway=* &
 #------------------------------------------------------------------------------
 # overlays
 
-
-# toll overlay
-toll=yes & highway!=motorway                                                            [0x10e03 resolution 24-22 continue]
-
 # bridge overlay
 (bridge=* & bridge!=no & bridge!=proposed & bridge!=abandoned)
     { set bridge=yes; }
@@ -213,6 +209,9 @@ bridge=yes & highway=tertiary                                                   
 bridge=yes & highway=tertiary_link                                                      [0x10102 resolution 24-23 continue]
 bridge=yes & ( highway=* | railway=* )                                                  [0x10103 resolution 24-23 continue]
 
+# toll overlay
+toll=yes & highway!=motorway                                                            [0x10e03 resolution 24-22 continue]
+
 # tunnel overlay
 (tunnel=yes | tunnel=building_passage | covered=yes)
          & (highway=motorway |
@@ -225,6 +224,25 @@ bridge=yes & ( highway=* | railway=* )                                          
 (tunnel=yes | tunnel=building_passage | covered=yes)
           & (highway=* |
              railway=*)                                                                 [0x10e06 resolution 24 continue]
+
+# bridleway overlay
+# only if it is allowed by signs
+(horse=designated |
+  horse=official |
+  horse=permissive)
+          & (highway=track |
+             highway=path |
+             highway=footway |
+             highway=cycleway)                                                          [0x10e0b resolution 24 continue]
+
+# path with bad conditions
+highway=path
+           & (smoothness~'.*(bad|horrible|impassable)' |
+             trail_visibility~'.*(bad|horrible|no)' )                                   [0x10e0c resolution 24 continue]
+
+# tram overlay
+highway=* & railway=tram                                                                [0x10e0d resolution 24-23 continue]
+              
 
 # embankment overlay
 (man_made=dyke | embankment=yes)
@@ -243,15 +261,3 @@ highway=ramp {set highway=footway}                                              
              highway=cycleway)                                                          [0x10f01 resolution 24 continue]
              
 highway=escalator {set highway=footway;}                                                [0x10f01 resolution 24 continue]
-
-# tram overlay
-highway=* & railway=tram                                                                [0x10e0d resolution 24-23 continue]
-
-# bridleway overlay
-highway=* & horse=designated                                                            [0x10e0b resolution 24 continue]
-
-# path with bad conditions
-highway=path
-           & (smoothness~'.*(bad|horrible|impassable)' |
-             trail_visibility~'.*(bad|horrible|no)' )                                   [0x10e0c resolution 24 continue]
-              
