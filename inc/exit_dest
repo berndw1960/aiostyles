@@ -2,6 +2,7 @@
 # start of rules for process-exits and process-destination options
 # which may add info to a part of these highway=*_link roads:
 # motorway_link, trunk_link, primary_link, secondary_link, tertiary_link
+
 # build destination hint 
 dest_hint=* { delete dest_hint }
 mkgmap:dest_hint=*
@@ -9,6 +10,7 @@ mkgmap:dest_hint=*
                     '${ref|subst: =>} ${mkgmap:dest_hint|subst:;=> |subst:/=> }' | 
                     '${mkgmap:dest_hint|subst:;=> |subst:/=> }'
        }
+
 # build exit hint 
 exit_hint=* { delete exit_hint }
 mkgmap:exit_hint=true 
