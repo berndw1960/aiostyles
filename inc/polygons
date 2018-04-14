@@ -21,7 +21,8 @@ leisure=water_park { add sport=swimming }
 
 #amenity=restaurant 				[0x13 resolution 24]
 
-amenity=place_of_worship 			[0x10f1b resolution 22]
+amenity=place_of_worship & 
+ building!=*					[0x10f1b resolution 22]
 
 amenity=grave_yard | landuse=cemetery 		[0x1a resolution 22]
 
@@ -165,6 +166,10 @@ building=yes &
   amenity=place_of_worship &
   religion=christian
                   { set building=church }
+
+building=* & building!=church &
+  amenity=place_of_worship
+                  { set building=public }
 
 building=yes &
   (amenity=social_centre |
