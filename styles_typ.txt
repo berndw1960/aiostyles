@@ -94,6 +94,16 @@ Xpm="0 0 2 0"
 [end]
 
 [_polygon]
+Type=0x4b
+String1=0x02,Kartenhintergrund
+String2=0x04,map-background
+ExtendedLabels=N
+Xpm="0 0 2 0"
+"1 c #BDFF8B"
+"2 c #004400"
+[end]
+
+[_polygon]
 Type=0x02
 String0=0x02,Siedlung
 String1=0x04,Village
@@ -343,7 +353,7 @@ String1=0x02,Gewerbe
 String2=0x04,Shopping
 ExtendedLabels=N
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #FFA040"
 "2 c #000000"
 "3 c #AA2200"
@@ -390,7 +400,7 @@ ExtendedLabels=N
 FontStyle=SmallFont
 CustomColor=No
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #85B185"
 "2 c #000000"
 "3 c #006541"
@@ -437,7 +447,7 @@ ExtendedLabels=N
 FontStyle=SmallFont
 CustomColor=No
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #FF9090"
 "2 c #000000"
 "3 c #882222"
@@ -482,7 +492,7 @@ String1=0x02,Industriegebiet
 String2=0x04,Industrial
 ExtendedLabels=N
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #FF95FF"
 "2 c #000000"
 "3 c #7B00B4"
@@ -619,7 +629,7 @@ String1=0x02,Commercial
 String2=0x04,Commercial
 ExtendedLabels=N
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #FFCAD5"
 "2 c #000000"
 "3 c #FFCAD5"
@@ -761,7 +771,7 @@ Xpm="0 0 2 0"
 [end]
 
 [_polygon]
-Type=0x01300
+Type=0x13
 String1=0x02,Geb‰ude
 String2=0x04,Building
 ExtendedLabels=Y
@@ -1305,9 +1315,9 @@ String1=0x02,Landwirtschaft
 String2=0x04,Farmyard
 ExtendedLabels=N
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #C0C080"
-"2 c none"
+"2 c #000000"
 "3 c #414141"
 "10101010101010101010101010101010"
 "01010101010101010101010101010101"
@@ -1500,7 +1510,7 @@ String1=0x02,Gebirge
 String2=0x04,Fell
 ExtendedLabels=N
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #BDFF41"
 "2 c #008040"
 "3 c #00C040"
@@ -2005,7 +2015,7 @@ String1=0x02,Basketball
 String2=0x04,Basketball
 ExtendedLabels=N
 Xpm="32 32 4 1"
-"0 c none"
+"0 c #FFFFFF"
 "1 c #39308B"
 "2 c #000000"
 "3 c #BD6500"
@@ -3952,7 +3962,7 @@ Xpm="32 10 2 1"
 "11111111111111111111111111111111"
 [end]
 
-[_line]
+[_line] 
 Type=0x10E0C
 ExtendedLabels=N
 String1=0x02,Unpassierbar
@@ -4368,7 +4378,7 @@ BorderWidth=1
 ExtendedLabels=N
 Xpm="0 0 2 0"
 "0 c #FF306A"
-"1 c #BD3000"
+"1 c #000000"
 
 [end]
 
@@ -4382,7 +4392,7 @@ LineWidth=4
 BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FF9520"
-"1 c #BD3000"
+"1 c #000000"
 
 [end]
 
@@ -4396,7 +4406,7 @@ LineWidth=4
 BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFCA00"
-"1 c #FF9520"
+"1 c #000000"
 
 [end]
 
@@ -4410,7 +4420,7 @@ LineWidth=3
 BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFFF00"
-"1 c #FF9520"
+"1 c #000000"
 
 [end]
 
@@ -4468,7 +4478,7 @@ BorderWidth=1
 ExtendedLabels=N
 Xpm="0 0 2 0"
 "0 c #00FF00"
-"1 c #838383"
+"1 c #000000"
 
 [end]
 
@@ -4661,7 +4671,7 @@ BorderWidth=1
 ExtendedLabels=N
 Xpm="0 0 2 0"
 "0 c #FF306A"
-"1 c #BD3000"
+"1 c #000000"
 
 [end]
 
@@ -4675,7 +4685,7 @@ LineWidth=2
 BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FF9520"
-"1 c #BD3000"
+"1 c #000000"
 
 [end]
 
@@ -4689,7 +4699,7 @@ LineWidth=2
 BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFCA00"
-"1 c #FF9520"
+"1 c #000000"
 
 [end]
 
@@ -4703,7 +4713,7 @@ LineWidth=2
 BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFFF00"
-"1 c #FF9520"
+"1 c #000000"
 
 [end]
 
@@ -4760,7 +4770,7 @@ BorderWidth=1
 ExtendedLabels=N
 Xpm="0 0 2 0"
 "0 c #00FF00"
-"1 c #838383"
+"1 c #000000"
 
 [end]
 
@@ -4773,6 +4783,17 @@ Xpm="32 1 2 1"
 "0 c #0000FF"
 "1 c #00FF00"
 "00001111000011110000111100001111"
+[end]
+
+[_line]
+Type=0x1200B
+String1=0x02,Unbekannter Track
+String2=0x04,Unknown track
+UseOrientation=N
+Xpm="32 1 2 1"
+"0 c #BD0000"
+"1 c #FFFF00"
+"00000000111111110000000011111111"
 [end]
 
 [_line]
@@ -4815,6 +4836,28 @@ Xpm="32 1 2 1"
 [end]
 
 [_line]
+Type=0x12010
+String1=0x02,Grade3
+String2=0x04,Grade3
+UseOrientation=N
+Xpm="32 1 2 1"
+"0 c #BD0000"
+"1 c none"
+"00000000111111110000000011111111"
+[end]
+
+[_line]
+Type=0x12011
+String1=0x02,Grade4-6
+String2=0x04,Grade4-6
+UseOrientation=N
+Xpm="32 1 2 1"
+"0 c #BD0000"
+"1 c none"
+"00010001000100010001000100010001"
+[end]
+
+[_line]
 Type=0x12012
 String1=0x02,Wanderweg/Pfad
 String2=0x04,Trail/Path
@@ -4848,6 +4891,20 @@ Xpm="32 1 2 1"
 [end]
 
 [_line]
+Type=0x12017
+UseOrientation=N
+String1=0x02,Wohnstraﬂe/Nebenstraﬂe
+String2=0x04,Residential/Unclassified
+UseOrientation=N
+LineWidth=1
+BorderWidth=0
+ExtendedLabels=N
+Useorientation=N
+Xpm="0 0 1 0"
+"0 c #838383"
+[end]
+
+[_line]
 Type=0x1201B
 String1=0x02,Fussg‰ngerzone
 String2=0x04,Pedestrian
@@ -4857,7 +4914,6 @@ Xpm="32 1 2 1"
 "1 c #FF0000"
 "00001111000011110000111100001111"
 [end]
-
 
 [_point]
 Type=0x01c02

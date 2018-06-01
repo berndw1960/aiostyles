@@ -10,12 +10,12 @@ highway=pedestrian                                                              
 highway=pedestrian                                                                      [0x1101b resolution 24 continue]
 highway=pedestrian                                                                      [0x07 resolution 24 road_class=0 road_speed=0]
 
-(highway=cycleway | (highway=path & bicycle=designated))                                [0x1200a resolution 23-23 continue]
-(highway=cycleway | (highway=path & bicycle=designated))                                [0x1100a resolution 24 continue]
+#(highway=cycleway | (highway=path & bicycle=designated))                                [0x1200a resolution 22-22 continue]
+(highway=cycleway | (highway=path & bicycle=designated))                                [0x1100a resolution 22-24 continue]
 (highway=cycleway | (highway=path & bicycle=designated)) & junction=roundabout          [0x0c resolution 24 road_class=0 road_speed=1]
 (highway=cycleway | (highway=path & bicycle=designated))                                [0x0a resolution 24 road_class=0 road_speed=1]
 
-highway=footway                                                                         [0x1200d resolution 23-23 continue]
+highway=footway                                                                         [0x1200d resolution 22-23 continue]
 highway=footway                                                                         [0x1100d resolution 24 continue]
 highway=footway &
               (bicycle=designated |
