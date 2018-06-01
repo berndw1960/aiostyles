@@ -1,0 +1,5 @@
+# common rules located in /inc/
+
+include '../inc/relations';
+include '../inc/boundary_rels';
+include '../inc/cycle_rels';

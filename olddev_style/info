@@ -1,0 +1,24 @@
+#
+# This file contains information about the style.
+# It is completely optional.
+#
+
+
+# A short one line description of the style
+#
+summary: The simplified Bikemap-style for old devices
+
+# Version of the style itself
+#
+version=1.0
+
+# A longer description of the style.
+description {
+The Bikemap-style in simplified Version.
+For old devices like old EDGE units.
+This is an alternative heavyweight style 
+that is designed for use when cycling. 
+
+
+contact: franco.bez (at) web.de
+}

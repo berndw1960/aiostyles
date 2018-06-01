@@ -1,0 +1,10 @@
+# -------------------------------------------------------------------
+#  common rules under inc/
+
+include 'olddev_polygons';
+include '../inc/water_polygons';
+
+
+# last line is the finalize section!
+include '../inc/finalize_polygons';
+

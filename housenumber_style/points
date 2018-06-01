@@ -1,0 +1,4 @@
+#------------------------------------------------------------------------------
+# housenumber
+
+addr:housenumber=* & name!=* { name '${addr:housenumber}' } [0x1e00 resolution 24]
