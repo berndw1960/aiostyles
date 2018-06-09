@@ -167,6 +167,7 @@ highway=secondary_link  							[0x08 resolution 24 road_class=2 road_speed=1]
 #--------------------------------------------------------------------------------------
 # tertiary
 
+highway=tertiary                            		[0x12015 resolution 20-20 continue]
 highway=tertiary                            		[0x12005 resolution 22-21 continue]
 highway=tertiary                            		[0x11005 resolution 24-23 continue]
 highway=tertiary & junction=roundabout	 			[0x0c resolution 24 road_class=1 road_speed=2]
@@ -182,6 +183,7 @@ highway=tertiary_link								[0x08 resolution 24 road_class=1 road_speed=1]
 # minor roads
 
 # unclassified
+highway=unclassified | highway=minor        		[0x12017 resolution 21-21 continue]
 highway=unclassified | highway=minor        		[0x12006 resolution 22-22 continue]
 highway=unclassified | highway=minor        		[0x11006 resolution 24-23 continue]
 (highway=unclassified | highway=minor) &  
@@ -189,6 +191,7 @@ highway=unclassified | highway=minor        		[0x11006 resolution 24-23 continue
 highway=unclassified | highway=minor        		[0x06 resolution 24 road_class=0 road_speed=2]
 
 # residential
+highway=residential 					             [0x12017 resolution 21-21 continue]
 highway=residential 					             [0x12006 resolution 22-22 continue]
 highway=residential 					             [0x11006 resolution 24-23 continue]
 highway=residential & junction=roundabout		     [0x0c resolution 24 road_class=0 road_speed=1]
@@ -206,12 +209,13 @@ highway=service & service=parking_aisle			       [0x07 resolution 24 road_class=
 highway=service & (service=alley|service=driveway)	   [0x07 resolution 24 road_class=0 road_speed=0]
 highway=service			 			                   [0x07 resolution 24 road_class=0 road_speed=2]
 
+highway=living_street				                   [0x12018 resolution 22-22 continue]
 highway=living_street				                   [0x12008 resolution 23-23 continue]
 highway=living_street				                   [0x11008 resolution 24 continue]
 highway=living_street				                   [0x07 resolution 24 road_class=0 road_speed=0]
 
 # runaway truck ramp
-highway=escape						                   [0x11007 resolution 24] 
+highway=escape						                   [0x11009 resolution 24-23] 
 
 # bus lanes
 highway=bus_guideway                                   [0x11007 resolution 24]
