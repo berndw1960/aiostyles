@@ -760,7 +760,7 @@ Xpm="0 0 2 0"
 
 [_polygon]
 Type=0x01300
-String1=0x02,Geb?ude
+String1=0x02,Gebäude
 String2=0x04,Building
 ExtendedLabels=Y
 FontStyle=Default
@@ -5611,7 +5611,7 @@ dayxpm="16 16 4 1" colormode=32
 [_point]
 Type=0x02b06
 String1=0x00,alpine_hut
-String2=0x02,Bergh?tte
+String2=0x02,Berghütte
 String3=0x04,alpine hut
 dayxpm="16 16 5 1" colormode=16
 "$ c #0082D4"
@@ -6405,7 +6405,7 @@ dayxpm="15 16 6 1" colormode=16
 
 [_point]
 Type=0x02e14
-String1=0x02,B?cher/Schreibwaren
+String1=0x02,Bücher/Schreibwaren
 String2=0x04,Books/Stationery
 dayxpm="12 16 10 1" colormode=16
 "$ c #313131"
@@ -9009,7 +9009,7 @@ dayxpm="16 7 3 1" colormode=16
 
 [_point]
 Type=0x06619
-String1=0x02,H?hle
+String1=0x02,Höhle
 String2=0x04,Cave
 dayxpm="16 16 2 1" colormode=16
 "$ c #000000"
