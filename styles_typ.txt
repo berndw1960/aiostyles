@@ -154,7 +154,7 @@ Xpm="32 32 4 1"
 [_polygon]
 Type=0x04
 ExtendedLabels=N
-String1=0x02,Milit?rgebiet
+String1=0x02,Militärgebiet
 String2=0x04,Military
 FontStyle=SmallFont
 CustomColor=Day
