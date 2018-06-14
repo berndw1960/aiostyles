@@ -759,8 +759,8 @@ Xpm="32 32 4 1"
 
 [_polygon]
 Type=0x01200
-String0=0x02,Fussgängerzone
-String1=0x04,Pedestrian
+String1=0x02,Fussgängerzone
+String2=0x04,Pedestrian
 ExtendedLabels=Y
 FontStyle=SmallFont
 Xpm="0 0 2 0"
@@ -2235,7 +2235,7 @@ Xpm="32 32 4 1"
 [_polygon]
 Type=0x10F08
 ExtendedLabels=N
-String1=0x02,Kleingürten
+String1=0x02,Kleingärten
 String2=0x04,Allotments
 Xpm="32 32 4 1"
 "0 c #A0E040"
