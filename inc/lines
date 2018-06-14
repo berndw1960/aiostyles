@@ -145,7 +145,7 @@ highway=primary_link		                        [0x08 resolution 24 road_class=3 r
 #--------------------------------------------------------------------------------------
 # secondary
 
-highway=secondary                           		[0x12004 resolution 21-20 continue]
+highway=secondary                           		[0x12004 resolution 21-18 continue]
 highway=secondary		                            [0x11004 resolution 24-22 continue]
 highway=secondary & 
   junction=roundabout &                               
@@ -237,16 +237,16 @@ highway=pedestrian					                   [0x07 resolution 24 road_class=0 road_
 # tracks
 
 (highway=track & tracktype=grade2) |
-      (highway=byway & mkgmap:unpaved=1)               [0x1200f resolution 23 continue]
+      (highway=byway & mkgmap:unpaved=1)               [0x1200f resolution 22 continue]
 (highway=track & tracktype=grade2) |
-      (highway=byway & mkgmap:unpaved=1)               [0x1100f resolution 24 continue]
+      (highway=byway & mkgmap:unpaved=1)               [0x1100f resolution 24-23 continue]
 (highway=track & tracktype=grade2) |
       (highway=byway & mkgmap:unpaved=1)               [0x0f resolution 24 road_class=0 road_speed=0]
 
 (highway=track & tracktype=grade1) |
-      (highway=byway & mkgmap:unpaved=0)               [0x1200e resolution 23-22 continue]
+      (highway=byway & mkgmap:unpaved=0)               [0x1200e resolution 22-22 continue]
 (highway=track & tracktype=grade1) |
-      (highway=byway & mkgmap:unpaved=0)               [0x1100e resolution 24 continue]
+      (highway=byway & mkgmap:unpaved=0)               [0x1100e resolution 24-23 continue]
 (highway=track & tracktype=grade1) |
       (highway=byway & mkgmap:unpaved=0)               [0x0e resolution 24 road_class=0 road_speed=0]
 
