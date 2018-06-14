@@ -1,0 +1,4 @@
+#------------------------------------------------------------------------------
+# housenumber
+
+addr:housenumber=* & name!=* { name '${addr:housenumber}' }
