@@ -11,7 +11,7 @@ highway=pedestrian                                                              
 highway=pedestrian                                                                      [0x07 resolution 24 road_class=0 road_speed=0]
 
 #(highway=cycleway | (highway=path & bicycle=designated))                                [0x1200a resolution 22-22 continue]
-(highway=cycleway | (highway=path & bicycle=designated))                                [0x1100a resolution 22-24 continue]
+(highway=cycleway | (highway=path & bicycle=designated))                                [0x1100a resolution 24-22 continue]
 (highway=cycleway | (highway=path & bicycle=designated)) & junction=roundabout          [0x0c resolution 24 road_class=0 road_speed=1]
 (highway=cycleway | (highway=path & bicycle=designated))                                [0x0a resolution 24 road_class=0 road_speed=1]
 
