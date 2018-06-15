@@ -4823,13 +4823,11 @@ Xpm="32 1 2 1"
 Type=0x12015
 String1=0x02,Kreisstraße
 String2=0x04,Tertiary
-UseOrientation=Y
 LineWidth=1
-BorderWidth=0
-Useorientation=N
-Xpm="0 0 1 0"
-"0 c #FFFF00"
-
+BorderWidth=1
+Xpm="0 0 2 0"
+"1 c #FFFF00"
+"2 c #000000"
 [end]
 
 [_line]
