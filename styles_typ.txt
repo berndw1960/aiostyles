@@ -87,7 +87,6 @@ ExtendedLabels=N
 String0=0x02,Stadt
 String1=0x04,City
 FontStyle=SmallFont
-CustomColor=No
 Xpm="0 0 2 0"
 "0 c #F5D5D5"
 "1 c #7B3041"
@@ -99,7 +98,6 @@ ExtendedLabels=N
 String0=0x02,Siedlung
 String1=0x04,Village
 FontStyle=SmallFont
-CustomColor=No
 Xpm="0 0 2 0"
 "0 c #E5D5D5"
 "1 c #7B3041"
@@ -157,8 +155,6 @@ ExtendedLabels=N
 String1=0x02,Militärgebiet
 String2=0x04,Military
 FontStyle=SmallFont
-CustomColor=Day
-DaycustomColor:#000000
 Xpm="32 32 4 1"
 "0 c none"
 "1 c #BF0000"
@@ -296,7 +292,6 @@ ExtendedLabels=N
 String1=0x02,Flugplatz
 String2=0x04,Airport
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 32 4 1"
 "0 c #E0E0E0"
 "1 c #AAAAAA"
@@ -434,7 +429,6 @@ ExtendedLabels=N
 String1=0x02,Krankenhaus
 String2=0x04,Hospital
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 32 4 1"
 "0 c none"
 "1 c #FF9090"
@@ -526,7 +520,6 @@ ExtendedLabels=N
 String1=0x02,Naturschutzgebiet
 String2=0x04,Nature reserve
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 32 4 1"
 "0 c none"
 "1 c #C5C5C5"
@@ -819,7 +812,6 @@ ExtendedLabels=N
 String1=0x02,Naturwald
 String2=0x04,Natural woodland
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 32 4 1"
 "0 c #00C000"
 "1 c #A0FF64"
@@ -1244,9 +1236,6 @@ Xpm="0 0 2 0"
 Type=0x02800
 ExtendedLabels=Y
 FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#7BCAFF
-NightcustomColor:#0000BA
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000B4"
@@ -1348,8 +1337,6 @@ ExtendedLabels=N
 String1=0x02,Weinanbau
 String2=0x04,Vineyard
 FontStyle=SmallFont
-CustomColor=Day
-DaycustomColor:#7B008B
 Xpm="32 32 4 1"
 "0 c #00FF40"
 "1 c #7B006A"
@@ -1484,9 +1471,6 @@ Xpm="32 32 4 1"
 Type=0x03200
 ExtendedLabels=Y
 FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#7BCAFF
-NightcustomColor:#0000BA
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000B4"
@@ -1543,9 +1527,6 @@ ExtendedLabels=N
 String0=0x02,See
 String1=0x04,Lake
 FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#7BCAFF
-NightcustomColor:#0000BA
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000B4"
@@ -3054,8 +3035,6 @@ String1=0x02,Bach
 String2=0x04,Stream
 BorderWidth=0
 UseOrientation=N
-UseOrientation=N
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #7BCAFF"
 
@@ -3128,8 +3107,6 @@ BorderWidth=0
 UseOrientation=N
 String1=0x02,Staatsgrenze
 String2=0x04,National Border
-UseOrientation=N
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #7B00FF"
 
@@ -3142,8 +3119,6 @@ BorderWidth=0
 UseOrientation=N
 String1=0x02,Wasserlauf
 String2=0x04,Water way
-UseOrientation=N
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #7BCAFF"
 
@@ -3198,8 +3173,6 @@ BorderWidth=0
 UseOrientation=N
 String1=0x04,Runway
 String2=0x02,Start/Landebahn
-UseOrientation=N
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #AAAAAA"
 
@@ -3265,7 +3238,7 @@ Xpm="32 2 2 1"
 [_line]
 Type=0x3B
 String1=0x02,Bergwanderweg
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 2 2 1"
 "0 c #FF0000"
 "1 c #00FF00"
@@ -3526,7 +3499,7 @@ Xpm="32 3 2 1"
 Type=0x10108
 String1=0x02,Radroute (lcn)
 String2=0x04,cycleroute (lcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 13 2 1"
 "0 c #FF9520"
 "1 c #FFCA41"
@@ -3549,7 +3522,7 @@ Xpm="32 13 2 1"
 Type=0x10109
 String1=0x02,Radroute (rcn)
 String2=0x04,cycleroute (rcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 13 2 1"
 "0 c #FF3020"
 "1 c #FF656A"
@@ -3572,7 +3545,7 @@ Xpm="32 13 2 1"
 Type=0x1010A
 String1=0x02,Radroute (ncn+)
 String2=0x04,cycleroute (ncn+)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 13 2 1"
 "0 c #FF30FF"
 "1 c #FF95FF"
@@ -3595,7 +3568,7 @@ Xpm="32 13 2 1"
 Type=0x1010B
 String1=0x02,Radroute (ncn+ rcn)
 String2=0x04,cycleroute (ncn+ rcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 13 2 1"
 "0 c #FF656A"
 "1 c #FF65FF"
@@ -3618,7 +3591,7 @@ Xpm="32 13 2 1"
 Type=0x1010C
 String1=0x02,Radroute (rcn lcn)
 String2=0x04,cycleroute (rcn lcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 13 2 1"
 "0 c #FF9520"
 "1 c #FF656A"
@@ -3641,7 +3614,7 @@ Xpm="32 13 2 1"
 Type=0x1010D
 String1=0x02,Radroute (ncn+ lcn)
 String2=0x04,cycleroute (ncn+ lcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 13 2 1"
 "0 c #FF9520"
 "1 c #FF65FF"
@@ -3664,7 +3637,7 @@ Xpm="32 13 2 1"
 Type=0x1010E
 String1=0x02,Radroute (ncn+ rcn lcn)
 String2=0x04,cycleroute (ncn+ rcn lcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 13 2 1"
 "0 c #FF9520"
 "1 c #FF65B4"
@@ -3687,7 +3660,7 @@ Xpm="32 13 2 1"
 Type=0x1010F
 String1=0x02,Radroute (rcn)
 String2=0x04,cycleroute (rcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 7 2 1"
 "0 c #FF3020"
 "1 c #FF656A"
@@ -3704,7 +3677,7 @@ Xpm="32 7 2 1"
 Type=0x10110
 String1=0x02,Radroute (ncn+)
 String2=0x04,cycleroute (ncn+)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 7 2 1"
 "0 c #FF30FF"
 "1 c #FF95FF"
@@ -3721,7 +3694,7 @@ Xpm="32 7 2 1"
 Type=0x10111
 String1=0x02,Radroute (rcn lcn)
 String2=0x04,cycleroute (rcn lcn)
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 7 2 1"
 "0 c #FF9520"
 "1 c #FF656A"
@@ -3875,7 +3848,7 @@ Xpm="32 10 2 1"
 Type=0x10E08
 String1=0x02,Radfahrstreifen
 String2=0x04,Cycle lane
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 10 2 1"
 "0 c #0095FF"
 "1 c none"
@@ -3935,7 +3908,7 @@ Xpm="32 10 2 1"
 Type=0x10E0B
 String1=0x02,Reitweg
 String2=0x04,Bridleway
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 10 2 1"
 "0 c #FF65FF"
 "1 c none"
@@ -3955,7 +3928,7 @@ Xpm="32 10 2 1"
 Type=0x10E0C
 String1=0x02,Unpassierbar
 String2=0x04,impassable
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 6 2 1"
 "0 c #FF0020"
 "1 c none"
@@ -4026,7 +3999,6 @@ String1=0x02,Standseilbahn
 String2=0x04,Funicular
 UseOrientation=N
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 3 2 1"
 "0 c #000000"
 "1 c none"
@@ -4079,9 +4051,8 @@ Xpm="32 3 4 1"
 Type=0x10E15
 String1=0x02,Sessellift
 String2=0x04,Chair lift
-UseOrientation=Y
+UseOrientation=N
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 5 2 1"
 "0 c #000000"
 "1 c none"
@@ -4096,9 +4067,8 @@ Xpm="32 5 2 1"
 Type=0x10E16
 String1=0x02,Schlepplift
 String2=0x04,Drag lift
-UseOrientation=Y
+UseOrientation=N
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 5 2 1"
 "0 c #000000"
 "1 c none"
@@ -4113,9 +4083,8 @@ Xpm="32 5 2 1"
 Type=0x10E17
 String1=0x02,Lift
 String2=0x04,Lift
-UseOrientation=Y
+UseOrientation=N
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 5 2 1"
 "0 c #838383"
 "1 c none"
@@ -4130,9 +4099,8 @@ Xpm="32 5 2 1"
 Type=0x10E18
 String1=0x02,Seilbahn
 String2=0x04,Cable car
-UseOrientation=Y
+UseOrientation=N
 FontStyle=SmallFont
-CustomColor=No
 Xpm="32 5 2 1"
 "0 c #000000"
 "1 c none"
@@ -4251,7 +4219,7 @@ Xpm="32 2 2 1"
 Type=0x10F03
 String1=0x02,Zaun
 String2=0x04,Fence
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 3 2 1"
 "0 c #808080"
 "1 c #C5C5C5"
@@ -4294,7 +4262,6 @@ UseOrientation=N
 String1=0x02,Staumauer
 String2=0x04,Dam wall
 FontStyle=SmallFont
-CustomColor=No
 Xpm="0 0 2 0"
 "0 c #838383"
 "1 c #525252"
@@ -4309,7 +4276,6 @@ UseOrientation=N
 String1=0x02,Wehr
 String2=0x04,Weir
 FontStyle=SmallFont
-CustomColor=No
 Xpm="0 0 2 0"
 "0 c #000000"
 "1 c #838383"
@@ -4320,7 +4286,7 @@ Xpm="0 0 2 0"
 Type=0x10F0C
 String1=0x02,Hecke
 String2=0x04,Hedge
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 2 2 1"
 "0 c #00FF00"
 "1 c #808040"
@@ -4384,7 +4350,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x11004
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Landesstraße
 String2=0x04,Secondary Road
 LineWidth=3
@@ -4397,7 +4363,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x11005
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Kreisstraße
 String2=0x04,Tertiary Road
 LineWidth=3
@@ -4410,7 +4376,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x11006
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Ortststraße
 String2=0x04,Residential
 LineWidth=2
@@ -4423,16 +4389,11 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x11007
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Zufahrtsweg
 String2=0x04,Service
-UseOrientation=Y
-UseOrientation=Y
-UseOrientation=Y
-UseOrientation=Y
 LineWidth=2
 BorderWidth=0
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #C5C5C5"
 
@@ -4440,7 +4401,7 @@ Xpm="0 0 1 0"
 
 [_line]
 Type=0x11008
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Wohnstraße
 String2=0x04,Livingstreet
 LineWidth=2
@@ -4455,7 +4416,7 @@ Xpm="0 0 2 0"
 Type=0x11009
 String1=0x02,Notfallspur
 String2=0x04,Emergency lane
-Useorientation=Y
+Useorientation=N
 Xpm="32 3 2 1"
 "0 c #FF0000"
 "1 c #E6E6E6"
@@ -4492,7 +4453,7 @@ Xpm="32 2 2 1"
 Type=0x1100D
 String1=0x02,Fussweg
 String2=0x04,Footway
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 2 2 1"
 "0 c #FF0000"
 "1 c #00FF00"
@@ -4507,11 +4468,6 @@ BorderWidth=0
 UseOrientation=N
 String1=0x02,Grade1
 String2=0x04,Grade1
-FontStyle=Default
-CustomColor=Day
-DaycustomColor:#000003
-UseOrientation=N
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #BD0000"
 
@@ -4596,11 +4552,6 @@ String1=0x02,Bach
 String2=0x04,Stream
 BorderWidth=0
 UseOrientation=N
-ExtendedLabels=Y
-FontStyle=Default
-UseOrientation=N
-UseOrientation=N
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #2EBBB4"
 
@@ -4622,7 +4573,7 @@ Xpm="32 2 2 1"
 Type=0x1101B
 String1=0x02,Fussgängerzone
 String2=0x04,Pedestrian
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 3 2 1"
 "0 c #00FF00"
 "1 c #FF0000"
@@ -4659,7 +4610,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x12002
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Schnellstraße
 String2=0x04,Trunk Road
 LineWidth=2
@@ -4672,7 +4623,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x12003
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Bundesstraße
 String2=0x04,Primary Road
 LineWidth=2
@@ -4685,7 +4636,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x12004
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Landes-/Staatsstraße
 String2=0x04,Secondary Road
 LineWidth=2
@@ -4698,7 +4649,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x12005
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Kreisstraße
 String2=0x04,Tertiary Road
 LineWidth=2
@@ -4711,7 +4662,7 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x12006
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Ortsstraße
 String2=0x04,Residential
 LineWidth=1
@@ -4724,12 +4675,9 @@ Xpm="0 0 2 0"
 
 [_line]
 Type=0x12007
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Zufahrtsweg
 String2=0x04,Service
-UseOrientation=Y
-UseOrientation=Y
-UseOrientation=Y
 LineWidth=1
 BorderWidth=0
 Useorientation=N
@@ -4740,7 +4688,7 @@ Xpm="0 0 1 0"
 
 [_line]
 Type=0x12008
-UseOrientation=Y
+UseOrientation=N
 String1=0x02,Wohnstraße
 String2=0x04,Livingstreet
 LineWidth=1
@@ -4780,7 +4728,6 @@ BorderWidth=0
 String1=0x02,Grade1
 String2=0x04,Grade1
 UseOrientation=N
-Useorientation=N
 Xpm="0 0 1 0"
 "0 c #BD0000"
 
