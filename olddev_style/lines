@@ -1,0 +1,28 @@
+
+# -------------------------------------------------------------------
+#  common rules under inc/
+
+# overlays
+include '../inc/cycle_lines';
+#include '../inc/cycle_highlights';
+include '../inc/pre_lines' ;
+
+# process exits and destination
+include '../inc/exit_dest' ;
+
+# rendering options of routable ways
+include '../inc/lines';
+include '../inc/non_motorcar_ways_lines';
+include '../inc/track_path_lines';
+
+# rendering options of nonroutable ways
+include '../inc/boundary_lines' ;
+include '../inc/non_route_ways_lines' ;
+include '../inc/water_lines' ;
+include '../inc/barrier_lines';
+
+# possible routable ways 
+include '../inc/unknown_ways_lines' ;
+
+# last line is the finalize section!
+include '../inc/finalize_lines';
