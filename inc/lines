@@ -79,8 +79,7 @@ highway=* & construction=* & maxspeed!=*
           add mkgmap:road-speed = '-1' 
           }
 
-# Overlay on highways under construction 
-highway=* & construction=*                          [0x10e02 resolution 24-23 continue]
+
 
 #--------------------------------------------------------------------------------------
 
@@ -228,27 +227,24 @@ highway=pedestrian & (area!=yes & area!=true & area!=1)
 		  add mkgmap:dead-end-check=false
 		  }
 
-
 highway=pedestrian					                   [0x1101b resolution 24 continue]
 highway=pedestrian					                   [0x07 resolution 24 road_class=0 road_speed=0]
 
-
 #------------------------------------------------------------------------------
-# tracks
-
-(highway=track & tracktype=grade2) |
-      (highway=byway & mkgmap:unpaved=1)               [0x1200f resolution 22 continue]
-(highway=track & tracktype=grade2) |
-      (highway=byway & mkgmap:unpaved=1)               [0x1100f resolution 24-23 continue]
-(highway=track & tracktype=grade2) |
-      (highway=byway  & mkgmap:unpaved=1)              [0x0f resolution 24 road_class=0 road_speed=0]
-
+# tracks, possible usable for motorvehicles
 (highway=track & tracktype=grade1) |
       (highway=byway & mkgmap:unpaved=0)               [0x1200e resolution 22-22 continue]
 (highway=track & tracktype=grade1) |
       (highway=byway & mkgmap:unpaved=0)               [0x1100e resolution 24-23 continue]
 (highway=track & tracktype=grade1) |
       (highway=byway & mkgmap:unpaved=0)               [0x0e resolution 24 road_class=0 road_speed=0]
+
+(highway=track & tracktype=grade2) |
+      (highway=byway & mkgmap:unpaved=1)               [0x1200f resolution 22-22 continue]
+(highway=track & tracktype=grade2) |
+      (highway=byway & mkgmap:unpaved=1)               [0x1100f resolution 24-23 continue]
+(highway=track & tracktype=grade2) |
+      (highway=byway  & mkgmap:unpaved=1)              [0x0f resolution 24 road_class=0 road_speed=0]
 
 #------------------------------------------------------------------------------
 # route

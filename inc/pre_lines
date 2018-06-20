@@ -15,7 +15,7 @@ highway=* & mkgmap:mp_created=true {add area=yes}
 (highway=proposed | 
   highway=proposal | 
   highway=planned | 
-  highway ~ '.*proposed.*')         {delete highway;delete junction}
+  highway ~ '.*proposed.*')         {deletealltags}
 
 # Hide removed ways
 (highway=razed | 
@@ -24,7 +24,8 @@ highway=* & mkgmap:mp_created=true {add area=yes}
 #Hide historic ways
 highway=historic                    {deletealltags}
 
-# Hide abandoned ways. Abandoned highways have some evidence of their former 
+# Hide abandoned ways. 
+# Abandoned highways have some evidence of their former 
 # existence but are no longer used. These
 # abandoned highways could be useful in topographical maps.
 # https://wiki.openstreetmap.org/wiki/Key:abandoned:
@@ -35,7 +36,7 @@ highway=historic                    {deletealltags}
 (highway=unbuilt | 
   highway=neverbuilt | 
   highway=rejected | 
-  highway ~ 'x-.*')                 {delete highway;delete junction}
+  highway ~ 'x-.*')                 {deletealltags}
   
 # Remove highway tag from ways which are not suitable for routing
 highway=traffic_signals | 
@@ -192,6 +193,21 @@ highway=* &
 
 #------------------------------------------------------------------------------
 # overlays
+
+# oneway overlay
+#highway=* & 
+# highway!=motorway & 
+# highway!=trunk & 
+# highway!=motorway_link & 
+# highway!=trunk_link &
+# highway!=primary_link &
+# highway!=secondary_link &
+# highway!=tertiary_link &
+# highway!=track  
+#    & oneway=yes                                                                       [0x10e10 resolution 24-23 continue] 
+
+# Overlay on highways under construction 
+highway=* & construction=*                                                             [0x10e02 resolution 24-23 continue]
 
 # bridge overlay
 (bridge=* & bridge!=no & bridge!=proposed & bridge!=abandoned)

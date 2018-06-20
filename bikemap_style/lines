@@ -4,7 +4,7 @@
 
 # overlays
 include '../inc/cycle_lines';
-include '../inc/cycle_highlights';
+#include '../inc/cycle_highlights';
 include '../inc/pre_lines' ;
 
 # process exits and destination

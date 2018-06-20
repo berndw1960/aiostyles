@@ -22,10 +22,6 @@ highway=track  {
 highway=path | highway=trail                                                            [0x12012 resolution 22 continue]
 highway=path | highway=trail                                                            [0x11012 resolution 24-23 continue]
 
-highway=path & (bicycle=permissive |
-                 bicycle=official |
-                 bicycle=yes)                                                           [0x0a resolution 24 road_class=0 road_speed=1]
-
 highway=path   {
                   add mkgmap:unpaved=1;
                 }                                                                       [0x12 resolution 24 road_class=0 road_speed=0]
