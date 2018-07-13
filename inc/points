@@ -352,6 +352,7 @@ amenity=restaurant &
 # Asian
 amenity=restaurant &
   ( cuisine=asian |
+    cuisine=japanese |
     cuisine=indian |
     cuisine=korean |
     cuisine=thai |
@@ -446,7 +447,6 @@ amenity=restaurant &
     cuisine=tapas |
     cuisine=greek |
     cuisine=turkish |
-    cuisine=japanese |
     cuisine=arabic |
     cuisine=african )                                                     [0x2a13 resolution 24]
 
