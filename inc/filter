@@ -26,11 +26,6 @@ man_made~'.*;.*'
                 set man_made='${man_made|part:}';
                 }
 
-cuisine~'.*;.*'
-                {
-                set cuisine='${cuisine|part:}';
-                }
-
 tourism~'.*;.*'
                 {
                 set tourism='${tourism|part:}';

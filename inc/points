@@ -346,11 +346,13 @@ tourism=wine_cellar                                                       [0x2c0
 
 # American
 amenity=restaurant &
-    cuisine=american                                                      [0x2a01 resolution 24]
-
+    cuisine=american |
+    cuisine~'burger'                                                     [0x2a01 resolution 24]
+    
 # Asian
 amenity=restaurant &
   ( cuisine=asian |
+    cuisine=japanese |
     cuisine=indian |
     cuisine=korean |
     cuisine=thai |
@@ -369,6 +371,7 @@ amenity=restaurant &
   ( cuisine=cake |
     cuisine=deli |
     cuisine=crepe )                                                       [0x2a05 resolution 24]
+
 amenity=ice_cream |
     cuisine=ice_cream                                                     [0x2a05 resolution 24]
 
@@ -377,11 +380,9 @@ amenity=restaurant &
     cuisine=international                                                 [0x2a06 resolution 24]
 
 # Fastfood
-amenity=fast_food  |
-( amenity=restaurant &
-    cuisine=fast_food ) |
-    cuisine=kebap |
-    cuisine=döner                                                         [0x2a07 resolution 24]
+amenity~'fast_food'                                                       [0x2a07 resolution 24]
+amenity=restaurant & 
+  ( cuisine~'fast_food' )                                                 [0x2a07 resolution 24]
 
 # Italian
 amenity=restaurant &
@@ -394,17 +395,20 @@ amenity=restaurant &
 
 # Pizza
 amenity=restaurant &
-    cuisine=pizza                                                         [0x2a0a resolution 24]
+    cuisine~'pizza'                                                       [0x2a0a resolution 24]
 
 # Seafood
 amenity=restaurant &
   ( cuisine=sea_food |
-    cuisine=fish |
+    cuisine~'fish' |
     cuisine=sushi )                                                       [0x2a0b resolution 24]
 
 # Steak/Grill
 amenity=restaurant &
   ( cuisine=steak_house |
+    cuisine=steak |
+    cuisine~'kebab' |
+    cuisine~'döner' |
     cuisine=chicken )                                                     [0x2a0c resolution 24]
 
 # Bagel/Donut
@@ -440,9 +444,9 @@ amenity=restaurant &
 amenity=restaurant &
   ( cuisine=mediterranean |
     cuisine=spanish |
+    cuisine=tapas |
     cuisine=greek |
     cuisine=turkish |
-    cuisine=japanese |
     cuisine=arabic |
     cuisine=african )                                                     [0x2a13 resolution 24]
 
