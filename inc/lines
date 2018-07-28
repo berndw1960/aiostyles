@@ -178,16 +178,20 @@ highway=tertiary_link &
   (mkgmap:exit_hint=true | mkgmap:dest_hint=*)      [0x07 resolution 24 road_class=1 road_speed=1]
 highway=tertiary_link								[0x08 resolution 24 road_class=1 road_speed=1]
 
-#------------------------------------------------------------------------------
-# minor roads
+
+#----------------------------------------------------------------------------------------
+# unclassified roads, use them like tertiary, but they look like residential
 
 # unclassified
-highway=unclassified | highway=minor        		[0x12017 resolution 21-21 continue]
-highway=unclassified | highway=minor        		[0x12006 resolution 22-22 continue]
-highway=unclassified | highway=minor        		[0x11006 resolution 24-23 continue]
-(highway=unclassified | highway=minor) &  
-  junction=roundabout                               [0x0c resolution 24 road_class=0 road_speed=1]
-highway=unclassified | highway=minor        		[0x06 resolution 24 road_class=0 road_speed=2]
+highway=unclassified                        		[0x12017 resolution 20-20 continue]
+highway=unclassified                         		[0x12006 resolution 22-21 continue]
+highway=unclassified                        		[0x11006 resolution 24-23 continue]
+highway=unclassified & junction=roundabout          [0x0c resolution 24 road_class=1 road_speed=1]
+highway=unclassified                        		[0x05 resolution 24 road_class=1 road_speed=3]
+
+
+#----------------------------------------------------------------------------------------
+# highway in landuse=residential
 
 # residential
 highway=residential 					             [0x12017 resolution 21-21 continue]
@@ -202,16 +206,20 @@ highway=service | highway=living_street
 		  add mkgmap:dead-end-check=false
 		}
 
+highway=living_street				                   [0x12018 resolution 22-22 continue]
+highway=living_street				                   [0x12008 resolution 23-23 continue]
+highway=living_street				                   [0x11008 resolution 24 continue]
+highway=living_street				                   [0x07 resolution 24 road_class=0 road_speed=0]
+
+#----------------------------------------------------------------------------------------
+# service roads
+
 highway=service						                   [0x12007 resolution 23-23 continue]
 highway=service						                   [0x11007 resolution 24 continue]
 highway=service & service=parking_aisle			       [0x07 resolution 24 road_class=0 road_speed=1]
 highway=service & (service=alley|service=driveway)	   [0x07 resolution 24 road_class=0 road_speed=0]
 highway=service			 			                   [0x07 resolution 24 road_class=0 road_speed=2]
 
-highway=living_street				                   [0x12018 resolution 22-22 continue]
-highway=living_street				                   [0x12008 resolution 23-23 continue]
-highway=living_street				                   [0x11008 resolution 24 continue]
-highway=living_street				                   [0x07 resolution 24 road_class=0 road_speed=0]
 
 # runaway truck ramp
 highway=escape						                   [0x11009 resolution 24-23] 
