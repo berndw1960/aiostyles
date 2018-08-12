@@ -125,54 +125,54 @@ man_made=windmill & mkgmap:area2poi!=true                               [0x641f 
 
 # Water Features
 amenity=fountain                                                        [0x6500 resolution 24]
-# 0x6501        # Arroyo
-# 0x6502        # sand bar
+#natural=Arroyo 0x6501         
+#natural=sand bar 0x6502        
 natural=bay & name=*                                                    [0x6503 resolution 24]
-# 0x6504        # bend
-# 0x6506        # channel
-# 0x6507        # cove
+#natural=bend 0x6504         
+#natural=channel 0x6506         
+#natural=cove 0x6507         
 natural=waterfall | waterway=waterfall                                  [0x6508 resolution 24]
-# 0c6509        # geyser
+natural=geyser                                                          [0x6509 resolution 24] 
 natural=glacier                                                         [0x650a resolution 22]
 harbour=*                                                               [0x650b resolution 24]
 # 0x650c see place=island above
 natural=water & name=*                                                  [0x650d resolution 24]
 waterway=rapids                                                         [0x650e resolution 24]
 landuse=reservoir                                                       [0x650f resolution 24]
-# 0x6510        # sea
+#natural=sea 0x6510       
 natural=spring                                                          [0x6511 resolution 24]
-# 0x6512        # stream
+#natural=stream 0x6512         
 natural=wetland  & mkgmap:area2poi!=true                                [0x6513 resolution 23]
 # 0x65ss
 
 # Land Features
 tourism=viewpoint & natural!=*                                          [0x6600 resolution 24]
-# 0x6601        # arch
-# 0x6602        # area
-# 0x6603        # basin
+#natural=arch 0x6601        
+#area 0x6602       
+#natural=basin 0x6603        
 natural=beach                                                           [0x6604 resolution 24]
 amenity=bench                                                           [0x6605 resolution 24]
 natural=cape                                                            [0x6606 resolution 24]
 natural=cliff                                                           [0x6607 resolution 24]
-# 0x6608        # crater
+natural=crater                                                          [0x6607 resolution 23]
 landuse=meadow & name=*                                                 [0x6609 resolution 23 continue]
-# 0x660a        # forest
-# 0x660b        # gap
-# 0x660c        # gut
-# 0x660d        # isthmus
+#forest 0x660a        
+#natural=gap 0x660b        
+#natural=gut 0x660c      
+#natural=isthmus 0x660d       
 natural=volcano                                                         [0x660e resolution 23]
-# 0x660f        # pillar
-# 0x6610        # plain
-# 0x6611        # range
-# 0x6612        # reserve
-# 0x6613        # ridge
+#natural=pillar 0x660f     
+#natural=plain 0x6610       
+#natural=range 0x6611         
+#natural=reserve 0x6612       
+natural=ridge                                                           [0x6613 resolution 24]        
 natural=rock                                                            [0x6614 resolution 24]
-# 0x6615        # slope
+#natural=slope 0x6615        
 natural=peak & ele>3500                                                 [0x6616 resolution 22]
 natural=peak & ele>2300                                                 [0x6616 resolution 23]
 natural=peak | natural=hill                                             [0x6616 resolution 24]
-# 0x6617        # valley
-# 0x6618        # woods
+#natural=valley 0x6617        
+#natural=woods 0x6618        
 mountain_pass=yes                                                       [0x6618 resolution 23 continue]
 # 0x66ss
 
