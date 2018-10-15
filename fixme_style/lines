@@ -18,6 +18,9 @@ highway = * & (fixme = * )
       cycleway!=no)
        { set name = 'FIXME: ${highway} with cycleway?'}         [0x10002 resolution 23]
 
+abandoned:highway=* 
+       { set name = 'FIXME: ${highway} check if exist?';}       [0x10002 resolution 23]
+       
 highway~'.*(:|,|;).*'
        { set name = 'FIXME: ${highway}';}                       [0x10002 resolution 23]
 

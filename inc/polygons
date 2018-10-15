@@ -59,9 +59,9 @@ place=village | landuse=residential             [0x03 resolution 18]
 
 place=island &
   name=* & 
-  area_size() < 1000000 & !(natural=coastline)  [0x53 resolution 19 continue]
+  area_size() < 1000000 & !(natural=coastline)  [0x27 resolution 19 continue]
 
-  place=islet                                   [0x53 resolution 22 continue]
+  place=islet                                   [0x27 resolution 22 continue]
 
 highway=pedestrian & 
   (area=yes | area=true | area=1)               [0x12 resolution 22]
@@ -156,7 +156,18 @@ natural=scree                       [0x24 resolution 20]
 natural=scrub 						[0x4f resolution 20]
 natural=heath 						[0x14 resolution 20]
 natural=fell | natural=grassland    [0x35 resolution 20]
+natural=tundra                                          [0x52 resolution 16]
+natural~'.*(flat)' | natural=desert                     [0x53 resolution 16]
+natural=glacier                                         [0x4d resolution 18]
 natural=sand                        [0x10f14 resolution 20]
+natural=wetland & wetland=wet_meadow                    [0x10f15 resolution 20]
+natural=wetland & (wetland~'.*(bog)' | wetland=fen)     [0x10f16 resolution 20]
+natural=wetland & wetland~'.*(swamp)'                   [0x10f17 resolution 20]
+natural=wetland & wetland~'.*(marsh)'                   [0x10f18 resolution 20]
+natural=wetland & wetland=reedbed                       [0x10f19 resolution 20]
+natural=marsh | natural=wetland | natural=mud           [0x51 resolution 20]
+natural=beach                                           [0x10F1A resolution 20]
+
 natural=land 						[0x27 resolution 10]
 
 #------------------------------------------------------------------------------
