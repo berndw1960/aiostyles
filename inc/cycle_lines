@@ -2,21 +2,21 @@
 # cycleway overlay
 
 highway=* & (oneway:bicycle=no |
-             bicycle=dismount)                                                          [0x10e07 resolution 24-23 continue]
+             bicycle=dismount)           [0x10e07 resolution 24-23 continue]
 
 highway=*
           & (cycleway=both |
              cycleway=lane |
-             cycleway=track )                                                           [0x10e08 resolution 24-23 continue]
+             cycleway=track )            [0x10e08 resolution 24-23 continue]
 
 highway=*
           & (cycleway:right=yes |
-             cycleway:right=lane)                                                       [0x10e09 resolution 24-23 continue]
+             cycleway:right=lane)        [0x10e09 resolution 24-23 continue]
 
 highway=*
           & (cycleway:left=yes |
              cycleway:left=lane |
              cycleway=opposite |
              cycleway=opposite_lane |
-             bicycle=opposite)                                                          [0x10e0a resolution 24-23 continue]
+             bicycle=opposite)           [0x10e0a resolution 24-23 continue]
 

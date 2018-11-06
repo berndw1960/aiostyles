@@ -82,30 +82,9 @@ Type=0x13,7
 Type=0x10F1B,7
 [end]
 
-[_polygon]
-Type=0x01
-ExtendedLabels=N
-String0=0x02,Stadt
-String1=0x04,City
-FontStyle=SmallFont
-Xpm="0 0 2 0"
-"0 c #F5D5D5"
-"1 c #7B3041"
-[end]
 
 [_polygon]
-Type=0x02
-ExtendedLabels=N
-String0=0x02,Siedlung
-String1=0x04,Village
-FontStyle=SmallFont
-Xpm="0 0 2 0"
-"0 c #E5D5D5"
-"1 c #7B3041"
-[end]
-
-[_polygon]
-Type=0x00300
+Type=0x03
 String1=0x02,Wohngebiet
 String2=0x04,Residential
 ExtendedLabels=Y
@@ -242,7 +221,7 @@ Xpm="32 32 4 1"
 [end]
 
 [_polygon]
-Type=0x00600
+Type=0x06
 String1=0x02,Parkgarage
 String2=0x04,Parking garage
 ExtendedLabels=Y
@@ -379,7 +358,7 @@ Xpm="32 32 4 1"
 [end]
 
 [_polygon]
-Type=0x00a00
+Type=0x0a
 String1=0x02,Universität
 String2=0x04,University
 ExtendedLabels=Y
@@ -562,7 +541,7 @@ Xpm="32 32 4 1"
 [end]
 
 [_polygon]
-Type=0x00e00
+Type=0x0e
 ExtendedLabels=N
 String1=0x02,Baulücke
 String2=0x04,Brownfield
@@ -742,7 +721,7 @@ Xpm="32 32 4 1"
 [end]
 
 [_polygon]
-Type=0x01200
+Type=0x12
 String1=0x02,Fussgängerzone
 String2=0x04,Pedestrian
 ExtendedLabels=Y
@@ -753,7 +732,7 @@ Xpm="0 0 2 0"
 [end]
 
 [_polygon]
-Type=0x01300
+Type=0x13
 String1=0x02,Gebäude
 String2=0x04,Building
 ExtendedLabels=Y
@@ -954,7 +933,7 @@ Xpm="0 0 2 0"
 [end]
 
 [_polygon]
-Type=0x01a00
+Type=0x1a
 ExtendedLabels=N
 String1=0x02,Friedhof
 String2=0x04,Cemetery
@@ -1179,7 +1158,7 @@ Xpm="32 32 4 1"
 [end]
 
 [_polygon]
-Type=0x02400
+Type=0x24
 ExtendedLabels=N
 String1=0x02,Geröll
 String2=0x04,scree
@@ -1234,7 +1213,7 @@ Xpm="0 0 2 0"
 [end]
 
 [_polygon]
-Type=0x02800
+Type=0x28
 ExtendedLabels=Y
 FontStyle=SmallFont
 Xpm="0 0 2 0"
@@ -3306,86 +3285,6 @@ Xpm="32 7 4 1"
 [end]
 
 [_line]
-Type=0x2C
-String1=0x02,unbekannter Wegetyp
-String2=0x01,unknown way
-Useorientation=N
-Xpm="32 3 2 1"
-"0 c #FF3020"
-"1 c none"
-"00000000000000000000000000000000"
-"11111111111111111111111111111111"
-"00000000000000000000000000000000"
-[end]
-
-[_line]
-Type=0x3A
-String1=0x02,Wanderweg
-String2=0x04,Hiking
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"11111100111111001111110011111100"
-"11111100111111001111110011111100"
-[end]
-
-[_line]
-Type=0x3B
-String1=0x02,Bergwanderweg
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"11011110110111101101111011011110"
-"11011110110111101101111011011110"
-[end]
-
-[_line]
-Type=0x3C
-String1=0x02,Erfahrener Bergwanderer
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"11011100110111001101110011011100"
-"11011100110111001101110011011100"
-[end]
-
-[_line]
-Type=0x3D
-String1=0x02,Alpinwandern
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"10011100100111001001110010011100"
-"10011100100111001001110010011100"
-[end]
-
-[_line]
-Type=0x3E
-String1=0x02,Anspruchsvolles Alpinwandern
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"10010100100101001001010010010100"
-"10010100100101001001010010010100"
-[end]
-
-[_line]
-Type=0x3F
-String1=0x02,Schwieriges Alpinwandern
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"00010100000101000001010000010100"
-"00010100000101000001010000010100"
-[end]
-
-[_line]
 Type=0x10001
 String1=0x02,FIXME
 String2=0x04,FIXME
@@ -4544,6 +4443,19 @@ Xpm="32 2 2 1"
 "1 c #FFFF00"
 "00000000111111110000000011111111"
 "00000000111111110000000011111111"
+[end]
+
+[_line]
+Type=0x1100C
+String1=0x02,unbekannter Wegetyp
+String2=0x01,unknown way
+Useorientation=N
+Xpm="32 3 2 1"
+"0 c #FF3020"
+"1 c none"
+"00000000000000000000000000000000"
+"11111111111111111111111111111111"
+"00000000000000000000000000000000"
 [end]
 
 [_line]
@@ -5896,7 +5808,6 @@ dayxpm="16 16 2 1" colormode=16
 "%%%%%$$$$$$%%%%%"
 "%%%%%%%$$%%%%%%%"
 [end]
-
 
 [_point]
 Type=0x02c10

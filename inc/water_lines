@@ -1,7 +1,7 @@
-natural=coastline                                                                       [0x15 resolution 12]
+natural=coastline                                     [0x15 resolution 12]
 
-waterway=canal                                                                          [0x1f resolution 21]
-waterway=river                                                                          [0x1f resolution 18]
-waterway=rapids|waterway=waterfall                                                      [0x1f resolution 22]
-waterway=stream                                                                         [0x18 resolution 22]
-waterway=drain                                                                          [0x18 resolution 22]
+waterway=canal                                        [0x1f resolution 21]
+waterway=river                                        [0x1f resolution 18]
+waterway=rapids|waterway=waterfall                    [0x1f resolution 22]
+waterway=stream                                       [0x18 resolution 22]
+waterway=drain                                        [0x18 resolution 22]

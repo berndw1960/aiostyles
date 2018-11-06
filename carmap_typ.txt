@@ -81,27 +81,6 @@ Type=0x13,7
 Type=0x10F1B,7
 [end]
 
-[_polygon]
-Type=0x01
-ExtendedLabels=N
-String0=0x02,Stadt
-String1=0x04,City
-FontStyle=SmallFont
-Xpm="0 0 2 0"
-"0 c #F5D5D5"
-"1 c #7B3041"
-[end]
-
-[_polygon]
-Type=0x02
-ExtendedLabels=N
-String0=0x02,Siedlung
-String1=0x04,Village
-FontStyle=SmallFont
-Xpm="0 0 2 0"
-"0 c #E5D5D5"
-"1 c #7B3041"
-[end]
 
 [_polygon]
 Type=0x00300
@@ -3215,86 +3194,6 @@ Xpm="32 7 4 1"
 [end]
 
 [_line]
-Type=0x2C
-String1=0x02,unbekannter Wegetyp
-String2=0x01,unknown way
-Useorientation=N
-Xpm="32 3 2 1"
-"0 c #FF3020"
-"1 c none"
-"00000000000000000000000000000000"
-"11111111111111111111111111111111"
-"00000000000000000000000000000000"
-[end]
-
-[_line]
-Type=0x3A
-String1=0x02,Wanderweg
-String2=0x04,Hiking
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"11111100111111001111110011111100"
-"11111100111111001111110011111100"
-[end]
-
-[_line]
-Type=0x3B
-String1=0x02,Bergwanderweg
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"11011110110111101101111011011110"
-"11011110110111101101111011011110"
-[end]
-
-[_line]
-Type=0x3C
-String1=0x02,Erfahrener Bergwanderer
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"11011100110111001101110011011100"
-"11011100110111001101110011011100"
-[end]
-
-[_line]
-Type=0x3D
-String1=0x02,Alpinwandern
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"10011100100111001001110010011100"
-"10011100100111001001110010011100"
-[end]
-
-[_line]
-Type=0x3E
-String1=0x02,Anspruchsvolles Alpinwandern
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"10010100100101001001010010010100"
-"10010100100101001001010010010100"
-[end]
-
-[_line]
-Type=0x3F
-String1=0x02,Schwieriges Alpinwandern
-Useorientation=N
-Xpm="32 2 2 1"
-"0 c #FF0000"
-"1 c #00FF00"
-"00010100000101000001010000010100"
-"00010100000101000001010000010100"
-[end]
-
-[_line]
 Type=0x10001
 String1=0x02,FIXME
 String2=0x04,FIXME
@@ -4419,6 +4318,19 @@ Xpm="32 2 2 1"
 "1 c #FFFF00"
 "00000000111111110000000011111111"
 "00000000111111110000000011111111"
+[end]
+
+[_line]
+Type=0x1100C
+String1=0x02,unbekannter Wegetyp
+String2=0x01,unknown way
+Useorientation=N
+Xpm="32 3 2 1"
+"0 c #FF3020"
+"1 c none"
+"00000000000000000000000000000000"
+"11111111111111111111111111111111"
+"00000000000000000000000000000000"
 [end]
 
 [_line]

@@ -6,8 +6,8 @@
 # are frequently tagged with both and we want the highway to take priority.
 
 boundary=administrative { name '${mkgmap:boundary_name}' }
-boundary=administrative & admin_level<=2                                                [0x1e resolution 16 continue]
-boundary=administrative & admin_level<=4                                                [0x1d resolution 19 continue]
-boundary=national                                                                       [0x1e resolution 17 continue]
+boundary=administrative & admin_level<=2      [0x1e resolution 16 continue]
+boundary=administrative & admin_level<=4      [0x1d resolution 19 continue]
+boundary=national                             [0x1e resolution 17 continue]
 
 # other boundaries moved to boundary layer

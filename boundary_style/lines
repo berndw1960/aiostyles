@@ -3,14 +3,14 @@
 # prevent visibility problems
 
 boundary=administrative { name '${mkgmap:boundary_name}' }
-boundary=administrative & admin_level<=2						[0x1e resolution 24-16]
-boundary=administrative & admin_level<=4 						[0x1d resolution 24-19]
-boundary=administrative & admin_level<=6 						[0x10e1c resolution 24-20]
-boundary=administrative & admin_level<=8 						[0x10e1d resolution 24-22]
-boundary=administrative & admin_level>=9						[0x10e1e resolution 24-23]
-#boundary=political 									[0x10e1c resolution 24-19]
+boundary=administrative & admin_level<=2		[0x1e resolution 24-16]
+boundary=administrative & admin_level<=4 		[0x1d resolution 24-19]
+boundary=administrative & admin_level<=6 		[0x10e1c resolution 24-20]
+boundary=administrative & admin_level<=8 		[0x10e1d resolution 24-22]
+boundary=administrative & admin_level>=9		[0x10e1e resolution 24-23]
+#boundary=political 							[0x10e1c resolution 24-19]
 
-boundary=national                                                                       [0x1e resolution 17]
+boundary=national                               [0x1e resolution 17]
 
 
 <finalize>
