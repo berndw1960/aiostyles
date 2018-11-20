@@ -12,7 +12,7 @@ route=road & network=e-road
             add ref='${ref}';
             add int_ref='${int_ref}';
             add network=e-road;
-			add mkgmap:fast_road=yes;
+            add mkgmap:fast_road=yes;
             }
           }
 

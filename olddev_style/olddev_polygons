@@ -14,31 +14,31 @@ leisure=water_park { add sport=swimming }
 
 
 # platforms, if they are an area or closed polygons
-(railway=platform | public_transport=platform) & area=yes	[0x13 resolution 23]
+(railway=platform | public_transport=platform) & area=yes    [0x13 resolution 23]
 
 #------------------------------------------------------------------------------
 # amenity
 
-#amenity=restaurant 				[0x13 resolution 24]
+#amenity=restaurant                 [0x13 resolution 24]
 
-amenity=place_of_worship & 
- building!=*					[0x10f1b resolution 22]
+amenity=place_of_worship &
+ building!=*                    [0x10f1b resolution 22]
 
-amenity=grave_yard | landuse=cemetery 		[0x1a resolution 22]
+amenity=grave_yard | landuse=cemetery         [0x1a resolution 22]
 
-amenity=hospital | building=hospital    	[0x0b resolution 20]
+amenity=hospital | building=hospital        [0x0b resolution 20]
 
-amenity=school 					[0x0a resolution 23]
-amenity=college 				[0x0a resolution 23]
-amenity=university 				[0x0a resolution 22]
+amenity=school                     [0x0a resolution 23]
+amenity=college                 [0x0a resolution 23]
+amenity=university                 [0x0a resolution 22]
 
 
 #------------------------------------------------------------------------------
 # parking
 
-amenity=parking & 
-  (parking=multi-storey | parking=underground) 	[0x06 resolution 24]
-amenity=parking 		        [0x05 resolution 24]
+amenity=parking &
+  (parking=multi-storey | parking=underground)     [0x06 resolution 24]
+amenity=parking                 [0x05 resolution 24]
 amenity=car_sharing             [0x05 resolution 24]
 
 
@@ -49,7 +49,7 @@ aeroway=aerodrome |
 aeroway=airport |
 aeroway=airfield |
 aeroway=apron |
-aeroway=helipad					[0x07 resolution 18]
+aeroway=helipad                    [0x07 resolution 18]
 aeroway=runway                  [0x0e resolution 20]
 
 #------------------------------------------------------------------------------
@@ -58,13 +58,13 @@ aeroway=runway                  [0x0e resolution 20]
 place=village | landuse=residential     [0x03 resolution 18]
 
 place=island &
-  name=* & 
+  name=* &
   area_size() < 1000000 & !(natural=coastline)  [0x53 resolution 19 continue]
 
   place=islet                                   [0x53 resolution 22 continue]
 
-highway=pedestrian & 
-  (area=yes | area=true | area=1) 	 [0x12 resolution 22]
+highway=pedestrian &
+  (area=yes | area=true | area=1)      [0x12 resolution 22]
 
 #leisure=nature_reserve          [0x0d resolution 18 continue]
 
@@ -74,42 +74,42 @@ highway=pedestrian &
 #landuse=forest &
 #  (wood=deciduous | leaf_type=broadleaved)      [0x22 resolution 24-23]
 #landuse=forest &
-#   (wood=mixed | leaf_type=mixed) 		[0x23 resolution 24-23]
-#landuse=forest 					[0x20 resolution 24-23]
+#   (wood=mixed | leaf_type=mixed)         [0x23 resolution 24-23]
+#landuse=forest                     [0x20 resolution 24-23]
 
-#landuse=meadow 					[0x10f10 resolution 21]
+#landuse=meadow                     [0x10f10 resolution 21]
 
-landuse=commercial 				[0x0f resolution 18]
-landuse=industrial				[0x0c resolution 18]
-landuse=retail 					[0x08 resolution 18]
+landuse=commercial                 [0x0f resolution 18]
+landuse=industrial                [0x0c resolution 18]
+landuse=retail                     [0x08 resolution 18]
 
 landuse=landfill                [0x10f07 resolution 18]
 
 #landuse=conservation            [0x10f0a resolution 18]
 
-#landuse=brownfield				[0x0e resolution 20]
-#landuse=greenfield				[0x10 resolution 20]
+#landuse=brownfield                [0x0e resolution 20]
+#landuse=greenfield                [0x10 resolution 20]
 landuse=construction            [0x11 resolution 20]
 
 #landuse=village_green |
-#landuse=grass					[0x10f11 resolution 22]
+#landuse=grass                    [0x10f11 resolution 22]
 
-#landuse=allotments 				[0x10f08 resolution 22]
+#landuse=allotments                 [0x10f08 resolution 22]
 #landuse=orchard                 [0x4e resolution 22]
 #landuse=farm |
 #landuse=farmland |
 #landuse=plant_nursery           [0x2a resolution 21]
 
-#landuse=farmyard 				[0x2b resolution 22]
-#landuse=vineyard 				[0x2c resolution 22]
-#landuse=quarry 					[0x2d resolution 22]
+#landuse=farmyard                 [0x2b resolution 22]
+#landuse=vineyard                 [0x2c resolution 22]
+#landuse=quarry                     [0x2d resolution 22]
 
-tourism=camp_site 				[0x2e resolution 22]
+tourism=camp_site                 [0x2e resolution 22]
 
 #------------------------------------------------------------------------------
 # sport/leisure
 
-leisure=marina 					[0x09 resolution 20 continue]
+leisure=marina                     [0x09 resolution 20 continue]
 
 #leisure=common |
 #leisure=park |
@@ -118,7 +118,7 @@ leisure=marina 					[0x09 resolution 20 continue]
 #leisure=garden                  [0x17 resolution 23]
 #leisure=playground              [0x10f13 resolution 23]
 #leisure=golf_course             [0x18 resolution 22]
-#leisure=sports_centre | leisure=stadium		[0x19 resolution 22]
+#leisure=sports_centre | leisure=stadium        [0x19 resolution 22]
 
 #leisure=pitch & sport=soccer                    [0x10f00 resolution 23]
 #leisure=pitch & sport=tennis                    [0x10f01 resolution 23]
@@ -153,11 +153,11 @@ military=barracks                                          [0x04 resolution 22]
 #natural=wood                                            [0x15 resolution 24-23]
 
 #natural=scree                       [0x24 resolution 20]
-#natural=scrub 						[0x4f resolution 20]
-#natural=heath 						[0x14 resolution 20]
+#natural=scrub                         [0x4f resolution 20]
+#natural=heath                         [0x14 resolution 20]
 #natural=fell | natural=grassland    [0x35 resolution 20]
 #natural=sand                        [0x10f14 resolution 20]
-#natural=land 						[0x27 resolution 10]
+#natural=land                         [0x27 resolution 10]
 
 #------------------------------------------------------------------------------
 # buildings
@@ -191,14 +191,14 @@ building=church |
   building=public |
   building=school                                 [0x13 resolution 23] #[0x10f1b resolution 23]
 
-#building=* &  
+#building=* &
 #  building!=no &
 #  building!=public &
 #  building!=school &
 #  building!=church &
 #  building!=cathredral &
 #  building!=chapel &
-#  building!=proposed 
+#  building!=proposed
 #  &
 #  mkgmap:residential!=*
 #                                                  [0x13 resolution 24]

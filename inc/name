@@ -69,9 +69,9 @@ brand=${name}     { delete brand; }
   railway=halt |
   railway=station)
     & (name=* | ref=*)
-		# unnamed bus_stop tram_stops etc. remain unnamed - this triggers 
-		# the icon's name from the styles_typ.txt for the POI-list and 
-		# also leaves no label on the map
+        # unnamed bus_stop tram_stops etc. remain unnamed - this triggers 
+        # the icon's name from the styles_typ.txt for the POI-list and 
+        # also leaves no label on the map
         {
         name '${name|def:H} ${ref}' | '${name|def:H}';
         delete name ;
@@ -130,7 +130,7 @@ amenity=parking
 
 amenity=post_office
         {
-	name '${operator}' | '${name}'
+    name '${operator}' | '${name}'
 }
 
 amenity=post_box |
@@ -202,7 +202,7 @@ amenity=fuel
              '${name}' |
              '${amenity|subst:_=> }' ;
         delete operator;
-        delete brand;  
+        delete brand;
         }
 
 amenity=place_of_worship & denomination=unknown { delete denomination }
@@ -210,22 +210,22 @@ amenity=place_of_worship & religion=unknown     { delete religion }
 amenity=place_of_worship & building=yes         { delete building }
 
 amenity=place_of_worship & name!=*
-	{
-	set temp_religion='${denomination} ${building}' |
+    {
+    set temp_religion='${denomination} ${building}' |
                       '${denomination}' |
                       '${religion} ${building}' |
                       '${religion}' |
                       '${building}' |
                       'religious' ;
-	add name = '${temp_religion|subst:_=> }' ;
-	}
+    add name = '${temp_religion|subst:_=> }' ;
+    }
 
 amenity=social_centre | amenity=social_facility
-	{
-	add name = '${amenity|subst:_=> } (${social_facility|subst:_=> } for ${social_facility:for|subst:_=> })'|
+    {
+    add name = '${amenity|subst:_=> } (${social_facility|subst:_=> } for ${social_facility:for|subst:_=> })'|
                '${amenity|subst:_=> } (${social_facility|subst:_=> })'|
                '${amenity|subst:_=> }'
-	}
+    }
 
 shop=*  & name!=*
         & shop!=hairdresser &
@@ -236,9 +236,9 @@ shop=*  & name!=*
           shop!=stationery &
           shop!=books &
           shop!=general
-	{
-	add name = '${shop|subst:_=> }' ;
-	}
+    {
+    add name = '${shop|subst:_=> }' ;
+    }
 
 power=*
         {
@@ -248,40 +248,40 @@ power=*
         }
 
 # Both operator and brand given
-operator=* & brand=* 
+operator=* & brand=*
       {
        name '${brand}: ${ref} ${name} (${operator})' |
             '${brand}: ${ref} (${operator})' |
             '${brand}: ${name} (${operator})' |
-            '${brand}: (${operator})' 
+            '${brand}: (${operator})'
       }
 
 # One of operator or brand given
-operator=* & brand!=* & 
-   (highway=bus_stop | railway=tram_stop | railway=halt | railway=station) 
+operator=* & brand!=* &
+   (highway=bus_stop | railway=tram_stop | railway=halt | railway=station)
       {
        name '${name} ${ref} ${operator}' |
             '${name} ${operator}' |
             '${ref} ${operator}' |
-            '${operator}' 
+            '${operator}'
        }
 
-operator=* & brand!=* 
+operator=* & brand!=*
       {
        name '${operator}: ${ref} ${name}' |
             '${operator}: ${name}' |
             '${operator}: ${ref}' |
             '${operator}' |
-            '${ref}' 
+            '${ref}'
       }
-      
-brand=* & operator!=* 
+
+brand=* & operator!=*
      {
        name '${brand}: ${ref} ${name}' |
-            '${brand}: ${name}' | 
+            '${brand}: ${name}' |
             '${brand}: ${ref}' |
             '${brand}' |
-            '${ref}' 
+            '${ref}'
      }
 
 leisure=* & sport=* & name=*  { name '${name} (${sport})' }
@@ -292,18 +292,18 @@ waterway=* & name!=* { add name = '$(waterway|subst:_=> }' }
 highway=speed_camera & maxspeed = *
       { name '${maxspeed}km/h' }
 
-natural=glacier & ele = *      
-      { 
-       name '${name} (${ele}m)' | 
+natural=glacier & ele = *
+      {
+       name '${name} (${ele}m)' |
             '${name}' |
-            '(${ele}m)' 
+            '(${ele}m)'
       }
 
-(natural=peak | natural=hill | mountain_pass=yes) & ele=* 
-        { 
+(natural=peak | natural=hill | mountain_pass=yes) & ele=*
+        {
          name '${name|def:} (${ele|def:}m)' |
               '${name}' |
-              '(${ele}m)' 
+              '(${ele}m)'
         }
 
 disused=yes  { name '${name} (disused)'|'(disused)';}

@@ -12,49 +12,49 @@ highway=* & (toll=yes|toll=true) { set mkgmap:toll=yes }
 highway=* & mkgmap:mp_created=true {add area=yes}
 
 # Hide proposed ways
-(highway=proposed | 
-  highway=proposal | 
-  highway=planned | 
+(highway=proposed |
+  highway=proposal |
+  highway=planned |
   highway ~ '.*proposed.*')         {deletealltags}
 
 # Hide removed ways
-(highway=razed | 
+(highway=razed |
   highway=dismantled)               {deletealltags}
-  
+
 #Hide historic ways
 highway=historic                    {deletealltags}
 
-# Hide abandoned ways. 
-# Abandoned highways have some evidence of their former 
+# Hide abandoned ways.
+# Abandoned highways have some evidence of their former
 # existence but are no longer used. These
 # abandoned highways could be useful in topographical maps.
 # https://wiki.openstreetmap.org/wiki/Key:abandoned:
-((abandoned:highway=* & highway!=*) | 
+((abandoned:highway=* & highway!=*) |
   highway=abandoned)                {deletealltags}
-  
+
 # Hide other non-existent ways
-(highway=unbuilt | 
-  highway=neverbuilt | 
-  highway=rejected | 
+(highway=unbuilt |
+  highway=neverbuilt |
+  highway=rejected |
   highway ~ 'x-.*')                 {deletealltags}
-  
+
 # Remove highway tag from ways which are not suitable for routing
-highway=traffic_signals | 
-  highway=junction | 
-  highway=island | 
-  highway=centre_line | 
-  highway=traffic_island | 
-  highway=stopline                   {delete highway} 
-highway=piste | 
+highway=traffic_signals |
+  highway=junction |
+  highway=island |
+  highway=centre_line |
+  highway=traffic_island |
+  highway=stopline                   {delete highway}
+highway=piste |
   highway=ski                        {delete highway}
-highway=no | 
+highway=no |
   highway=none                       {delete highway}
 
 
 # Hide unaccessible tunnels
-highway=* & tunnel=yes & 
-  (access=private|access=no) & 
-  foot!=* & 
+highway=* & tunnel=yes &
+  (access=private|access=no) &
+  foot!=* &
   bicycle!=*                        {delete highway;delete junction}
 
 # Disable dead-end-checks for unaccessible oneways
@@ -102,9 +102,9 @@ highway=* &
     surface=concrete:plates |
     surface=paving_stones  |
     surface=cobblestone  |
-   	surface=cobblestone:flattened  |
-   	surface=metal  |
-   	surface=wood)
+       surface=cobblestone:flattened  |
+       surface=metal  |
+       surface=wood)
       { set mkgmap:unpaved=0 }
 
 highway=* & tracktype=grade1 & surface!=*

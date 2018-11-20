@@ -10,8 +10,8 @@
 # A class is not allowed to use the way if its tag is set to 'no'
 
 # Germany (DEU)
-        
-highway ~ 'motorway.*' 
+
+highway ~ 'motorway.*'
         & mkgmap:country=DEU            { add bicycle=no; add foot=no }
 
 highway=* & motorroad=yes
@@ -23,8 +23,8 @@ highway=* & motorroad=yes
 
 highway=trunk & motorroad !=*
         & mkgmap:country=DEU            { add bicycle=no; add foot=no }
-        
-highway=bus_guideway 
+
+highway=bus_guideway
         & mkgmap:country=DEU            { add bus=yes; add taxi=yes; addaccess 'no' ; }
 
 # Belgium (BEL)
@@ -48,7 +48,7 @@ highway=bridleway & mkgmap:country=ESP  { add bicycle=yes; add foot=yes }
 
 highway=* & motorroad=yes               { add bicycle=no; add foot=no }
 highway ~ 'motorway.*'                  { add bicycle=no; add foot=no }
-                        
+
 #-----------------------------------------------------------------------------
 # Next line is needed, because 'motorcycle=no' makes
 # nonroutable highways for motorcar, other values will be ignored
@@ -89,42 +89,42 @@ access ~ '.*(agricultural|forestry).*'       { add foot=yes ; addaccess 'no' ; }
 
 # throughroute cannot be handled differently for different vehicle types
 # Therefore we have to choose one vehicle type - and the winner is: motorcar
-                          
+
 access ~ '.*(customers|delivery|destination).*'
                 {
                   set mkgmap:throughroute=no;
                   set motorcar=yes
                   }
 
-motorcar ~ '.*(customers|delivery|destination).*' 
+motorcar ~ '.*(customers|delivery|destination).*'
                 {
                   set mkgmap:throughroute=no;
                   set motorcar=yes
                   }
-                  
+
 # add some tags to make a better defined routing in special cases
-highway=* 
-    & highway!=track 
-    & highway!=path 
-    & highway!=cycleway 
-    & highway!=footway 
-    & highway!=pedestrian 
+highway=*
+    & highway!=track
+    & highway!=path
+    & highway!=cycleway
+    & highway!=footway
+    & highway!=pedestrian
     & highway!=steps
     & highway!=bridleway
     & (maxwidth<2.0 | width<2.0)
                 {
-                  set mkgmap:throughroute=no 
+                  set mkgmap:throughroute=no
                 }
-                
+
 ## rules to prevent using small or bad ways
 
-highway=* 
+highway=*
     & (maxwidth<1.0 | width<1.0)
                 {
                   add foot=yes ;
                   addaccess 'no' ;
                 }
- 
+
 highway=track
             & mkgmap:unpaved=1
             & (tracktype~'grade[4-6]' |
@@ -166,7 +166,7 @@ highway=pedestrian & area!=*
                   }
 
 highway=bridleway
-                { 
+                {
                   addaccess 'no'
                   }
 
@@ -214,7 +214,7 @@ barrier~'.*(gate)' |
             set mkgmap:road-speed=0;
             }
 
-# copy the access rules to usable key/value pairs 
+# copy the access rules to usable key/value pairs
 vehicle=*               {
                             set bicycle='${vehicle}';
                             set motorcar='${vehicle}';
@@ -236,10 +236,9 @@ psv=*                   {
                             add bus='${psv}';
                             }
 
-                        
-# some ways are locally signed with vehicle=no, but are included in a cycle network, 
+# some ways are locally signed with vehicle=no, but are included in a cycle network,
 # we set them to bicycle=yes to allow routing over this ways
-cn_temp ~ '.*cn'        { set bicycle=yes }                        
+cn_temp ~ '.*cn'        { set bicycle=yes }
 
 # Copy the OSM access tags to the mkgmap internal tags
 foot=*                  { set mkgmap:foot='${foot}' }
@@ -254,7 +253,7 @@ emergency=*             { set mkgmap:emergency='${emergency}' }
 ## a catchall to define all restrictions that are not already set
 access=*                { addaccess '${access}' }
 
-# Don't route into private property!                        
+# Don't route into private property!
 access=private          { setaccess 'no' }
 
 # Don't route through highway=construction, they are considered unusable

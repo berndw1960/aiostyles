@@ -1,6 +1,6 @@
 
 # barrier
-# please don't delete the continue action, because they are needed to render 
+# please don't delete the continue action, because they are needed to render
 # landuse polygons with barrier tags
 
 
@@ -10,11 +10,11 @@ barrier~'.*(block)'               [0x10f05 resolution 24 continue]
 barrier~'.*(hedge)'               [0x10f0c resolution 24 continue]
 
 # man made
-(man_made=cable|(man_made=* & man_made ~ '.*pipe.*')) & 
+(man_made=cable|(man_made=* & man_made ~ '.*pipe.*')) &
         area!=yes &
-        tunnel!=yes & 
+        tunnel!=yes &
         location != underground    [0x28 resolution 23]
 
 # power
-power=line | power=minor_line    
+power=line | power=minor_line
         { delete name }            [0x29 resolution 24]

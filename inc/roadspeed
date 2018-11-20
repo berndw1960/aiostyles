@@ -21,7 +21,7 @@ maxspeed~'.*:rural'             { set maxspeed=90 }
 
 maxspeed~'.*:trunk'             { set maxspeed=100 }
 maxspeed~'.*:motorway'          { set maxspeed=130 }
-maxspeed=none					{ set maxspeed=130 }
+maxspeed=none                    { set maxspeed=130 }
 
 # delete maxspeed if we still cannot convert it to km/h
 maxspeed=* & maxspeedkmh()!=*   { delete maxspeed }
@@ -35,5 +35,5 @@ highway=* & maxspeed=* & mkgmap:road-speed-max!=* & maxspeedkmh() <= 100 { set m
 highway=* & maxspeed=* & mkgmap:road-speed-max!=* & maxspeedkmh() <= 120 { set mkgmap:road-speed-max = 6 }
 
 
-# make sure that mkgmap:road-speed is also set when mkgmap:road-speed-max is set  
+# make sure that mkgmap:road-speed is also set when mkgmap:road-speed-max is set
 highway=* & mkgmap:road-speed-max=* & mkgmap:road-speed!=* { add mkgmap:road-speed = '${mkgmap:road-speed-max}' }

@@ -1,20 +1,4 @@
 
-Zoom	cGPSmapper	etrex Vista	Oregon
-24	120 m		...		200 m
-23	200 - 300 m	...		300 m
-22	500 m		...		500 - 800 m
-21	800 m - 1,2 km	...		1,2 km
-20	2 km		...		2 - 3 km
-19	3 km		...		5 km
-18	5- 8 km		...		8 km
-17	12 km		...		12 km
-16	20 - 30 km	...		20 - 30 km
-15	50 km		...		50 km
-14	80 - 120 km	...		80 - 120 km
-13	200 - 300 km	...		200 - 300km
-12	500 - 800 km	...		500 - 800 km
-
-
 
 ;between hex type (0xYYYY) and name of element you must use TAB as separator!
 ;
