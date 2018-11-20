@@ -21,7 +21,7 @@ leisure=water_park { add sport=swimming }
 
 #amenity=restaurant 				[0x13 resolution 24]
 
-amenity=place_of_worship & 
+amenity=place_of_worship &
  building!=*					[0x10f1b resolution 22]
 
 amenity=grave_yard | landuse=cemetery 		[0x1a resolution 22]
@@ -36,7 +36,7 @@ amenity=university 				[0x0a resolution 22]
 #------------------------------------------------------------------------------
 # parking
 
-amenity=parking & 
+amenity=parking &
   (parking=multi-storey | parking=underground) 	[0x06 resolution 24]
 amenity=parking 		        [0x05 resolution 24]
 amenity=car_sharing             [0x05 resolution 24]
@@ -58,12 +58,12 @@ aeroway=runway                  [0x0e resolution 20]
 place=village | landuse=residential             [0x03 resolution 18]
 
 place=island &
-  name=* & 
+  name=* &
   area_size() < 1000000 & !(natural=coastline)  [0x27 resolution 19 continue]
 
   place=islet                                   [0x27 resolution 22 continue]
 
-highway=pedestrian & 
+highway=pedestrian &
   (area=yes | area=true | area=1)               [0x12 resolution 22]
 
 leisure=nature_reserve                          [0x0d resolution 18 continue]
@@ -202,7 +202,7 @@ building=church |
   building=public |
   building=school                                 [0x10f1b resolution 23]
 
-building=* &  
+building=* &
   building!=no &
   building!=public &
   building!=school &
@@ -211,6 +211,3 @@ building=* &
   building!=chapel &
   building!=proposed &
   mkgmap:residential!=*                          [0x13 resolution 24]
-  
-
-  

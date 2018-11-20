@@ -93,21 +93,21 @@ highway=corridor
                   add covered=yes;
                   }
 # Flag paved roads
-highway=* & 
-  (surface=asphalt | 
-    surface=paved | 
-    surface=sett | 
-    surface=concrete | 
-    surface=concrete:lanes | 
-    surface=concrete:plates | 
-    surface=paving_stones  | 
-    surface=cobblestone  | 
-   	surface=cobblestone:flattened  | 
-   	surface=metal  | 
-   	surface=wood)               
+highway=* &
+  (surface=asphalt |
+    surface=paved |
+    surface=sett |
+    surface=concrete |
+    surface=concrete:lanes |
+    surface=concrete:plates |
+    surface=paving_stones  |
+    surface=cobblestone  |
+   	surface=cobblestone:flattened  |
+   	surface=metal  |
+   	surface=wood)
       { set mkgmap:unpaved=0 }
 
-highway=* & tracktype=grade1 & surface!=* 
+highway=* & tracktype=grade1 & surface!=*
       { set mkgmap:unpaved=0 }
 
 # Flag unpaved roads
@@ -139,7 +139,7 @@ highway=*
 
 (highway=bridleway |
       highway=trail |
-      highway=unsurfaced | 
+      highway=unsurfaced |
       highway=byway)
             & surface!=*
             & tracktype!=*
@@ -157,7 +157,7 @@ man_made=pier & area!=yes
                 }
 
 ## highway=services with amenity=* should use the amenity tag
-(highway=services | highway= rest_area) & 
+(highway=services | highway= rest_area) &
     amenity=*                                {delete highway}
 
 ## highway=services should have the area tag, to prevent routing errors
@@ -173,40 +173,40 @@ highway=*  & (oneway=1 | oneway=true)
 (highway=motorway | highway=motorway_link)
                             { add oneway=yes; add mkgmap:numbers=false }
 
-                            
+
 # Good ways without relation
-highway=* & mkgmap:fast_road!=* & 
-  (int_ref=* | 
-   network=e-road| 
-   network=AH | 
-   network=TAH | 
-   network=US:I | 
+highway=* & mkgmap:fast_road!=* &
+  (int_ref=* |
+   network=e-road|
+   network=AH |
+   network=TAH |
+   network=US:I |
    network=US:US)         {add mkgmap:fast_road=yes}
-   
+
 # Not best for car routing
-highway=* & 
-  (access=hov | 
-   hov=designated | 
-   oneway=reversible) { set mkgmap:road-class=-2; 
-                        set mkgmap:road-speed=-2; 
-                        delete mkgmap:fast_road}                            
+highway=* &
+  (access=hov |
+   hov=designated |
+   oneway=reversible) { set mkgmap:road-class=-2;
+                        set mkgmap:road-speed=-2;
+                        delete mkgmap:fast_road}
 
 #------------------------------------------------------------------------------
 # overlays
 
 # oneway overlay
-#highway=* & 
-# highway!=motorway & 
-# highway!=trunk & 
-# highway!=motorway_link & 
+#highway=* &
+# highway!=motorway &
+# highway!=trunk &
+# highway!=motorway_link &
 # highway!=trunk_link &
 # highway!=primary_link &
 # highway!=secondary_link &
 # highway!=tertiary_link &
-# highway!=track  
-#    & oneway=yes                                                                       [0x10e10 resolution 24-23 continue] 
+# highway!=track
+#    & oneway=yes                                                                       [0x10e10 resolution 24-23 continue]
 
-# Overlay on highways under construction 
+# Overlay on highways under construction
 highway=* & construction=*                                                             [0x10e02 resolution 24-23 continue]
 
 # bridge overlay
@@ -258,7 +258,7 @@ highway=path
 
 # tram overlay
 highway=* & railway=tram                                                                [0x10e0d resolution 24-23 continue]
-              
+
 
 # embankment overlay
 (man_made=dyke | embankment=yes)
@@ -275,5 +275,5 @@ highway=ramp {set highway=footway}                                              
              highway=path |
              highway=footway |
              highway=cycleway)                                                          [0x10f01 resolution 24 continue]
-             
+
 highway=escalator {set highway=footway;}                                                [0x10f01 resolution 24 continue]
