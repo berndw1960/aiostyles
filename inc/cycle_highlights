@@ -22,4 +22,3 @@ cn_temp=icnrcnlcn                    [0x10110 resolution 20-18 continue]
 
 (highway=cycleway | (highway=path & bicycle=designated)) & cn_name=*
                 { set name='${cn_name}' }
- 

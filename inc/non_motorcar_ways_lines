@@ -6,49 +6,50 @@ highway=pedestrian & (area!=yes & area!=true & area!=1)
                   add mkgmap:dead-end-check=false
                   }
 
-highway=pedestrian                                                                      [0x1201b resolution 23-23 continue]
-highway=pedestrian                                                                      [0x1101b resolution 24 continue]
-highway=pedestrian                                                                      [0x07 resolution 24 road_class=0 road_speed=0]
+highway=pedestrian                                  [0x1201b resolution 23-23 continue]
+highway=pedestrian                                  [0x1101b resolution 24 continue]
+highway=pedestrian                                  [0x07 resolution 24 road_class=0 road_speed=0]
 
-highway=cycleway                                                                        [0x1200a resolution 22-22 continue]
-highway=cycleway                                                                        [0x1100a resolution 24-22 continue]
-highway=cycleway   & junction=roundabout                                                [0x0c resolution 24 road_class=0 road_speed=1]
-highway=cycleway                                                                        [0x0a resolution 24 road_class=0 road_speed=1]
+highway=cycleway                                    [0x1200a resolution 22-22 continue]
+highway=cycleway                                    [0x1100a resolution 24-23 continue]
+highway=cycleway   & junction=roundabout            [0x0c resolution 24 road_class=0 road_speed=1]
+highway=cycleway                                    [0x0a resolution 24 road_class=0 road_speed=1]
 
 #highway=path & (bicycle=permissive |
 #                 bicycle=official |
-#                 bicycle=designated | 
-#                 bicycle=yes)                                                           [0x1200a resolution 22-22 continue]
+#                 bicycle=designated |
+#                 bicycle=yes)                       [0x1200a resolution 22-22 continue]
 highway=path & (bicycle=permissive |
                  bicycle=official |
-                 bicycle=designated | 
-                 bicycle=yes)                                                           [0x1100a resolution 24-22 continue]
+                 bicycle=designated |
+                 bicycle=yes)                       [0x1100a resolution 24-22 continue]
 highway=path & (bicycle=permissive |
                  bicycle=official |
-                 bicycle=designated | 
-                 bicycle=yes) & junction=roundabout                                     [0x0c resolution 24 road_class=0 road_speed=1]
+                 bicycle=designated |
+                 bicycle=yes) & junction=roundabout [0x0c resolution 24 road_class=0 road_speed=1]
 highway=path & (bicycle=permissive |
                  bicycle=official |
-                 bicycle=designated | 
-                 bicycle=yes)                                                           [0x0a resolution 24 road_class=0 road_speed=1]
+                 bicycle=designated |
+                 bicycle=yes)                       [0x0a resolution 24 road_class=0 road_speed=1]
 
-highway=footway                                                                         [0x1200d resolution 23-22 continue]
-highway=footway                                                                         [0x1100d resolution 24 continue]
+highway=footway                                     [0x1200d resolution 23-22 continue]
+highway=footway                                     [0x1100d resolution 24 continue]
 highway=footway &
               (bicycle=designated |
                bicycle=permissive |
                bicycle=official |
-               bicycle=yes)                                                             [0x0a resolution 24 road_class=0 road_speed=1]
-highway=footway                                                                         [0x0d resolution 24 road_class=0 road_speed=0]
+               bicycle=yes)                         [0x0a resolution 24 road_class=0 road_speed=1]
+highway=footway                                     [0x0d resolution 24 road_class=0 road_speed=0]
 
-highway=bridleway                                                                       [0x12016 resolution 23-23 continue]
-highway=bridleway                                                                       [0x11016 resolution 24 continue]
+highway=bridleway                                   [0x12016 resolution 23-23 continue]
+highway=bridleway                                   [0x11016 resolution 24 continue]
 highway=bridleway &
               (bicycle=designated |
                bicycle=permissive |
                bicycle=official |
-               bicycle=yes)                                                             [0x0a resolution 24 road_class=0 road_speed=1]
-highway=bridleway                                                                       [0x16 resolution 24 road_class=0 road_speed=0]
+               bicycle=yes)                         [0x0a resolution 24 road_class=0 road_speed=1]
+highway=bridleway                                   [0x16 resolution 24 road_class=0 road_speed=0]
 
-highway=steps                                                                           [0x12013 resolution 23-23 continue]
-highway=steps                                                                           [0x13 resolution 24 road_class=0 road_speed=0]
+highway=steps                                       [0x12013 resolution 23-23 continue]
+highway=steps                                       [0x13 resolution 24 road_class=0 road_speed=0]
+

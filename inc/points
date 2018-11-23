@@ -24,38 +24,37 @@ include '../inc/filter';
 # 0x0600-0x0A00   City name (Point, big)
 # 0x0B00-0x0D00   City name (Point, small)
 
-place=city & population > 999999 & name=*                       {set cityxx=yes} [0x0100 resolution 12 continue with_actions]
-place=city & population > 799999 & cityxx!=yes & name=*         {set cityxx=yes} [0x0200 resolution 13 continue with_actions]
-place=city & population > 399999 & cityxx!=yes & name=*         {set cityxx=yes} [0x0300 resolution 14 continue with_actions]
-place=city & population > 299999 & cityxx!=yes & name=*         {set cityxx=yes} [0x0400 resolution 14 continue with_actions]
-place=city & population > 199999 & cityxx!=yes & name=*         {set cityxx=yes} [0x0500 resolution 15 continue with_actions]
-place=city & population >  99999 & cityxx!=yes & name=*         {set cityxx=yes} [0x0600 resolution 15 continue with_actions]
-place=city & population >  49999 & cityxx!=yes & name=*         {set cityxx=yes} [0x0700 resolution 15 continue with_actions]
-place=city & population >   9999 & cityxx!=yes & name=*         {set cityxx=yes} [0x0800 resolution 16 continue with_actions]
+place=city & population > 999999 & name=*         [0x0100 resolution 12]
+place=city & population > 799999 & name=*         [0x0200 resolution 13]
+place=city & population > 399999 & name=*         [0x0300 resolution 14]
+place=city & population > 299999 & name=*         [0x0400 resolution 14]
+place=city & population > 199999 & name=*         [0x0500 resolution 15]
+place=city & population >  99999 & name=*         [0x0600 resolution 15]
+place=city & population >  49999 & name=*         [0x0700 resolution 15]
+place=city & population >   9999 & name=*         [0x0800 resolution 16]
+place=city & population >      0 & name=*         [0x0800 resolution 17]
+place=city                       & name=*         [0x0700 resolution 17]
 
-place=city & population >      0 & cityxx!=yes & name=*         {set cityxx=yes} [0x0800 resolution 17 continue with_actions]
-place=city                       & cityxx!=yes & name=*         {set cityxx=yes} [0x0700 resolution 17 continue with_actions]
+place=town & population >  69999  & name=*        [0x0600 resolution 16]
+place=town & population >  19999  & name=*        [0x0700 resolution 16]
+place=town & population >   9999  & name=*        [0x0800 resolution 17]
+place=town & population >   4999  & name=*        [0x0900 resolution 17]
+place=town & population >    999  & name=*        [0x0a00 resolution 18]
+place=town & population >      0  & name=*        [0x0b00 resolution 18]
+place=town                        & name=*        [0x0800 resolution 18]
 
-place=town & population >  69999 & cityxx!=yes  & name=*        {set cityxx=yes} [0x0600 resolution 16 continue with_actions]
-place=town & population >  19999 & cityxx!=yes  & name=*        {set cityxx=yes} [0x0700 resolution 16 continue with_actions]
-place=town & population >   9999 & cityxx!=yes  & name=*        {set cityxx=yes} [0x0800 resolution 17 continue with_actions]
-place=town & population >   4999 & cityxx!=yes  & name=*        {set cityxx=yes} [0x0900 resolution 17 continue with_actions]
-place=town & population >    999 & cityxx!=yes  & name=*        {set cityxx=yes} [0x0a00 resolution 18 continue with_actions]
-place=town & population >      0 & cityxx!=yes  & name=*        {set cityxx=yes} [0x0b00 resolution 18 continue with_actions]
-place=town                       & cityxx!=yes  & name=*        {set cityxx=yes} [0x0800 resolution 18 continue with_actions]
-
-place=village                    & cityxx!=yes  & name=*        {set cityxx=yes} [0x0900 resolution 19 continue with_actions]
-place=suburb                     & cityxx!=yes  & name=*        {set cityxx=yes} [0x0a00 resolution 21 continue with_actions]
+place=village                     & name=*        [0x0900 resolution 19]
+place=suburb                      & name=*        [0x0a00 resolution 21]
 
 (place=isolated_dwelling |
 place=hamlet |
 place=neighbourhood |
-place=farm)                      & cityxx!=yes  & name=*        {set cityxx=yes} [0x0b00 resolution 22 continue with_actions]
+place=farm)                       & name=*        [0x0b00 resolution 22]
 
-place=island                     & cityxx!=yes  & name=*        {set cityxx=yes} [0x650c resolution 21 continue with_actions]
-place=islet                      & cityxx!=yes  & name=*        {set cityxx=yes} [0x650c resolution 22 continue with_actions]
+place=island                      & name=*        [0x650c resolution 21]
+place=islet                       & name=*        [0x650c resolution 22]
 
-place=locality  & name=*                                                          [0x2800 resolution 24 continue with_actions]
+place=locality  & name=*                          [0x2800 resolution 24]
 # 0x2800-0x283F   Region name (no Point, small)
 
 barrier=no {delete barrier}
@@ -125,54 +124,54 @@ man_made=windmill & mkgmap:area2poi!=true                               [0x641f 
 
 # Water Features
 amenity=fountain                                                        [0x6500 resolution 24]
-#natural=Arroyo 0x6501         
-#natural=sand bar 0x6502        
+#natural=Arroyo 0x6501
+#natural=sand bar 0x6502
 natural=bay & name=*                                                    [0x6503 resolution 24]
-#natural=bend 0x6504         
-#natural=channel 0x6506         
-#natural=cove 0x6507         
+#natural=bend 0x6504
+#natural=channel 0x6506
+#natural=cove 0x6507
 natural=waterfall | waterway=waterfall                                  [0x6508 resolution 24]
-natural=geyser                                                          [0x6509 resolution 24] 
+natural=geyser                                                          [0x6509 resolution 24]
 natural=glacier                                                         [0x650a resolution 22]
 harbour=*                                                               [0x650b resolution 24]
 # 0x650c see place=island above
 natural=water & name=*                                                  [0x650d resolution 24]
 waterway=rapids                                                         [0x650e resolution 24]
 landuse=reservoir                                                       [0x650f resolution 24]
-#natural=sea 0x6510       
+#natural=sea 0x6510
 natural=spring                                                          [0x6511 resolution 24]
-#natural=stream 0x6512         
+#natural=stream 0x6512
 natural=wetland  & mkgmap:area2poi!=true                                [0x6513 resolution 23]
 # 0x65ss
 
 # Land Features
 tourism=viewpoint & natural!=*                                          [0x6600 resolution 24]
-#natural=arch 0x6601        
-#area 0x6602       
-#natural=basin 0x6603        
+#natural=arch 0x6601
+#area 0x6602
+#natural=basin 0x6603
 natural=beach                                                           [0x6604 resolution 24]
 amenity=bench                                                           [0x6605 resolution 24]
 natural=cape                                                            [0x6606 resolution 24]
 natural=cliff                                                           [0x6607 resolution 24]
 natural=crater                                                          [0x6607 resolution 23]
 landuse=meadow & name=*                                                 [0x6609 resolution 23 continue]
-#forest 0x660a        
-#natural=gap 0x660b        
-#natural=gut 0x660c      
-#natural=isthmus 0x660d       
+#forest 0x660a
+#natural=gap 0x660b
+#natural=gut 0x660c
+#natural=isthmus 0x660d
 natural=volcano                                                         [0x660e resolution 23]
-#natural=pillar 0x660f     
-#natural=plain 0x6610       
-#natural=range 0x6611         
-#natural=reserve 0x6612       
-natural=ridge                                                           [0x6613 resolution 24]        
+#natural=pillar 0x660f
+#natural=plain 0x6610
+#natural=range 0x6611
+#natural=reserve 0x6612
+natural=ridge                                                           [0x6613 resolution 24]
 natural=rock                                                            [0x6614 resolution 24]
-#natural=slope 0x6615        
+#natural=slope 0x6615
 natural=peak & ele>3500                                                 [0x6616 resolution 22]
 natural=peak & ele>2300                                                 [0x6616 resolution 23]
 natural=peak | natural=hill                                             [0x6616 resolution 24]
-#natural=valley 0x6617        
-#natural=woods 0x6618        
+#natural=valley 0x6617
+#natural=woods 0x6618
 mountain_pass=yes                                                       [0x6618 resolution 23 continue]
 # 0x66ss
 
@@ -206,7 +205,7 @@ shop=car | shop=car_parts                                                 [0x2f0
 car_service=wrecker                                                       [0x2f0a resolution 24]
 
 # Parking
-# 
+#
 amenity=parking & access=private {delete amenity}
 amenity=parking                                                           [0x2f0b resolution 24]
 
@@ -348,7 +347,7 @@ tourism=wine_cellar                                                       [0x2c0
 amenity=restaurant &
     cuisine=american |
     cuisine~'burger'                                                     [0x2a01 resolution 24]
-    
+
 # Asian
 amenity=restaurant &
   ( cuisine=asian |
@@ -381,7 +380,7 @@ amenity=restaurant &
 
 # Fastfood
 amenity~'fast_food'                                                       [0x2a07 resolution 24]
-amenity=restaurant & 
+amenity=restaurant &
   ( cuisine~'fast_food' )                                                 [0x2a07 resolution 24]
 
 # Italian
