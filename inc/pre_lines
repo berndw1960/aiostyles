@@ -12,14 +12,14 @@ highway=* & (toll=yes|toll=true) { set mkgmap:toll=yes }
 highway=* & mkgmap:mp_created=true {add area=yes}
 
 # Hide proposed ways
-(highway=proposed |
+highway=proposed |
   highway=proposal |
   highway=planned |
-  highway ~ '.*proposed.*')         {deletealltags}
+  highway ~ '.*proposed.*'         {deletealltags}
 
 # Hide removed ways
-(highway=razed |
-  highway=dismantled)               {deletealltags}
+highway=razed |
+  highway=dismantled               {deletealltags}
 
 #Hide historic ways
 highway=historic                    {deletealltags}
@@ -29,14 +29,19 @@ highway=historic                    {deletealltags}
 # existence but are no longer used. These
 # abandoned highways could be useful in topographical maps.
 # https://wiki.openstreetmap.org/wiki/Key:abandoned:
-((abandoned:highway=* & highway!=*) |
-  highway=abandoned)                {deletealltags}
+abandoned:highway=* & highway!=*    {deletealltags}
+highway=abandoned                   {deletealltags}
+highway=disused                     {deletealltags}
+highway=demolished                  {deletealltags}
+highway=removed                     {deletealltags}
+highway=informal_path               {deletealltags}
 
 # Hide other non-existent ways
-(highway=unbuilt |
+highway=unbuilt |
   highway=neverbuilt |
+  highway=never_built |
   highway=rejected |
-  highway ~ 'x-.*')                 {deletealltags}
+  highway ~ 'x-.*'                 {deletealltags}
 
 # Remove highway tag from ways which are not suitable for routing
 highway=traffic_signals |
@@ -49,7 +54,6 @@ highway=piste |
   highway=ski                        {delete highway}
 highway=no |
   highway=none                       {delete highway}
-
 
 # Hide unaccessible tunnels
 highway=* & tunnel=yes &
@@ -156,13 +160,6 @@ man_made=pier & area!=yes
                 add bicycle=dismount
                 }
 
-## highway=services with amenity=* should use the amenity tag
-(highway=services | highway= rest_area) &
-    amenity=*                                {delete highway}
-
-## highway=services should have the area tag, to prevent routing errors
-(highway=services | highway= rest_area) &
-    area!=* & is_closed() = true              {add area=yes}
 
 #------------------------------------------------------------------------------
 # Convert some rules
@@ -190,7 +187,8 @@ highway=* &
    oneway=reversible) { set mkgmap:road-class=-2;
                         set mkgmap:road-speed=-2;
                         delete mkgmap:fast_road}
-
+# highway=access == highway=service??
+highway=access {set highway=service}
 #------------------------------------------------------------------------------
 # overlays
 
@@ -255,6 +253,7 @@ toll=yes & highway!=motorway                                                    
 highway=path
            & (smoothness~'.*(bad|horrible|impassable)' |
              trail_visibility~'.*(bad|horrible|no)' )                                   [0x10e0c resolution 24 continue]
+highway=via_ferrata                                                                     [0x10e0c resolution 24 continue]
 
 # tram overlay
 highway=* & railway=tram                                                                [0x10e0d resolution 24-23 continue]
@@ -267,7 +266,7 @@ highway=* & railway=tram                                                        
              highway=footway |
              highway=cycleway)                                                          [0x10f00 resolution 24 continue]
 
-highway=ramp {set highway=footway}                                                      [0x10f00 resolution 24 continue]
+highway~'.*ramp'                                                                        [0x10f00 resolution 24 continue]
 
 # cutting overlay
 (cutting=yes)

@@ -120,18 +120,18 @@ highway=trunk_link                                  [0x09 resolution 24 road_cla
 #--------------------------------------------------------------------------------------
 # primary
 
-highway=primary                                        [0x12003 resolution 21-18 continue]
-highway=primary                                        [0x11003 resolution 24-22 continue]
+highway=primary                                  [0x12003 resolution 21-18 continue]
+highway=primary                                  [0x11003 resolution 24-22 continue]
 highway=primary &
   junction=roundabout &
-  mkgmap:fast_road=yes                              [0x0c resolution 24 road_class=4 road_speed=2]
+  mkgmap:fast_road=yes                           [0x0c resolution 24 road_class=4 road_speed=2]
 highway=primary &
-  junction=roundabout                                [0x0c resolution 24 road_class=3 road_speed=2]
+  junction=roundabout                            [0x0c resolution 24 road_class=3 road_speed=2]
 highway=primary &
-  mkgmap:fast_road=yes                              [0x0c resolution 24 road_class=4 road_speed=4] 
-highway=primary                                        [0x03 resolution 24 road_class=3 road_speed=4]
+  mkgmap:fast_road=yes                           [0x0c resolution 24 road_class=4 road_speed=4]
+highway=primary                                  [0x03 resolution 24 road_class=3 road_speed=4]
 
-highway=primary_link                                 [0x12003 resolution 22-21 continue]
+highway=primary_link                                [0x12003 resolution 22-21 continue]
 highway=primary_link                                [0x11003 resolution 24-23 continue]
 highway=primary_link &
   mkgmap:fast_road=yes &
@@ -145,13 +145,13 @@ highway=primary_link                                [0x08 resolution 24 road_cla
 # secondary
 
 highway=secondary                                   [0x12004 resolution 21-18 continue]
-highway=secondary                                    [0x11004 resolution 24-22 continue]
+highway=secondary                                   [0x11004 resolution 24-22 continue]
 highway=secondary &
   junction=roundabout &
   mkgmap:fast_road=yes                              [0x0c resolution 24 road_class=3 road_speed=3]
 highway=secondary &
   junction=roundabout                               [0x0c resolution 24 road_class=2 road_speed=2]
-highway=secondary                                    [0x04 resolution 24 road_class=2 road_speed=3]
+highway=secondary                                   [0x04 resolution 24 road_class=2 road_speed=3]
 
 highway=secondary_link                              [0x12004 resolution 22-22 continue]
 highway=secondary_link                              [0x11004 resolution 24-23 continue]
@@ -169,14 +169,14 @@ highway=secondary_link                              [0x08 resolution 24 road_cla
 highway=tertiary                                    [0x12015 resolution 20-20 continue]
 highway=tertiary                                    [0x12005 resolution 22-21 continue]
 highway=tertiary                                    [0x11005 resolution 24-23 continue]
-highway=tertiary & junction=roundabout                 [0x0c resolution 24 road_class=1 road_speed=2]
+highway=tertiary & junction=roundabout              [0x0c resolution 24 road_class=1 road_speed=2]
 highway=tertiary                                    [0x05 resolution 24 road_class=1 road_speed=3]
 
 highway=tertiary_link                               [0x12005 resolution 22-22 continue]
 highway=tertiary_link                               [0x11005 resolution 24-23 continue]
 highway=tertiary_link &
   (mkgmap:exit_hint=true | mkgmap:dest_hint=*)      [0x07 resolution 24 road_class=1 road_speed=1]
-highway=tertiary_link                                [0x08 resolution 24 road_class=1 road_speed=1]
+highway=tertiary_link                               [0x08 resolution 24 road_class=1 road_speed=1]
 
 
 #----------------------------------------------------------------------------------------
@@ -184,7 +184,7 @@ highway=tertiary_link                                [0x08 resolution 24 road_cl
 
 # unclassified
 highway=unclassified                                [0x12017 resolution 20-20 continue]
-highway=unclassified                                 [0x12006 resolution 22-21 continue]
+highway=unclassified                                [0x12006 resolution 22-21 continue]
 highway=unclassified                                [0x11006 resolution 24-23 continue]
 highway=unclassified & junction=roundabout          [0x0c resolution 24 road_class=1 road_speed=1]
 highway=unclassified                                [0x05 resolution 24 road_class=1 road_speed=3]
@@ -197,7 +197,7 @@ highway=unclassified                                [0x05 resolution 24 road_cla
 highway=residential                                  [0x12017 resolution 21-21 continue]
 highway=residential                                  [0x12006 resolution 22-22 continue]
 highway=residential                                  [0x11006 resolution 24-23 continue]
-highway=residential & junction=roundabout             [0x0c resolution 24 road_class=0 road_speed=1]
+highway=residential & junction=roundabout            [0x0c resolution 24 road_class=0 road_speed=1]
 highway=residential                                  [0x06 resolution 24 road_class=0 road_speed=2]
 
 # service
@@ -214,18 +214,22 @@ highway=living_street                                   [0x07 resolution 24 road
 #----------------------------------------------------------------------------------------
 # service roads
 
-highway=service                                           [0x12007 resolution 23-23 continue]
-highway=service                                           [0x11007 resolution 24 continue]
-highway=service & service=parking_aisle                   [0x07 resolution 24 road_class=0 road_speed=1]
-highway=service & (service=alley|service=driveway)       [0x07 resolution 24 road_class=0 road_speed=0]
-highway=service                                            [0x07 resolution 24 road_class=0 road_speed=2]
+highway=service                                         [0x12007 resolution 23-23 continue]
+highway=service                                         [0x11007 resolution 24 continue]
+highway=service & service=parking_aisle                 [0x07 resolution 24 road_class=0 road_speed=1]
+highway=service & (service=alley|service=driveway)      [0x07 resolution 24 road_class=0 road_speed=0]
+highway=service                                         [0x07 resolution 24 road_class=0 road_speed=2]
 
 
 # runaway truck ramp
-highway=escape                                           [0x11009 resolution 24-23]
+highway=escape                                          [0x11009 resolution 24-23]
+
+# emergency lanes
+highway=emergency_bay                                   [0x11009 resolution 24-23]
 
 # bus lanes
-highway=bus_guideway                                   [0x11007 resolution 24]
+highway=bus_guideway                                    [0x11007 resolution 24]
+highway=bus_lane                                        [0x11007 resolution 24]
 
 #------------------------------------------------------------------------------
 # designated ways
@@ -256,4 +260,13 @@ highway=pedestrian                                       [0x07 resolution 24 roa
 
 #------------------------------------------------------------------------------
 # route
-route=ferry         {add mkgmap:ferry=1}               [0x1a resolution 22 road_class=0 road_speed=0]
+route=ferry &
+  (toll=no | toll=false)      {set mkgmap:toll=no}
+route=ferry                   {set mkgmap:numbers=false;
+                               set mkgmap:ferry=1;
+                               add mkgmap:toll=yes}
+
+route=ferry &
+  (motorcar=no |
+   motor_vehicle=no)                                   [0x1a road_class=0 road_speed=0 resolution 23]
+route=ferry                                            [0x1a road_class=3 road_speed=0 resolution 20]

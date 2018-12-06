@@ -65,175 +65,186 @@ leisure=swimming_pool { deletealltags }
 amenity=swimming_pool { deletealltags }
 
 ## emergency phone and other
-emergency=phone | amenity=emergency_phone                              [0x5101 resolution 24]
+emergency=phone | amenity=emergency_phone         [0x5101 resolution 24]
 
-highway=emergency_access_point | emergency=access_point                 [0x5102 resolution 24]
+highway=emergency_access_point |
+  emergency=access_point                          [0x5102 resolution 24]
 
 # Man Made
 # 0x6401        # bridge
-amenity=shelter                                                         [0x6402 resolution 24 continue]
+amenity=shelter                                   [0x6402 resolution 24 continue]
 # 0x6402        # skyscaper
 # 0x6403        # tombstone
-amenity=grave_yard & mkgmap:area2poi!=true                              [0x6404 resolution 24]
-landuse=cemetery & mkgmap:area2poi!=true                                [0x6404 resolution 24]
+amenity=grave_yard & mkgmap:area2poi!=true        [0x6404 resolution 24]
+landuse=cemetery & mkgmap:area2poi!=true          [0x6404 resolution 24]
 # 0x6405        # civil
 
 # 0x6406        # crossing
-railway=level_crossing | railway=crossing                               [0x6406 resolution 24]
+railway=level_crossing |
+  railway=crossing                                [0x6406 resolution 24]
 # 0x6407        # dam
 # 0x6408        # hospital
 # 0x6409        # levee
 # 0x640a        # locale
-military=bunker                                                         [0x640b resolution 24]
-man_made=mineshaft                                                      [0x640c resolution 24]
-man_made=petroleum_well                                                 [0x640d resolution 24]
+military=bunker                                   [0x640b resolution 24]
+man_made=mineshaft                                [0x640c resolution 24]
+man_made=petroleum_well                           [0x640d resolution 24]
 # 0x640e        # park
 
-amenity=post_box                                                        [0x640f resolution 24]
+amenity=post_box                                  [0x640f resolution 24]
 
-amenity=clock                                                           [0x6410 resolution 24]
+amenity=clock                                     [0x6410 resolution 24]
 
 (man_made=mast | man_made=tower)
-              & tower:type=communication                                [0x5103 resolution 24]
-man_made=tower & tower:type=observation                                 [0x6600 resolution 24]
+              & tower:type=communication          [0x5103 resolution 24]
+man_made=tower & tower:type=observation           [0x6600 resolution 24]
 
-man_made=tower & tower:type=bell_tower                                  [0x5b0c resolution 24]
-man_made=tower                                                          [0x6411 resolution 24]
+man_made=tower & tower:type=bell_tower            [0x5b0c resolution 24]
+man_made=tower                                    [0x6411 resolution 24]
 
 (tourism=information
           & information=guidepost) |
             (amenity=guidepost |
-             amenity=signpost )                                         [0x6412 resolution 24]
-man_made=adit                                                           [0x6413 resolution 24]
+             amenity=signpost )                   [0x6412 resolution 24]
+man_made=adit                                     [0x6413 resolution 24]
 
-(amenity=drinking_water & (drinking_water=yes|drinkable=yes)) |
-        (amenity=water_well & water_well=drinking_water)                [0x6414 resolution 24]
-man_made=water_tower                                                    [0x6415 resolution 24]
-amenity=hunting_stand                                                   [0x6417 resolution 24]
-man_made=survey_point                                                   [0x6418 resolution 24]
-man_made=flagpole                                                       [0x6419 resolution 24]
-man_made=reservoir_covered  & mkgmap:area2poi!=true                     [0x641a resolution 24]
-man_made=observatory | man_made=telescope | landuse=observatory         [0x641b resolution 24]
-man_made=water_mill  & mkgmap:area2poi!=true                            [0x641c resolution 24]
-man_made=gasometer | man_made=storage_tank & mkgmap:area2poi!=true      [0x641d resolution 24]
-man_made=works & mkgmap:area2poi!=true                                  [0x641e resolution 24]
-man_made=windmill & mkgmap:area2poi!=true                               [0x641f resolution 24]
+(amenity=drinking_water &
+  (drinking_water=yes|drinkable=yes)) |
+  (amenity=water_well & water_well=drinking_water)[0x6414 resolution 24]
+man_made=water_tower                              [0x6415 resolution 24]
+amenity=hunting_stand                             [0x6417 resolution 24]
+man_made=survey_point                             [0x6418 resolution 24]
+man_made=flagpole                                 [0x6419 resolution 24]
+man_made=reservoir_covered &
+  mkgmap:area2poi!=true                           [0x641a resolution 24]
+man_made=observatory |
+  man_made=telescope |
+  landuse=observatory                             [0x641b resolution 24]
+man_made=water_mill  &
+  mkgmap:area2poi!=true                           [0x641c resolution 24]
+man_made=gasometer |
+  man_made=storage_tank &
+  mkgmap:area2poi!=true                           [0x641d resolution 24]
+man_made=works & mkgmap:area2poi!=true            [0x641e resolution 24]
+man_made=windmill & mkgmap:area2poi!=true         [0x641f resolution 24]
 
 # 0x64ss
 
 
 # Water Features
-amenity=fountain                                                        [0x6500 resolution 24]
+amenity=fountain                                  [0x6500 resolution 24]
 #natural=Arroyo 0x6501
 #natural=sand bar 0x6502
-natural=bay & name=*                                                    [0x6503 resolution 24]
+natural=bay & name=*                              [0x6503 resolution 24]
 #natural=bend 0x6504
 #natural=channel 0x6506
 #natural=cove 0x6507
-natural=waterfall | waterway=waterfall                                  [0x6508 resolution 24]
-natural=geyser                                                          [0x6509 resolution 24]
-natural=glacier                                                         [0x650a resolution 22]
-harbour=*                                                               [0x650b resolution 24]
+natural=waterfall | waterway=waterfall            [0x6508 resolution 24]
+natural=geyser                                    [0x6509 resolution 24]
+natural=glacier                                   [0x650a resolution 22]
+harbour=*                                         [0x650b resolution 24]
 # 0x650c see place=island above
-natural=water & name=*                                                  [0x650d resolution 24]
-waterway=rapids                                                         [0x650e resolution 24]
-landuse=reservoir                                                       [0x650f resolution 24]
+natural=water & name=*                            [0x650d resolution 24]
+waterway=rapids                                   [0x650e resolution 24]
+landuse=reservoir                                 [0x650f resolution 24]
 #natural=sea 0x6510
-natural=spring                                                          [0x6511 resolution 24]
+natural=spring                                    [0x6511 resolution 24]
 #natural=stream 0x6512
-natural=wetland  & mkgmap:area2poi!=true                                [0x6513 resolution 23]
+natural=wetland  & mkgmap:area2poi!=true          [0x6513 resolution 23]
 # 0x65ss
 
 # Land Features
-tourism=viewpoint & natural!=*                                          [0x6600 resolution 24]
+tourism=viewpoint & natural!=*                    [0x6600 resolution 24]
 #natural=arch 0x6601
 #area 0x6602
 #natural=basin 0x6603
-natural=beach                                                           [0x6604 resolution 24]
-amenity=bench                                                           [0x6605 resolution 24]
-natural=cape                                                            [0x6606 resolution 24]
-natural=cliff                                                           [0x6607 resolution 24]
-natural=crater                                                          [0x6607 resolution 23]
-landuse=meadow & name=*                                                 [0x6609 resolution 23 continue]
+natural=beach                                     [0x6604 resolution 24]
+amenity=bench                                     [0x6605 resolution 24]
+natural=cape                                      [0x6606 resolution 24]
+natural=cliff                                     [0x6607 resolution 24]
+natural=crater                                    [0x6607 resolution 23]
+landuse=meadow & name=*                           [0x6609 resolution 23 continue]
 #forest 0x660a
 #natural=gap 0x660b
 #natural=gut 0x660c
 #natural=isthmus 0x660d
-natural=volcano                                                         [0x660e resolution 23]
+natural=volcano                                   [0x660e resolution 23]
 #natural=pillar 0x660f
 #natural=plain 0x6610
 #natural=range 0x6611
 #natural=reserve 0x6612
-natural=ridge                                                           [0x6613 resolution 24]
-natural=rock                                                            [0x6614 resolution 24]
+natural=ridge                                     [0x6613 resolution 24]
+natural=rock                                      [0x6614 resolution 24]
 #natural=slope 0x6615
-natural=peak & ele>3500                                                 [0x6616 resolution 22]
-natural=peak & ele>2300                                                 [0x6616 resolution 23]
-natural=peak | natural=hill                                             [0x6616 resolution 24]
+natural=peak & ele>3500                           [0x6616 resolution 22]
+natural=peak & ele>2300                           [0x6616 resolution 23]
+natural=peak | natural=hill                       [0x6616 resolution 24]
 #natural=valley 0x6617
 #natural=woods 0x6618
-mountain_pass=yes                                                       [0x6618 resolution 23 continue]
+mountain_pass=yes                                 [0x6618 resolution 23 continue]
 # 0x66ss
 
-natural=cave_entrance                                                   [0x6619 resolution 24]  # type without category
+# type without category
+natural=cave_entrance                             [0x6619 resolution 24]
 # 0x11503       # mineshaft     # type without category
 
 #------------------------------------------------------------------------------
 # Exit
 
-highway=motorway_junction                                                [0x2000 resolution 22]
+highway=motorway_junction                         [0x2000 resolution 22]
 
 #------------------------------------------------------------------------------
 # Fuel
 
 # Auto Fuel
-amenity=fuel                                                             [0x2f01 resolution 24]
+amenity=fuel                                      [0x2f01 resolution 24]
 
 #------------------------------------------------------------------------------
 # Auto Services
 
 # Auto Rental
-amenity=car_rental | amenity=car_sharing                                  [0x2f02 resolution 24]
+amenity=car_rental | amenity=car_sharing          [0x2f02 resolution 24]
 
 # Auto Repair
-shop=car_repair                                                           [0x2f03 resolution 24]
+shop=car_repair                                   [0x2f03 resolution 24]
 
 # Dealer/Auto Parts
-shop=car | shop=car_parts                                                 [0x2f07 resolution 24]
+shop=car | shop=car_parts                         [0x2f07 resolution 24]
 
 # Wrecker Service
-car_service=wrecker                                                       [0x2f0a resolution 24]
+car_service=wrecker                               [0x2f0a resolution 24]
 
 # Parking
 #
 amenity=parking & access=private {delete amenity}
-amenity=parking                                                           [0x2f0b resolution 24]
+amenity=parking                                   [0x2f0b resolution 24]
 
 # Rest_Area/Tourist Information
-amenity=parking & (toilets=yes | tourism=information)                     [0x2f0c resolution 24]
+amenity=parking &
+  (toilets=yes | tourism=information)             [0x2f0c resolution 24]
 
 # Auto Club
 # 0x2f0d
 
 # Car Wash
-amenity=car_wash                                                          [0x2f0e resolution 24]
+amenity=car_wash                                  [0x2f0e resolution 24]
 
 # Truck Stop
-amenity=truck_stop                                                        [0x2f16 resolution 24]
+amenity=truck_stop                                [0x2f16 resolution 24]
 
 # 0x4css        # information
-tourism=information                                                       [0x4c00 resolution 24]
+tourism=information                               [0x4c00 resolution 24]
 
 # 0x4ess        # restroom
-amenity=toilets                                                           [0x4e01 resolution 24]
+amenity=toilets                                   [0x4e01 resolution 24]
 
 # 0x4fss        # shower
-amenity=shower                                                            [0x4f01 resolution 24]
+amenity=shower                                    [0x4f01 resolution 24]
 
 # 0x50ss        # drinking water
 
 # 0x51ss        # telephone
-amenity=telephone                                                         [0x5100 resolution 24]
+amenity=telephone                                 [0x5100 resolution 24]
 
 
 #------------------------------------------------------------------------------
@@ -244,13 +255,13 @@ amenity=telephone                                                         [0x510
 
 # Air Transportation
 
-aeroway=aerodrome & mkgmap:area2poi!=true                                 [0x5901 resolution 23-18 continue]
-aeroway=aerodrome & mkgmap:area2poi!=true                                 [0x2f04 resolution 24]
-aeroway=airport & mkgmap:area2poi!=true                                   [0x5902 resolution 23-20 continue]
-aeroway=airport & mkgmap:area2poi!=true                                   [0x2f04 resolution 24]
+aeroway=aerodrome & mkgmap:area2poi!=true         [0x5901 resolution 23-18 continue]
+aeroway=aerodrome & mkgmap:area2poi!=true         [0x2f04 resolution 24]
+aeroway=airport & mkgmap:area2poi!=true           [0x5902 resolution 23-20 continue]
+aeroway=airport & mkgmap:area2poi!=true           [0x2f04 resolution 24]
 (aeroway=airfield | military=airfield) & mkgmap:area2poi!=true            [0x5903 resolution 23-22 continue]
 (aeroway=airfield | military=airfield) & mkgmap:area2poi!=true            [0x2f04 resolution 24]
-aeroway=helipad                                                           [0x5904 resolution 24]
+aeroway=helipad                                   [0x5904 resolution 24]
 
 
 # Ground Transportation
@@ -259,15 +270,15 @@ railway=halt |
 railway=tram_stop |
 public_transport=platform |
 amenity=bus_station |
-highway=bus_stop                                                          [0x2f08 resolution 24 continue with_actions]
+highway=bus_stop                                  [0x2f08 resolution 24 continue with_actions]
 
-railway=station                                                           [0x7207 resolution 22]
-railway=halt                                                              [0x7207 resolution 23]
+railway=station                                   [0x7207 resolution 22]
+railway=halt                                      [0x7207 resolution 23]
 
 railway=tram_stop |
 public_transport=platform |
 amenity=bus_station |
-highway=bus_stop                                                          [0x7208 resolution 24]
+highway=bus_stop                                  [0x7208 resolution 24]
 
 
 #------------------------------------------------------------------------------
@@ -277,61 +288,63 @@ highway=bus_stop                                                          [0x720
 #[0x2b00]
 
 # Hotel/Motel
-tourism=hotel | tourism=motel                                             [0x2b01 resolution 24]
+tourism=hotel | tourism=motel                     [0x2b01 resolution 24]
 
 # Bed & Breakfast Inn
-tourism=guest_house                                                       [0x2b02 resolution 24]
-tourism=hostel                                                            [0x2b05 resolution 24]
+tourism=guest_house |
+ tourism=bed_and_breakfast                        [0x2b02 resolution 24]
+
+tourism=hostel                                    [0x2b05 resolution 24]
 
 # Campground/RV Park
-tourism=camp_site & tents!=no                                             [0x2b03 resolution 24]
-tourism=caravan_site & tents=yes                                          [0x2b03 resolution 24]
+tourism=camp_site & tents!=no                     [0x2b03 resolution 24]
+tourism=caravan_site & tents=yes                  [0x2b03 resolution 24]
 
 # Resort
-tourism=resort                                                            [0x2b04 resolution 24]
+tourism=resort                                    [0x2b04 resolution 24]
 
 # Other
-tourism~'.*(hut)'                                                         [0x2b06 resolution 24]
+tourism~'.*(hut)'                                 [0x2b06 resolution 24]
 
-#tourism=chalet                                                           [0x2b09 resolution 24]
+#tourism=chalet                                   [0x2b09 resolution 24]
 
 #------------------------------------------------------------------------------
 # Attraction
 
 # Amusement/Theme Park
-tourism=theme_park                                                        [0x2c01 resolution 24]
+tourism=theme_park                                [0x2c01 resolution 24]
 
 # Museum/Historical
-tourism=museum | historic=museum                                          [0x2c02 resolution 24]
-historic=archaeological_site | historic=battlefield                       [0x2c11 resolution 24]
-historic=memorial                                                         [0x2c11 resolution 24]
+tourism=museum | historic=museum                  [0x2c02 resolution 24]
+historic=archaeological_site | historic=battlefield  [0x2c11 resolution 24]
+historic=memorial                                 [0x2c11 resolution 24]
 
 # Landmark
-tourism=attraction                                                        [0x2c04 resolution 24]
+tourism=attraction                                [0x2c04 resolution 24]
 
-historic=castle                                                           [0x5201 resolution 24]
-historic=ruins                                                            [0x5202 resolution 24]
-historic=fort                                                             [0x5203 resolution 24]
-historic=city_gate                                                        [0x5204 resolution 24]
-historic=monument                                                         [0x5205 resolution 24]
-historic=wayside_cross                                                    [0x5206 resolution 24]
-historic=wayside_shrine                                                   [0x5207 resolution 24]
+historic=castle                                   [0x5201 resolution 24]
+historic=ruins                                    [0x5202 resolution 24]
+historic=fort                                     [0x5203 resolution 24]
+historic=city_gate                                [0x5204 resolution 24]
+historic=monument                                 [0x5205 resolution 24]
+historic=wayside_cross                            [0x5206 resolution 24]
+historic=wayside_shrine                           [0x5207 resolution 24]
 
 # Park/Garden
-leisure=garden & name=*                                                   [0x2c06 resolution 24]
+leisure=garden & name=*                           [0x2c06 resolution 24]
 
 
 # Zoo/Aquarium
-tourism=zoo | tourism=aquarium                                            [0x2c07 resolution 24]
+tourism=zoo | tourism=aquarium                    [0x2c07 resolution 24]
 
 # Arena/Track
 # 0x2c08
 
 # Hall/Auditorium
-amenity=concert_hall                                                      [0x2c09 resolution 24]
+amenity=concert_hall                              [0x2c09 resolution 24]
 
 # Winery
-tourism=wine_cellar                                                       [0x2c0a resolution 24]
+tourism=wine_cellar                               [0x2c0a resolution 24]
 
 # Hot Spring
 # 0x2c0c
@@ -346,7 +359,7 @@ tourism=wine_cellar                                                       [0x2c0
 # American
 amenity=restaurant &
     cuisine=american |
-    cuisine~'burger'                                                     [0x2a01 resolution 24]
+    cuisine~'burger'                              [0x2a01 resolution 24]
 
 # Asian
 amenity=restaurant &
@@ -355,42 +368,42 @@ amenity=restaurant &
     cuisine=indian |
     cuisine=korean |
     cuisine=thai |
-    cuisine=vietnamese )                                                  [0x2a02 resolution 24]
+    cuisine=vietnamese )                          [0x2a02 resolution 24]
 
 # Barbeque
 amenity=restaurant &
-    cuisine=barbecue                                                      [0x2a03 resolution 24]
+    cuisine=barbecue                              [0x2a03 resolution 24]
 
 # Chinese
 amenity=restaurant &
-    cuisine=chinese                                                       [0x2a04 resolution 24]
+    cuisine=chinese                               [0x2a04 resolution 24]
 
 # Deli/Bakery
 amenity=restaurant &
   ( cuisine=cake |
     cuisine=deli |
-    cuisine=crepe )                                                       [0x2a05 resolution 24]
+    cuisine=crepe )                               [0x2a05 resolution 24]
 
 amenity=ice_cream |
-    cuisine=ice_cream                                                     [0x2a05 resolution 24]
+    cuisine=ice_cream                             [0x2a05 resolution 24]
 
 # International
 amenity=restaurant &
-    cuisine=international                                                 [0x2a06 resolution 24]
+    cuisine=international                         [0x2a06 resolution 24]
 
 # Fastfood
-amenity~'fast_food'                                                       [0x2a07 resolution 24]
+amenity~'fast_food'                               [0x2a07 resolution 24]
 amenity=restaurant &
-  ( cuisine~'fast_food' )                                                 [0x2a07 resolution 24]
+  ( cuisine~'fast_food' )                         [0x2a07 resolution 24]
 
 # Italian
 amenity=restaurant &
   ( cuisine=italian |
-    cuisine=pasta )                                                       [0x2a08 resolution 24]
+    cuisine=pasta )                               [0x2a08 resolution 24]
 
 # Mexican
 amenity=restaurant &
-    cuisine=mexican                                                       [0x2a09 resolution 24]
+    cuisine=mexican                               [0x2a09 resolution 24]
 
 # Pizza
 amenity=restaurant &

@@ -17,11 +17,14 @@ highway=track  {
                 }                            [0x11 resolution 24 road_class=0 road_speed=0]
 
 #------------------------------------------------------------------------------
-# path
+# via_ferrata not routable
+highway=via_ferrata                          [0x12012 resolution 24]
 
+# path
 highway=path | highway=trail                 [0x12012 resolution 22-22 continue]
 highway=path | highway=trail                 [0x11012 resolution 24-23 continue]
 
-highway=path   {
+highway=path | highway=trail  
+               {
                   add mkgmap:unpaved=1;
                 }                            [0x12 resolution 24 road_class=0 road_speed=0]

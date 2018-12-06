@@ -1,4 +1,3 @@
-
 # -------------------------------------------------------------------
 #  common rules under inc/
 
@@ -21,7 +20,7 @@ include '../inc/non_route_ways_lines' ;
 include '../inc/water_lines' ;
 include '../inc/barrier_lines';
 
-# possible routable ways 
+# possible routable ways
 include '../inc/unknown_ways_lines';
 
 # last line is the finalize section!

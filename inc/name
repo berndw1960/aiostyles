@@ -3,7 +3,7 @@
 # name, brand, operator, ref
 
 # delete FIXME values (they should be better used in maintenance maps)
-ref ~ '(?i)fix[ _]?+me'       { delete ref; } 
+ref ~ '(?i)fix[ _]?+me'       { delete ref; }
 operator ~ '(?i)fix[ _]?+me'  { delete operator; }
 brand ~ '(?i)fix[ _]?+me'     { delete brand; }
 name ~ '(?i)fix[ _]?+me'      { delete name; }
@@ -69,8 +69,8 @@ brand=${name}     { delete brand; }
   railway=halt |
   railway=station)
     & (name=* | ref=*)
-        # unnamed bus_stop tram_stops etc. remain unnamed - this triggers 
-        # the icon's name from the styles_typ.txt for the POI-list and 
+        # unnamed bus_stop tram_stops etc. remain unnamed - this triggers
+        # the icon's name from the styles_typ.txt for the POI-list and
         # also leaves no label on the map
         {
         name '${name|def:H} ${ref}' | '${name|def:H}';
@@ -78,19 +78,17 @@ brand=${name}     { delete brand; }
         delete ref ;
         }
 
-highway=motorway_junction 
-        { 
-          name '${ref} ${name}' | 
-               '${ref}' | 
-               '${name}'; 
+highway=motorway_junction
+        {
+          name '${ref} ${name}' |
+               '${ref}' |
+               '${name}';
         }
 
 highway=emergency_access_point
        {
-        
         # ref is needed to identify the point, all other infos are additional
         add ref='';
-        
         # prefere to display the phonenumber before other infos
         name '${ref} (${emergency_telephone_code})' |
              '${ref} ${operator}' |
@@ -98,7 +96,7 @@ highway=emergency_access_point
              '${ref}';
         }
 
-# remove unneeded tags 
+# remove unneeded tags
 amenity=parking & access=private            { delete amenity }
 amenity=parking & capacity=unknown          { delete capacity ; }
 amenity=parking & capacity:disabled=unknown { delete capacity:disabled ; }
@@ -108,8 +106,8 @@ amenity=parking & fee=no                    { delete fee ; }
 
 amenity=parking
         & ( parking=multi-storey |
-            parking=underground)       
-         { 
+            parking=underground)
+         {
           name '^ ${name|def:P} (${capacity}/${capacity:disabled})[${fee}]' |
                '^ ${name|def:P} (${capacity}/${capacity:disabled})' |
                '^ ${name|def:P} (${capacity})[${fee}]' |
@@ -117,15 +115,14 @@ amenity=parking
                '^ ${name|def:P} [${fee}]' |
                '^ ${name|def:P}'
           }
-                
 amenity=parking
-         { 
+         {
           name '${name|def:P} (${capacity}/${capacity:disabled})[${fee}]' |
                '${name|def:P} (${capacity}/${capacity:disabled})' |
                '${name|def:P} (${capacity})[${fee}]' |
                '${name|def:P} (${capacity})' |
                '${name|def:P} [${fee}]'|
-               '${name|def:P}'                
+               '${name|def:P}'
           }
 
 amenity=post_office
@@ -247,42 +244,6 @@ power=*
         delete name ;
         }
 
-# Both operator and brand given
-operator=* & brand=*
-      {
-       name '${brand}: ${ref} ${name} (${operator})' |
-            '${brand}: ${ref} (${operator})' |
-            '${brand}: ${name} (${operator})' |
-            '${brand}: (${operator})'
-      }
-
-# One of operator or brand given
-operator=* & brand!=* &
-   (highway=bus_stop | railway=tram_stop | railway=halt | railway=station)
-      {
-       name '${name} ${ref} ${operator}' |
-            '${name} ${operator}' |
-            '${ref} ${operator}' |
-            '${operator}'
-       }
-
-operator=* & brand!=*
-      {
-       name '${operator}: ${ref} ${name}' |
-            '${operator}: ${name}' |
-            '${operator}: ${ref}' |
-            '${operator}' |
-            '${ref}'
-      }
-
-brand=* & operator!=*
-     {
-       name '${brand}: ${ref} ${name}' |
-            '${brand}: ${name}' |
-            '${brand}: ${ref}' |
-            '${brand}' |
-            '${ref}'
-     }
 
 leisure=* & sport=* & name=*  { name '${name} (${sport})' }
 leisure=* & sport=* & name!=* { add name = '${sport}' }

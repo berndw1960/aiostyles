@@ -13,8 +13,11 @@ amenity=swimming_pool { set temp_pool=yes; delete amenity; delete sport}
 leisure=water_park { add sport=swimming }
 
 
+#-----------------------------------------------------------------------------
 # platforms, if they are an area or closed polygons
-(railway=platform | public_transport=platform) & area=yes    [0x13 resolution 23]
+
+(railway=platform | public_transport=platform) &
+  (area=yes | mkgmap:mp_created=true) [0x13 resolution 23]
 
 #------------------------------------------------------------------------------
 # amenity
@@ -29,17 +32,19 @@ amenity=grave_yard | landuse=cemetery         [0x1a resolution 22]
 amenity=hospital | building=hospital        [0x0b resolution 20]
 
 amenity=school                     [0x0a resolution 23]
-amenity=college                 [0x0a resolution 23]
+amenity=college                    [0x0a resolution 23]
 amenity=university                 [0x0a resolution 22]
 
 
 #------------------------------------------------------------------------------
 # parking
 
+highway=services | highway=rest_area               [0x08 resolution 20]
+
 amenity=parking &
   (parking=multi-storey | parking=underground)     [0x06 resolution 24]
-amenity=parking                 [0x05 resolution 24]
-amenity=car_sharing             [0x05 resolution 24]
+amenity=parking                                    [0x05 resolution 24]
+amenity=car_sharing                                [0x05 resolution 24]
 
 
 #------------------------------------------------------------------------------
@@ -49,8 +54,8 @@ aeroway=aerodrome |
 aeroway=airport |
 aeroway=airfield |
 aeroway=apron |
-aeroway=helipad                    [0x07 resolution 18]
-aeroway=runway                  [0x0e resolution 20]
+aeroway=helipad                                    [0x07 resolution 18]
+aeroway=runway                                     [0x0e resolution 20]
 
 #------------------------------------------------------------------------------
 # landuse
@@ -64,7 +69,7 @@ place=island &
   place=islet                                   [0x27 resolution 22 continue]
 
 highway=pedestrian &
-  (area=yes | area=true | area=1)               [0x12 resolution 22]
+  (area=yes | mkgmap:mp_created=true)           [0x12 resolution 22]
 
 leisure=nature_reserve                          [0x0d resolution 18 continue]
 
@@ -74,37 +79,37 @@ landuse=forest &
 landuse=forest &
   (wood=deciduous | leaf_type=broadleaved)      [0x22 resolution 24-23]
 landuse=forest &
-   (wood=mixed | leaf_type=mixed)                 [0x23 resolution 24-23]
-landuse=forest                                     [0x20 resolution 24-23]
+   (wood=mixed | leaf_type=mixed)               [0x23 resolution 24-23]
+landuse=forest                                  [0x20 resolution 24-23]
 
-landuse=meadow                                     [0x10f10 resolution 21]
+landuse=meadow                                  [0x10f10 resolution 21]
 
-landuse=commercial                                 [0x0f resolution 18]
-landuse=industrial                                [0x0c resolution 18]
-landuse=retail                                     [0x08 resolution 18]
+landuse=commercial                              [0x0f resolution 18]
+landuse=industrial                              [0x0c resolution 18]
+landuse=retail                                  [0x08 resolution 18]
 
 landuse=landfill                                [0x10f07 resolution 18]
 
 landuse=conservation                            [0x10f0a resolution 18]
 
-landuse=brownfield                                [0x0e resolution 20]
-landuse=greenfield                                [0x10 resolution 20]
+landuse=brownfield                              [0x0e resolution 20]
+landuse=greenfield                              [0x10 resolution 20]
 landuse=construction                            [0x11 resolution 20]
 
 landuse=village_green |
-landuse=grass                                    [0x10f11 resolution 22]
+landuse=grass                                   [0x10f11 resolution 22]
 
-landuse=allotments                                 [0x10f08 resolution 22]
+landuse=allotments                              [0x10f08 resolution 22]
 landuse=orchard                                 [0x4e resolution 22]
 
 landuse=farmland |
 landuse=plant_nursery                           [0x2a resolution 21]
 
-landuse=farmyard                                 [0x2b resolution 22]
-landuse=vineyard                                 [0x2c resolution 22]
-landuse=quarry                                     [0x2d resolution 22]
+landuse=farmyard                                [0x2b resolution 22]
+landuse=vineyard                                [0x2c resolution 22]
+landuse=quarry                                  [0x2d resolution 22]
 
-tourism=camp_site                                 [0x2e resolution 22]
+tourism=camp_site                               [0x2e resolution 22]
 
 #------------------------------------------------------------------------------
 # sport/leisure
@@ -124,7 +129,7 @@ leisure=pitch & sport=soccer                    [0x10f00 resolution 23]
 leisure=pitch & sport=tennis                    [0x10f01 resolution 23]
 leisure=pitch & sport=multi                     [0x10f02 resolution 23]
 leisure=pitch & sport=basketball                [0x10f03 resolution 23]
-leisure=pitch & sport~'.*(handball)'            [0x10f04 resolution 23]
+leisure=pitch & sport~'.*handball'              [0x10f04 resolution 23]
 leisure=pitch & sport=boules                    [0x10f05 resolution 23]
 
 leisure=pitch                                   [0x19 resolution 23]

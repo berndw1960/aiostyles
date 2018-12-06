@@ -6,24 +6,24 @@
 # build destination hint
 dest_hint=* { delete dest_hint }
 mkgmap:dest_hint=*
-  { set dest_hint = '${destination:ref|subst: =>} ${mkgmap:dest_hint|subst:;=> |subst:/=> }' |
-                    '${ref|subst: =>} ${mkgmap:dest_hint|subst:;=> |subst:/=> }' |
-                    '${mkgmap:dest_hint|subst:;=> |subst:/=> }'
+  { set tmp:dest_hint = '${destination:ref|subst: =>} ${mkgmap:dest_hint|subst:;=> |subst:/=> }' |
+                        '${ref|subst: =>} ${mkgmap:dest_hint|subst:;=> |subst:/=> }' |
+                        '${mkgmap:dest_hint|subst:;=> |subst:/=> }'
        }
 
 # build exit hint
 exit_hint=* { delete exit_hint }
 mkgmap:exit_hint=true
-  { set exit_hint = 'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name}' |
-                    'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to}' |
-                    'Exit ${mkgmap:exit_hint_exit_to}' |
-                    'Exit ${mkgmap:exit_hint_name}' |
-                    'Exit ${mkgmap:exit_hint_ref}';
+  { set tmp:exit_hint = 'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_name}' |
+                        'Exit ${mkgmap:exit_hint_ref} ${mkgmap:exit_hint_exit_to}' |
+                        'Exit ${mkgmap:exit_hint_exit_to}' |
+                        'Exit ${mkgmap:exit_hint_name}' |
+                        'Exit ${mkgmap:exit_hint_ref}';
        }
 
 # destination hint and/or exit hint to build name
 (mkgmap:exit_hint=true | mkgmap:dest_hint=*)
-  { set name = '${exit_hint} ${dest_hint}' | '${dest_hint}' | '${exit_hint}'}
+{ set name = '${tmp:exit_hint} ${tmp:dest_hint}' | '${tmp:dest_hint}' | '${tmp:exit_hint}'}
 
 
 # end of rules for process-exits and process-destination options
