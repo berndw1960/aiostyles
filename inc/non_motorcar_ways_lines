@@ -32,6 +32,8 @@ highway=path & (bicycle=permissive |
                  bicycle=designated |
                  bicycle=yes)                       [0x0a resolution 24 road_class=0 road_speed=1]
 
+highway~'.*ramp' {set highway=footway}
+
 highway=footway                                     [0x1200d resolution 23-22 continue]
 highway=footway                                     [0x1100d resolution 24 continue]
 highway=footway &
@@ -40,6 +42,10 @@ highway=footway &
                bicycle=official |
                bicycle=yes)                         [0x0a resolution 24 road_class=0 road_speed=1]
 highway=footway                                     [0x0d resolution 24 road_class=0 road_speed=0]
+
+## handle like footway but invisible, mostly used as underlay on pedestrian areas
+highway=virtual                                     [0x0d resolution 24 road_class=0 road_speed=0]
+
 
 highway=bridleway                                   [0x12016 resolution 23-23 continue]
 highway=bridleway                                   [0x11016 resolution 24 continue]

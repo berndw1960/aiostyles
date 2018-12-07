@@ -221,8 +221,12 @@ highway=service			 			                   [0x07 resolution 24 road_class=0 road_s
 # runaway truck ramp
 highway=escape						                   [0x11009 resolution 24-23] 
 
+# emergency lanes
+highway=emergency_bay                                   [0x11009 resolution 24-23]
+
 # bus lanes
 highway=bus_guideway                                   [0x11007 resolution 24]
+highway=bus_lane                                        [0x11007 resolution 24]
 
 #------------------------------------------------------------------------------
 # designated ways
@@ -253,4 +257,13 @@ highway=pedestrian					                   [0x07 resolution 24 road_class=0 road_
 
 #------------------------------------------------------------------------------
 # route
-route=ferry 		{add mkgmap:ferry=1}               [0x1a resolution 22 road_class=0 road_speed=0]      
+route=ferry &
+  (toll=no | toll=false)      {set mkgmap:toll=no}
+route=ferry                   {set mkgmap:numbers=false;
+                               set mkgmap:ferry=1;
+                               add mkgmap:toll=yes}
+
+route=ferry &
+  (motorcar=no |
+   motor_vehicle=no)                                   [0x1a road_class=0 road_speed=0 resolution 23]
+route=ferry                                            [0x1a road_class=3 road_speed=0 resolution 20]
