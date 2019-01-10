@@ -68,6 +68,8 @@ place=island &
 
   place=islet                                   [0x27 resolution 22 continue]
 
+place=square                                    [0x12 resolution 22]
+
 highway=pedestrian &
   (area=yes | mkgmap:mp_created=true)           [0x12 resolution 22]
 

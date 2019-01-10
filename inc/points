@@ -72,7 +72,6 @@ highway=emergency_access_point |
 
 # Man Made
 # 0x6401        # bridge
-amenity=shelter                                   [0x6402 resolution 24 continue]
 # 0x6402        # skyscaper
 # 0x6403        # tombstone
 amenity=grave_yard & mkgmap:area2poi!=true        [0x6404 resolution 24]
@@ -294,8 +293,6 @@ tourism=hotel | tourism=motel                     [0x2b01 resolution 24]
 tourism=guest_house |
  tourism=bed_and_breakfast                        [0x2b02 resolution 24]
 
-tourism=hostel                                    [0x2b05 resolution 24]
-
 # Campground/RV Park
 tourism=camp_site & tents!=no                     [0x2b03 resolution 24]
 tourism=caravan_site & tents=yes                  [0x2b03 resolution 24]
@@ -303,9 +300,12 @@ tourism=caravan_site & tents=yes                  [0x2b03 resolution 24]
 # Resort
 tourism=resort                                    [0x2b04 resolution 24]
 
+tourism=hostel                                    [0x2b05 resolution 24]
+
 # Other
 tourism~'.*(hut)'                                 [0x2b06 resolution 24]
-
+tourism=lean_to                                   [0x2b06 resolution 24]
+amenity=shelter & shelter_type!=public_transport  [0x2b06 resolution 24]
 #tourism=chalet                                   [0x2b09 resolution 24]
 
 #------------------------------------------------------------------------------
