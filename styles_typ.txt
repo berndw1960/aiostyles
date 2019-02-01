@@ -29,6 +29,7 @@ Type=0x10,3
 Type=0x11,3
 Type=0x12,3
 Type=0x15,3
+Type=0x1F,3
 Type=0x20,3
 Type=0x21,3
 Type=0x22,3
@@ -86,7 +87,7 @@ Type=0x00300
 String1=0x02,Wohngebiet
 String2=0x04,Residential
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #FFFFFF"
 "1 c #E6E6E6"
@@ -132,7 +133,7 @@ Type=0x04
 ExtendedLabels=N
 String1=0x02,Militärgebiet
 String2=0x04,Military
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c none"
 "1 c #BF0000"
@@ -223,7 +224,7 @@ Type=0x00600
 String1=0x02,Parkgarage
 String2=0x04,Parking garage
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #F6EEB6"
 "1 c #57AED9"
@@ -269,7 +270,7 @@ Type=0x07
 ExtendedLabels=N
 String1=0x02,Flugplatz
 String2=0x04,Airport
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #E0E0E0"
 "1 c #AAAAAA"
@@ -360,7 +361,7 @@ Type=0x00a00
 String1=0x02,Universität
 String2=0x04,University
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #FFFFFF"
 "1 c #85B185"
@@ -406,7 +407,7 @@ Type=0x0b
 ExtendedLabels=N
 String1=0x02,Krankenhaus
 String2=0x04,Hospital
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #FFFFFF"
 "1 c #FF9090"
@@ -497,7 +498,7 @@ Type=0x0d
 ExtendedLabels=N
 String1=0x02,Naturschutzgebiet
 String2=0x04,Nature reserve
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c none"
 "1 c #C5C5C5"
@@ -723,7 +724,7 @@ Type=0x01200
 String1=0x02,Fussgängerzone
 String2=0x04,Pedestrian
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #FFFF8B"
 "1 c #BD9500"
@@ -789,7 +790,7 @@ Type=0x15
 ExtendedLabels=N
 String1=0x02,Naturwald
 String2=0x04,Natural woodland
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #00C000"
 "1 c #A0FF64"
@@ -972,6 +973,51 @@ Xpm="32 32 4 1"
 "00000000000000000000000000000000"
 "00000000000000000000000000000000"
 "00000000000000000000000000000000"
+;12345678901234567890123456789012
+[end]
+
+[_polygon]
+Type=0x1f
+ExtendedLabels=N
+String1=0x02,Tourismus
+String2=0x04,Tourism
+Xpm="32 32 4 1"
+"0 c #004400"
+"1 c #BDFF8B"
+"2 c #BDFF8B"
+"3 c #004400"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111011111111111111101"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111100111111111111110011"
+"11111111111011011111111111101101"
+"11111111011011011111111101101101"
+"11111111111100111111111111110011"
+"11111111111111111111111111111111"
+"11111111111111101111111111111110"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11111101111111111111110111111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
+"11110011111111111111001111111111"
+"11101101111111111110110111111111"
+"01101101111111110110110111111111"
+"11110011111111111111001111111111"
+"11111111111111111111111111111111"
+"11111110111111111111111011111111"
+"11111111111111111111111111111111"
+"11111111111111111111111111111111"
 ;12345678901234567890123456789012
 [end]
 
@@ -1213,7 +1259,7 @@ Xpm="0 0 2 0"
 [_polygon]
 Type=0x02800
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000B4"
@@ -1314,7 +1360,7 @@ Type=0x2c
 ExtendedLabels=N
 String1=0x02,Weinanbau
 String2=0x04,Vineyard
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #00FF40"
 "1 c #7B006A"
@@ -1448,7 +1494,7 @@ Xpm="32 32 4 1"
 [_polygon]
 Type=0x03200
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000B4"
@@ -1504,7 +1550,7 @@ Type=0x3c
 ExtendedLabels=N
 String0=0x02,See
 String1=0x04,Lake
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000B4"
@@ -1560,7 +1606,7 @@ Type=0x3e
 ExtendedLabels=N
 String0=0x02,See
 String1=0x04,Lake
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000BA"
@@ -1591,7 +1637,7 @@ Type=0x46
 ExtendedLabels=N
 String0=0x02,Fluss
 String1=0x04,River
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #7BCAFF"
 "1 c #0000BA"
@@ -1612,7 +1658,7 @@ Type=0x4e
 ExtendedLabels=N
 String1=0x02,Obstgarten
 String2=0x04,Orchard
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 32 4 1"
 "0 c #00FF40"
 "1 c #FFCA41"
@@ -2736,7 +2782,7 @@ Type=0x10F1B
 String1=0x02,Öffentliches Gebäude
 String2=0x04,official Building
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 xpm="0 0 1 0"
 "0 c #399541"
 [end]
@@ -3841,7 +3887,7 @@ String1=0x02,Straßenbahn
 String2=0x04,Tram
 Useorientation=N
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 3 4 1"
 "0 c #737373"
 "1 c none"
@@ -3858,7 +3904,7 @@ String1=0x02,Straßenbahn
 String2=0x04,Tram
 Useorientation=N
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 3 4 1"
 "0 c #737373"
 "1 c none"
@@ -3875,7 +3921,7 @@ String1=0x02,Straßenbahn
 String2=0x04,Tram
 Useorientation=N
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 5 4 1"
 "0 c #737373"
 "1 c none"
@@ -3911,7 +3957,7 @@ Type=0x10E11
 String1=0x02,Standseilbahn
 String2=0x04,Funicular
 Useorientation=N
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 3 2 1"
 "0 c #000000"
 "1 c none"
@@ -3965,7 +4011,7 @@ Type=0x10E15
 String1=0x02,Sessellift
 String2=0x04,Chair lift
 Useorientation=N
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 5 2 1"
 "0 c #000000"
 "1 c none"
@@ -3981,7 +4027,7 @@ Type=0x10E16
 String1=0x02,Schlepplift
 String2=0x04,Drag lift
 Useorientation=N
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 5 2 1"
 "0 c #000000"
 "1 c none"
@@ -3997,7 +4043,7 @@ Type=0x10E17
 String1=0x02,Lift
 String2=0x04,Lift
 Useorientation=N
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 5 2 1"
 "0 c #838383"
 "1 c none"
@@ -4013,7 +4059,7 @@ Type=0x10E18
 String1=0x02,Seilbahn
 String2=0x04,Cable car
 Useorientation=N
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="32 5 2 1"
 "0 c #000000"
 "1 c none"
@@ -4174,7 +4220,7 @@ BorderWidth=1
 Useorientation=N
 String1=0x02,Staumauer
 String2=0x04,Dam wall
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #838383"
 "1 c #525252"
@@ -4188,7 +4234,7 @@ BorderWidth=1
 Useorientation=N
 String1=0x02,Wehr
 String2=0x04,Weir
-FontStyle=SmallFont
+FontStyle=Default
 Xpm="0 0 2 0"
 "0 c #000000"
 "1 c #838383"
@@ -4860,7 +4906,7 @@ dayxpm="1 1 2 1" colormode=16
 [_point]
 Type=0x02000
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="16 13 10 1" colormode=32
 "$ c #FFFFFF" alpha=0
 "% c #838383" alpha=0
@@ -4932,7 +4978,7 @@ dayxpm="20 9 24 1" colormode=32
 [_point]
 Type=0x02700
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="16 13 5 1" colormode=32
 "$ c #D5D5D5" alpha=0
 "% c #FFFFFF" alpha=0
@@ -5650,7 +5696,7 @@ Type=0x02c06
 String1=0x02,Park/Garten
 String2=0x04,Park/Garden
 ;Extended at &56C0
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="1 1 2 1" colormode=16
 "$ c #FEFEFE"
 "% c none"
@@ -7557,7 +7603,7 @@ Type=0x05201
 String1=0x02,Schloss
 String2=0x04,Castle
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="12 11 5 1" colormode=32
 "$ c #FFFFFF" alpha=0
 "% c #C5C5C5" alpha=0
@@ -7583,7 +7629,7 @@ Type=0x05202
 String1=0x02,Ruine
 String2=0x04,Ruins
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="16 16 9 1" colormode=32
 "$ c #000000" alpha=15
 "% c #399520" alpha=0
@@ -7618,7 +7664,7 @@ Type=0x05203
 String1=0x01,Fort
 String2=0x02,Fort
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="16 12 2 1" colormode=16
 "$ c #101010"
 "% c none"
@@ -7642,7 +7688,7 @@ Type=0x05204
 String1=0x02,Stadttor
 String2=0x04,City gate
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="16 12 2 1" colormode=16
 "$ c #202020"
 "% c none"
@@ -7666,7 +7712,7 @@ Type=0x05205
 String1=0x02,Monument
 String2=0x04,Monument
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="10 16 4 1" colormode=32
 "$ c #000000" alpha=15
 "% c #FFCA20" alpha=0
@@ -8824,7 +8870,7 @@ dayxpm="16 16 2 1" colormode=16
 Type=0x06600
 String1=0x02,Aussicht
 String2=0x04,Viewpoint
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="14 14 2 1" colormode=16
 "$ c #0000FF"
 "% c none"
@@ -8868,7 +8914,7 @@ dayxpm="16 8 3 1" colormode=16
 Type=0x06609
 String1=0x02,Wiese
 String2=0x04,Meadow
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="2 2 2 1" colormode=16
 "$ c #FFFFFF"
 "% c none"
@@ -8882,7 +8928,7 @@ Type=0x06616
 String1=0x02,Gipfel
 String2=0x04,Peak
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="11 6 2 1" colormode=16
 "$ c #101010"
 "% c none"
@@ -8900,7 +8946,7 @@ Type=0x6618
 String1=0x02,Bergübergang
 String2=0x04,Mountain pass
 ExtendedLabels=Y
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="16 7 3 1" colormode=16
 "$ c #FFCA20"
 "% c #000000"
@@ -9170,7 +9216,7 @@ dayxpm="16 16 4 1" colormode=16
 Type=0x07207
 String1=0x02,Bahnhof
 String2=0x04,Railway Station
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="8 8 2 1" colormode=0
 "$ c #0000B4"
 "% c #0000FF"
@@ -9189,7 +9235,7 @@ dayxpm="8 8 2 1" colormode=0
 Type=0x07208
 String1=0x02,Haltestelle
 String2=0x04,Tram / Bus stop
-FontStyle=SmallFont
+FontStyle=Default
 dayxpm="12 12 7 1" colormode=32
 "$ c #000000" alpha=15
 "% c #BDCA00" alpha=14

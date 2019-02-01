@@ -24,7 +24,7 @@ highway=via_ferrata                          [0x12012 resolution 24]
 highway=path | highway=trail                 [0x12012 resolution 22-22 continue]
 highway=path | highway=trail                 [0x11012 resolution 24-23 continue]
 
-highway=path | highway=trail  
+highway=path | highway=trail
                {
                   add mkgmap:unpaved=1;
                 }                            [0x12 resolution 24 road_class=0 road_speed=0]

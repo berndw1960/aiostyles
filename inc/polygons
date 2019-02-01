@@ -68,6 +68,8 @@ place=island &
 
   place=islet                                   [0x27 resolution 22 continue]
 
+place=square                                    [0x12 resolution 22]
+
 highway=pedestrian &
   (area=yes | mkgmap:mp_created=true)           [0x12 resolution 22]
 
@@ -109,12 +111,18 @@ landuse=farmyard                                [0x2b resolution 22]
 landuse=vineyard                                [0x2c resolution 22]
 landuse=quarry                                  [0x2d resolution 22]
 
+
+#------------------------------------------------------------------------------
+# tourism
 tourism=camp_site                               [0x2e resolution 22]
+tourism=* & area!=no & waterway!=* 
+           {add name='${tourism|subst:"_=> "}'} [0x1f resolution 24]
+
 
 #------------------------------------------------------------------------------
 # sport/leisure
 
-leisure=marina                                     [0x09 resolution 20 continue]
+leisure=marina                                  [0x09 resolution 20 continue]
 
 leisure=common |
 leisure=park |
@@ -174,6 +182,12 @@ natural=marsh | natural=wetland | natural=mud           [0x51 resolution 20]
 natural=beach                                           [0x10F1A resolution 20]
 
 natural=land                                            [0x27 resolution 10]
+
+
+#------------------------------------------------------------------------------
+# man_made can be used on areas or lines
+man_made=* & area!=no {add name='${man_made|subst:"_=> "}'} [0x13 resolution 24]
+
 
 #------------------------------------------------------------------------------
 # buildings
