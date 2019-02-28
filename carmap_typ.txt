@@ -637,7 +637,7 @@ String1=0x02,Bauland
 String2=0x04,Greenfield
 Xpm="32 32 4 1"
 "0 c #A4A4A4"
-"1 c #00CA20"
+"1 c #A0EBAC"
 "2 c #000000"
 "3 c #006541"
 "11110000111100001111000011110000"
@@ -682,7 +682,7 @@ String1=0x02,Baugebiet
 String2=0x04,Construction
 Xpm="32 32 4 1"
 "0 c #A4A4A4"
-"1 c #FF6500"
+"1 c #FFE8D9"
 "2 c #000000"
 "3 c #BD6500"
 "11110000111100001111000011110000"
@@ -1272,7 +1272,7 @@ ExtendedLabels=N
 String1=0x02,Acker
 String2=0x04,Farm
 Xpm="32 32 4 1"
-"0 c #FFE080"
+"0 c #FFF4D3"
 "1 c #808040"
 "2 c #7B0020"
 "3 c #BD6541"
