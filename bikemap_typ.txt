@@ -1452,7 +1452,7 @@ ExtendedLabels=N
 String1=0x02,Campingplatz
 String2=0x04,Camp site
 Xpm="32 32 4 1"
-"0 c #C0C080"
+"0 c #D8D8B2"
 "1 c #00BB00"
 "2 c #006500"
 "3 c #004400"
