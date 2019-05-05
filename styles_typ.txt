@@ -2926,7 +2926,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x02
-String1=0x02,Schnellstra√üe
+String1=0x02,Schnellstraﬂe
 String2=0x04,Trunk Road
 Useorientation=N
 Xpm="32 1 2 1"
@@ -2937,7 +2937,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x03
-String1=0x02,Bundesstra√üe
+String1=0x02,Bundesstraﬂe
 String2=0x04,Primary Road
 Useorientation=N
 Xpm="32 1 2 1"
@@ -2948,7 +2948,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x04
-String1=0x02,Landesstra√üe
+String1=0x02,Landesstraﬂe
 String2=0x04,Secondary Road
 Useorientation=N
 Xpm="32 1 2 1"
@@ -2959,7 +2959,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x05
-String1=0x02,Kreisstra√üe
+String1=0x02,Kreisstraﬂe
 String2=0x04,Tertiary Road
 Useorientation=N
 Xpm="32 1 2 1"
@@ -2970,7 +2970,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x06
-String1=0x02,Ortststra√üe
+String1=0x02,Ortststraﬂe
 String2=0x04,Residential
 Useorientation=N
 Xpm="32 1 2 1"
@@ -3019,7 +3019,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x0B
-String1=0x02,Unb. Stra√üe
+String1=0x02,Unb. Straﬂe
 String2=0x04,Road
 Useorientation=N
 Xpm="32 1 2 1"
@@ -3175,7 +3175,7 @@ Xpm="0 0 4 0"
 
 [_line]
 Type=0x1A
-String1=0x02,F√§hre
+String1=0x02,F‰hre
 String2=0x04,Ferry
 Useorientation=N
 Xpm="32 2 2 1"
@@ -3474,7 +3474,7 @@ Xpm="32 5 2 1"
 
 [_line]
 Type=0x10101
-String1=0x02,Autobahnbr√ºcke
+String1=0x02,Autobahnbr¸cke
 String2=0x04,Motorway bridge
 Useorientation=N
 Xpm="32 8 2 1"
@@ -3492,7 +3492,7 @@ Xpm="32 8 2 1"
 
 [_line]
 Type=0x10102
-String1=0x02,Br√ºcke
+String1=0x02,Br¸cke
 String2=0x04,Bridge
 Useorientation=N
 Xpm="32 7 2 1"
@@ -3509,7 +3509,7 @@ Xpm="32 7 2 1"
 
 [_line]
 Type=0x10103
-String1=0x02,Br√ºcke
+String1=0x02,Br¸cke
 String2=0x04,Bridge
 Useorientation=N
 Xpm="32 6 2 1"
@@ -3966,7 +3966,7 @@ Xpm="32 6 2 1"
 
 [_line]
 Type=0x10E0D
-String1=0x02,Stra√üenbahn
+String1=0x02,Straﬂenbahn
 String2=0x04,Tram
 Useorientation=N
 ExtendedLabels=Y
@@ -3983,7 +3983,7 @@ Xpm="32 3 4 1"
 
 [_line]
 Type=0x10E0E
-String1=0x02,Stra√üenbahn
+String1=0x02,Straﬂenbahn
 String2=0x04,Tram
 Useorientation=N
 ExtendedLabels=Y
@@ -4000,7 +4000,7 @@ Xpm="32 3 4 1"
 
 [_line]
 Type=0x10E0F
-String1=0x02,Stra√üenbahn
+String1=0x02,Straﬂenbahn
 String2=0x04,Tram
 Useorientation=N
 ExtendedLabels=Y
@@ -4286,7 +4286,7 @@ Xpm="32 4 2 1"
 
 [_line]
 Type=0x10F05
-String1=0x02,Steinbl√∂cke
+String1=0x02,Steinblˆcke
 String2=0x04,Blocks
 Useorientation=N
 Xpm="32 2 2 1"
@@ -4367,7 +4367,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x11002
 Useorientation=N
-String1=0x02,Schnellstra√üe
+String1=0x02,Schnellstraﬂe
 String2=0x04,Trunk Road
 LineWidth=4
 BorderWidth=1
@@ -4380,7 +4380,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x11003
 Useorientation=N
-String1=0x02,Bundesstra√üe
+String1=0x02,Bundesstraﬂe
 String2=0x04,Primary Road
 LineWidth=4
 BorderWidth=1
@@ -4393,7 +4393,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x11004
 Useorientation=N
-String1=0x02,Landesstra√üe
+String1=0x02,Landesstraﬂe
 String2=0x04,Secondary Road
 LineWidth=3
 BorderWidth=1
@@ -4406,7 +4406,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x11005
 Useorientation=N
-String1=0x02,Kreisstra√üe
+String1=0x02,Kreisstraﬂe
 String2=0x04,Tertiary Road
 LineWidth=3
 BorderWidth=1
@@ -4419,7 +4419,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x11006
 Useorientation=N
-String1=0x02,Ortststra√üe
+String1=0x02,Ortststraﬂe
 String2=0x04,Residential
 LineWidth=2
 BorderWidth=1
@@ -4445,7 +4445,7 @@ Xpm="0 0 1 0"
 [_line]
 Type=0x11008
 Useorientation=N
-String1=0x02,Wohnstra√üe
+String1=0x02,Wohnstraﬂe
 String2=0x04,Livingstreet
 LineWidth=2
 BorderWidth=1
@@ -4615,7 +4615,7 @@ Xpm="0 0 1 0"
 
 [_line]
 Type=0x1101A
-String1=0x02,F√§hre
+String1=0x02,F‰hre
 String2=0x04,Ferry
 Useorientation=N
 Xpm="32 2 2 1"
@@ -4627,7 +4627,7 @@ Xpm="32 2 2 1"
 
 [_line]
 Type=0x1101B
-String1=0x02,Fussg√§ngerzone
+String1=0x02,Fussg‰ngerzone
 String2=0x04,Pedestrian
 Useorientation=N
 Xpm="32 3 2 1"
@@ -4667,7 +4667,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x12002
 Useorientation=N
-String1=0x02,Schnellstra√üe
+String1=0x02,Schnellstraﬂe
 String2=0x04,Trunk Road
 LineWidth=2
 BorderWidth=1
@@ -4680,7 +4680,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x12003
 Useorientation=N
-String1=0x02,Bundesstra√üe
+String1=0x02,Bundesstraﬂe
 String2=0x04,Primary Road
 LineWidth=2
 BorderWidth=1
@@ -4693,7 +4693,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x12004
 Useorientation=N
-String1=0x02,Landes-/Staatsstra√üe
+String1=0x02,Landes-/Staatsstraﬂe
 String2=0x04,Secondary Road
 LineWidth=2
 BorderWidth=1
@@ -4706,7 +4706,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x12005
 Useorientation=N
-String1=0x02,Kreisstra√üe
+String1=0x02,Kreisstraﬂe
 String2=0x04,Tertiary Road
 LineWidth=2
 BorderWidth=1
@@ -4719,7 +4719,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x12006
 Useorientation=N
-String1=0x02,Ortsstra√üe
+String1=0x02,Ortsstraﬂe
 String2=0x04,Residential
 LineWidth=1
 BorderWidth=1
@@ -4745,7 +4745,7 @@ Xpm="0 0 1 0"
 [_line]
 Type=0x12008
 Useorientation=N
-String1=0x02,Wohnstra√üe
+String1=0x02,Wohnstraﬂe
 String2=0x04,Livingstreet
 LineWidth=1
 BorderWidth=1
@@ -4824,7 +4824,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x12015
-String1=0x02,Kreisstra√üe
+String1=0x02,Kreisstraﬂe
 String2=0x04,Tertiary
 LineWidth=1
 BorderWidth=1
@@ -4847,7 +4847,7 @@ Xpm="32 1 2 1"
 
 [_line]
 Type=0x12017
-String1=0x02,Ortsstra√üe
+String1=0x02,Ortsstraﬂe
 String2=0x04,Residential
 LineWidth=1
 BorderWidth=0
@@ -4860,7 +4860,7 @@ Xpm="0 0 1 0"
 
 [_line]
 Type=0x12018
-String1=0x02,Wohnstra√üe
+String1=0x02,Wohnstraﬂe
 String2=0x04,Livingstreet
 Useorientation=N
 LineWidth=1
@@ -4873,7 +4873,7 @@ Xpm="0 0 1 0"
 
 [_line]
 Type=0x1201B
-String1=0x02,Fussg√§ngerzone
+String1=0x02,Fussg‰ngerzone
 String2=0x04,Pedestrian
 Useorientation=N
 Xpm="32 1 2 1"
@@ -5373,7 +5373,7 @@ dayxpm="16 16 6 1" colormode=32
 
 [_point]
 Type=0x2913
-String1=0x02,Vorfahrt gew√§hren
+String1=0x02,Vorfahrt gew‰hren
 String2=0x04,Give way
 dayxpm="16 16 3 1" colormode=16
 "$ c #FF0000"
@@ -5613,7 +5613,7 @@ dayxpm="16 16 4 1" colormode=32
 [_point]
 Type=0x02b06
 String1=0x00,alpine_hut
-String2=0x02,Bergh√ºtte
+String2=0x02,Bergh¸tte
 String3=0x04,alpine hut
 dayxpm="16 16 5 1" colormode=16
 "$ c #0082D4"
@@ -5669,7 +5669,7 @@ dayxpm="16 10 9 1" colormode=16
 
 [_point]
 Type=0x2B09
-String1=0x02,Chalet, Sennh√ºtte
+String1=0x02,Chalet, Sennh¸tte
 String2=0x04,Chalet
 dayxpm="16 16 8 1" colormode=32
 "$ c #838383" alpha=0
@@ -5896,7 +5896,7 @@ dayxpm="16 16 13 1" colormode=16
 
 [_point]
 Type=0x2C11
-String1=0x02,Gedenkst√§tte
+String1=0x02,Gedenkst‰tte
 String2=0x04,Memorial
 dayxpm="7 16 8 1" colormode=32
 "$ c #000000" alpha=15
@@ -6122,7 +6122,7 @@ dayxpm="12 16 9 1" colormode=32
 
 [_point]
 Type=0x2E07
-String1=0x02,Bekleidungsgesch√§ft
+String1=0x02,Bekleidungsgesch‰ft
 String2=0x04,Clothes
 dayxpm="16 16 9 1" colormode=32
 "$ c #7B958B" alpha=0
@@ -6188,7 +6188,7 @@ dayxpm="16 16 9 1" colormode=32
 
 [_point]
 Type=0x2E09
-String1=0x02,M√∂belgesch√§ft
+String1=0x02,Mˆbelgesch‰ft
 String2=0x04,Furniture
 dayxpm="14 16 9 1" colormode=32
 "$ c #7B9541" alpha=0
@@ -6221,7 +6221,7 @@ dayxpm="14 16 9 1" colormode=32
 
 [_point]
 Type=0x2E0A
-String1=0x02,Spezialit√§ten
+String1=0x02,Spezialit‰ten
 String2=0x04,Speciality Retail
 dayxpm="16 16 3 1" colormode=0
 "$ c #BD65B4"
@@ -6407,7 +6407,7 @@ dayxpm="15 16 6 1" colormode=16
 
 [_point]
 Type=0x02e14
-String1=0x02,B√ºcher/Schreibwaren
+String1=0x02,B¸cher/Schreibwaren
 String2=0x04,Books/Stationery
 dayxpm="12 16 10 1" colormode=16
 "$ c #313131"
@@ -6474,7 +6474,7 @@ dayxpm="16 16 9 1" colormode=32
 
 [_point]
 Type=0x2E16
-String1=0x02,Getr√§nkehandel
+String1=0x02,Getr‰nkehandel
 String2=0x04,Beverages
 dayxpm="16 16 9 1" colormode=32
 "$ c #313131" alpha=0
@@ -6537,7 +6537,7 @@ dayxpm="16 13 9 1" colormode=32
 
 [_point]
 Type=0x2E19
-String1=0x02,W√§scherei
+String1=0x02,W‰scherei
 String2=0x04,Laundry
 dayxpm="11 16 9 1" colormode=32
 "$ c #737373" alpha=1
@@ -6692,7 +6692,7 @@ dayxpm="24 24 5 1" colormode=0
 
 [_point]
 Type=0x2F0F
-String1=0x02,Blumenh√§ndler
+String1=0x02,Blumenh‰ndler
 String2=0x04,Florist
 dayxpm="14 16 9 1" colormode=32
 "$ c #FFCA41" alpha=0
@@ -6862,7 +6862,7 @@ dayxpm="16 15 4 1" colormode=32
 
 [_point]
 Type=0x3000
-String1=0x02,√ñffentl.Geb√§ude
+String1=0x02,√ñffentl.Geb‰ude
 String2=0x04,public Building
 dayxpm="1 1 2 1" colormode=16
 "$ c #FFFFFF"
@@ -8154,7 +8154,7 @@ dayxpm="16 16 7 1" colormode=32
 
 [_point]
 Type=0x5409
-String1=0x02,Bogenschie√üen
+String1=0x02,Bogenschieﬂen
 String2=0x04,Archery
 dayxpm="16 16 10 1" colormode=16
 "$ c #FFFF00"
@@ -8373,7 +8373,7 @@ dayxpm="16 10 3 1" colormode=16
 
 [_point]
 Type=0x6402
-String1=0x02,Schutzh√ºtte
+String1=0x02,Schutzh¸tte
 String2=0x04,Shelter
 dayxpm="16 16 9 1" colormode=32
 "$ c #39CAFF" alpha=0
@@ -8406,7 +8406,7 @@ dayxpm="16 16 9 1" colormode=32
 
 [_point]
 Type=0x6406
-String1=0x02,Bahn√ºbergang
+String1=0x02,Bahn¸bergang
 String2=0x04,level crossing
 dayxpm="9 15 10 1" colormode=16
 "$ c #BD0020"
@@ -8748,7 +8748,7 @@ dayxpm="16 16 9 1" colormode=16
 
 [_point]
 Type=0x641C
-String1=0x02,Wasserm√ºhle
+String1=0x02,Wasserm¸hle
 String2=0x04,Watermill
 dayxpm="20 16 6 1" colormode=16
 "$ c #101010"
@@ -8839,7 +8839,7 @@ dayxpm="16 16 5 1" colormode=32
 
 [_point]
 Type=0x641F
-String1=0x02,Windm√ºhle
+String1=0x02,Windm¸hle
 String2=0x04,Windmill
 dayxpm="16 16 3 1" colormode=16
 "$ c #000000"
@@ -8991,7 +8991,7 @@ dayxpm="11 6 2 1" colormode=16
 
 [_point]
 Type=0x6618
-String1=0x02,Berg√ºbergang
+String1=0x02,Berg¸bergang
 String2=0x04,Mountain pass
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -9011,7 +9011,7 @@ dayxpm="16 7 3 1" colormode=16
 
 [_point]
 Type=0x06619
-String1=0x02,H√∂hle
+String1=0x02,Hˆhle
 String2=0x04,Cave
 dayxpm="16 16 2 1" colormode=16
 "$ c #000000"
