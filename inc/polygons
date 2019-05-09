@@ -219,11 +219,15 @@ building=church |
   building=cathredral |
   building=chapel |
   building=public |
+  building=public_building |
+  building=civic |
   building=school                                 [0x10f1b resolution 23]
 
 building=* &
   building!=no &
   building!=public &
+  building!=public_building &|
+  building!=civic &
   building!=school &
   building!=church &
   building!=cathredral &
