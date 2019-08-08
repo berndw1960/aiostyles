@@ -25,8 +25,8 @@ leisure=water_park { add sport=swimming }
 #amenity=restaurant                 [0x13 resolution 24]
 
 amenity=place_of_worship &
- building!=*                    [0x10f1b resolution 22]
-
+            building!=*             [0x10f1b resolution 22]
+ 
 amenity=grave_yard | landuse=cemetery         [0x1a resolution 22]
 
 amenity=hospital | building=hospital        [0x0b resolution 20]
@@ -99,7 +99,8 @@ landuse=greenfield                              [0x10 resolution 20]
 landuse=construction                            [0x11 resolution 20]
 
 landuse=village_green |
-landuse=grass                                   [0x10f11 resolution 22]
+landuse=grass  |
+landuse=religious                               [0x10f11 resolution 22]
 
 landuse=allotments                              [0x10f08 resolution 22]
 landuse=orchard                                 [0x4e resolution 22]

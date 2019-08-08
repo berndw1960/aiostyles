@@ -1,14 +1,18 @@
 #------------------------------------------------------------------------------
 # water
 
-
+waterway=riverbank & intermittent=yes                                   [0x4c resolution 20]
 waterway=riverbank                                                      [0x46 resolution 20]
 
-landuse=reservoir | landuse=basin                                       [0x3f resolution 22]
-
-natural=water & water=reservoir                                         [0x3f resolution 22]
+natural=water & intermittent=yes                                        [0x4c resolution 18]
 natural=water                                                           [0x3c resolution 18]
+
 natural=waterfall | waterway=waterfall                                  [0x47 resolution 21]
 natural=bay                                                             [0x3d resolution 18]
-natural=sea { add mkgmap:skipSizeFilter=true; set mkgmap:drawLevel=2 }  [0x32 resolution 10]
 
+# landuse without natural=water, maybe dry at most of the times
+
+landuse=basin & basin=detention               {add intermittent=yes;}
+
+(landuse=reservoir | landuse=basin) & intermittent=yes                  [0x4c resolution 20]
+landuse=reservoir | landuse=basin                                       [0x3f resolution 20]
