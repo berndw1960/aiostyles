@@ -1,18 +1,28 @@
 #------------------------------------------------------------------------------
-# water
+# basins and reservoirs, maybe dry at most of the times,
+# are artifical constructions and shouldn't be handled as natural=water
+# colors are the same, but the hints are different
+
+# covered basins and reservoirs handled as buildings as they are.
+
+(landuse=reservoir | landuse=basin) & covered=yes                       [0x13 resolution 22]
+
+# uncovered basin and reservoir, detention handled as intermittent
+
+landuse=basin & basin=detention               {add intermittent=yes;}
+(landuse=reservoir | landuse=basin) & intermittent=yes                  [0x3e resolution 20]
+landuse=reservoir | landuse=basin                                       [0x3f resolution 20]
+
+# waterpolygons with more or less natural characteristics
 
 waterway=riverbank & intermittent=yes                                   [0x4c resolution 20]
 waterway=riverbank                                                      [0x46 resolution 20]
 
-natural=water & intermittent=yes                                        [0x4c resolution 18]
-natural=water                                                           [0x3c resolution 18]
-
 natural=waterfall | waterway=waterfall                                  [0x47 resolution 21]
 natural=bay                                                             [0x3d resolution 18]
 
-# landuse without natural=water, maybe dry at most of the times
+# natural=water as catchall
 
-landuse=basin & basin=detention               {add intermittent=yes;}
+natural=water & intermittent=yes                                        [0x4c resolution 18]
+natural=water                                                           [0x3c resolution 18]
 
-(landuse=reservoir | landuse=basin) & intermittent=yes                  [0x4c resolution 20]
-landuse=reservoir | landuse=basin                                       [0x3f resolution 20]

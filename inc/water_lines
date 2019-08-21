@@ -1,5 +1,3 @@
-natural=coastline                                     [0x15 resolution 12]
-
 waterway=river & intermittent=yes                     [0x26 resolution 18]
 waterway=river                                        [0x1f resolution 18]
 
@@ -13,3 +11,5 @@ waterway=drain & intermittent=yes                     [0x26 resolution 22]
 waterway=drain                                        [0x18 resolution 22]
 
 waterway=rapids|waterway=waterfall                    [0x1f resolution 22]
+
+natural=coastline                                     [0x15 resolution 12]
