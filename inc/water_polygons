@@ -7,7 +7,7 @@
 
 (landuse=reservoir | landuse=basin) & covered=yes                       [0x13 resolution 22]
 
-# uncovered basin and reservoir, detention handled as intermittent
+# uncovered basin and reservoir
 
 landuse=basin & basin=detention               {add intermittent=yes;}
 (landuse=reservoir | landuse=basin) & intermittent=yes                  [0x3e resolution 20]

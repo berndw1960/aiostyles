@@ -55,11 +55,12 @@ highway=piste |
 highway=no |
   highway=none                       {delete highway}
 
-# Hide unaccessible tunnels
-highway=* & tunnel=yes &
-  (access=private|access=no) &
-  foot!=* &
-  bicycle!=*                        {delete highway;delete junction}
+# Hide unaccessible tunnels (removed while overwhelming)
+# highway=* & tunnel=yes &
+#  (access=private|access=no) &
+#  foot!=* &
+#  bicycle!=*                        {echotags ''}
+#  bicycle!=*                        {delete highway;delete junction}
 
 # Disable dead-end-checks for unaccessible oneways
 highway=* & oneway=yes &
