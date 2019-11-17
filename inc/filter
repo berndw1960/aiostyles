@@ -47,15 +47,14 @@ historic~'.*;.*'
                 }
 
 # check width and maxwidth
+highway=* & width ~'.*,.*'
+                {
+                  set width='${width|subst:",=>."}'
+                }
 
 highway=* & width ~'.*cm'
                 {
                   delete width
-                }
-
-highway=* & width ~'.*;.*'
-                {
-                  set width='${width|part:}';
                 }
 
 highway=* & width ~'.*m'
@@ -63,9 +62,9 @@ highway=* & width ~'.*m'
                   set width='${width|part:"m"}';
                 }
 
-highway=* & width ~'.*,.*'
+highway=* & width ~'.*;.*'
                 {
-                  set width='${width|subst:",=>."}'
+                  set width='${width|part:}';
                 }
 
 highway=* & width ~'.*-.*'
