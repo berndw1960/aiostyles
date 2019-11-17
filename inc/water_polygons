@@ -20,10 +20,10 @@ waterway=riverbank                                                      [0x46 re
 
 natural=waterfall | waterway=waterfall                                  [0x47 resolution 21]
 natural=bay                                                             [0x3d resolution 18]
-natural=sea { add mkgmap:skipSizeFilter=true; set mkgmap:drawLevel=2 }  [0x32 resolution 10]
 
 # natural=water as catchall
 
 natural=water & intermittent=yes                                        [0x4c resolution 18]
 natural=water                                                           [0x3c resolution 18]
 
+natural=sea { add mkgmap:skipSizeFilter=true; set mkgmap:drawLevel=2 }  [0x32 resolution 10]
