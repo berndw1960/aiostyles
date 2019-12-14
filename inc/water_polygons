@@ -19,7 +19,9 @@ waterway=riverbank & intermittent=yes                                   [0x4c re
 waterway=riverbank                                                      [0x46 resolution 20]
 
 natural=waterfall | waterway=waterfall                                  [0x47 resolution 21]
-natural=bay                                                             [0x3d resolution 18]
+
+# natural=bay only as point in the map, see inc/points
+#natural=bay                                                             [0x3d resolution 18]
 
 # natural=water as catchall
 

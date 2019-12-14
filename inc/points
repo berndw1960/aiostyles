@@ -134,7 +134,7 @@ man_made=windmill & mkgmap:area2poi!=true         [0x641f resolution 24]
 amenity=fountain                                  [0x6500 resolution 24]
 #natural=Arroyo 0x6501
 #natural=sand bar 0x6502
-natural=bay & name=*                              [0x6503 resolution 24]
+natural=bay & name=* &  mkgmap:area2poi=true      [0x6503 resolution 24]
 #natural=bend 0x6504
 #natural=channel 0x6506
 #natural=cove 0x6507
@@ -149,7 +149,7 @@ landuse=reservoir                                 [0x650f resolution 24]
 #natural=sea 0x6510
 natural=spring                                    [0x6511 resolution 24]
 #natural=stream 0x6512
-natural=wetland  & mkgmap:area2poi!=true          [0x6513 resolution 23]
+natural=wetland & mkgmap:area2poi!=true          [0x6513 resolution 23]
 # 0x65ss
 
 # Land Features
