@@ -22,7 +22,7 @@ add-pois-to-areas
 pois-to-areas-placement=entrance=main;entrance=yes;building=entrance
 link-pois-to-ways
 preserve-element-order
-copyright-message=OpenStreetMap contributors, ODbL. See: http://www.openstreetmap.org/copyright
+copyright-message=OpenStreetMap contributors, ODbL. See: https://www.openstreetmap.org/copyright
 process-exits
 process-destination
 housenumbers

@@ -134,7 +134,9 @@ man_made=windmill & mkgmap:area2poi!=true         [0x641f resolution 24]
 amenity=fountain                                  [0x6500 resolution 24]
 #natural=Arroyo 0x6501
 #natural=sand bar 0x6502
-natural=bay & name=* &  mkgmap:area2poi=true      [0x6503 resolution 24]
+(natural=bay | natural=fjord | natural=strait) &
+   name=* &
+   mkgmap:area2poi=true                            [0x6503 resolution 24]
 #natural=bend 0x6504
 #natural=channel 0x6506
 #natural=cove 0x6507
@@ -827,5 +829,5 @@ highway=mini_roundabout                                                   [0x291
 highway=passing_place                                                     [0x2916 resolution 24]
 highway=crossing                                                          [0x2917 resolution 24]
 
-highway=speed_camera                                                      [0x2918 resolution 24]
+#highway=speed_camera                                                      [0x2918 resolution 24]
 #man_made=surveillance                                                    [0x2918 resolution 24]

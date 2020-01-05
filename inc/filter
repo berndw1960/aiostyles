@@ -1,3 +1,24 @@
+# remove razed:* keys/value pairs
+
+razed:railway=* & railway=*
+                {
+                  delete railway
+                }
+
+razed:highway=* & highway=*
+                {
+                  delete highway
+                  }
+
+razed:building=* & building=*
+                {
+                  deletealltags
+                  }
+
+razed:man_made=*
+                {
+                  deletealltags
+                  }
 
 ## only use the first value before ';'
 
@@ -86,3 +107,4 @@ highway=* & maxwidth ~'.*,.*'
                 {
                   set maxwidth='${maxwidth|subst:",=>."}'
                 }
+
