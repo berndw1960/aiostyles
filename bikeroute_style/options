@@ -18,7 +18,7 @@ levels = 0:24, 1:23, 2:22, 3:21, 4:20, 5:18, 6:17, 7:16
 #pois-to-areas-placement=entrance=main;entrance=yes;building=entrance
 #link-pois-to-ways
 preserve-element-order
-copyright-message=OpenStreetMap contributors, ODbL. See: http://www.openstreetmap.org/copyright
+copyright-message=OpenStreetMap contributors, ODbL. See: https://www.openstreetmap.org/copyright
 #process-exits
 #process-destination
 #housenumbers
@@ -34,6 +34,8 @@ merge-lines
 #index
 transparent
 #route
+# unicode didn't work on some Oregon with newer firmware
+# not tested on other PNAs
 latin1
 #unicode
 

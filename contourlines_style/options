@@ -20,7 +20,10 @@
 
 reduce-point-density=20
 transparent
+# unicode didn't work on some Oregon with newer firmware
+# not tested on other PNAs
 latin1
+#unicode
 
 ## if you want to integrate the DEM data in the counterlines layer
 ## uncomment the following lines 
