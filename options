@@ -16,7 +16,6 @@
 
 
 ## official and documented options
-show-profiles=1
 split-name-index
 add-pois-to-areas
 pois-to-areas-placement=entrance=main;entrance=yes;building=entrance
