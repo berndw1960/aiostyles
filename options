@@ -3,6 +3,10 @@
 # Style options.
 #
 
+## copyright message
+
+copyright-message=OpenStreetMap contributors, ODbL. See: https://www.openstreetmap.org/copyright
+
 # The levels specification for this style
 #
 # Example:
@@ -14,19 +18,18 @@
 ## experimental options
 
 
-
 ## official and documented options
 split-name-index
 add-pois-to-areas
 pois-to-areas-placement=entrance=main;entrance=yes;building=entrance
 link-pois-to-ways
 preserve-element-order
-copyright-message=OpenStreetMap contributors, ODbL. See: https://www.openstreetmap.org/copyright
 process-exits
 process-destination
 housenumbers
 check-roundabouts
 check-roundabout-flares
+report-dead-ends
 make-opposite-cycleways
 min-size-polygon=8
 reduce-point-density=4

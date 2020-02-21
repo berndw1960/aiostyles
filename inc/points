@@ -177,9 +177,16 @@ natural=volcano                                   [0x660e resolution 23]
 natural=ridge                                     [0x6613 resolution 24]
 natural=rock                                      [0x6614 resolution 24]
 #natural=slope 0x6615
+
+# convert elevations
+natural=peak & ele ~'.*ft'
+                {
+                  set ele='${ele|conv:"ft=>m"}'
+                }
 natural=peak & ele>3500                           [0x6616 resolution 22]
 natural=peak & ele>2300                           [0x6616 resolution 23]
 natural=peak | natural=hill                       [0x6616 resolution 24]
+
 #natural=valley 0x6617
 #natural=woods 0x6618
 mountain_pass=yes                                 [0x6618 resolution 23 continue]

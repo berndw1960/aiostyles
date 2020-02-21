@@ -106,5 +106,3 @@ highway=* & maxwidth ~'.*m'
 highway=* & maxwidth ~'.*,.*'
                 {
                   set maxwidth='${maxwidth|subst:",=>."}'
-                }
-

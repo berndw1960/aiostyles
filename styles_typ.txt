@@ -1597,7 +1597,7 @@ Type=0x3d
 ExtendedLabels=N
 String1=0x02,Bucht
 String2=0x04,Bay
-FontStyle=NoLabel (invisible)
+FontStyle=SmallFont
 Xpm="32 32 2 1"
 "0 c none"
 "1 c #0000B4"
