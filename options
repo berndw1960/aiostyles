@@ -16,7 +16,7 @@ copyright-message=OpenStreetMap contributors, ODbL. See: https://www.openstreetm
 #levels = 0:24, 1:22, 2:21, 3:20, 4:18, 5:17, 6:16
 
 ## experimental options
-
+dead-ends=fixme,FIXME,noexit,barrier
 
 ## official and documented options
 split-name-index

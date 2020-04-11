@@ -5589,7 +5589,7 @@ dayxpm="14 7 2 1" colormode=0
 
 [_point]
 Type=0x2918
-String1=0x02,ÃÂberwachungskamera
+String1=0x02,Überwachungskamera
 String2=0x04,Surveillance
 dayxpm="16 16 4 1" colormode=32
 "$ c #414141" alpha=3
@@ -6953,7 +6953,7 @@ dayxpm="16 15 4 1" colormode=32
 
 [_point]
 Type=0x3000
-String1=0x02,ÃÂffentl.Gebäude
+String1=0x02,öffentl.Gebäude
 String2=0x04,public Building
 dayxpm="1 1 2 1" colormode=16
 "$ c #FFFFFF"
