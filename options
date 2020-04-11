@@ -43,4 +43,5 @@ transparent
 # unicode didn't work on some Oregon with newer firmware
 # not tested on other PNAs
 latin1
+code-page=1252
 #unicode

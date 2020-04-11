@@ -2,10 +2,10 @@
 ;created : 07-08-2018
 ;------------------------------
 [_id]
-ProductCode=46
-FID=5
+;ProductCode=46
+;FID=5
 ;Header=5B
-CodePage=1252
+;CodePage=1252
 [end]
 
 [_drawOrder]
