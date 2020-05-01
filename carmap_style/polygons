@@ -1,7 +1,7 @@
 # -------------------------------------------------------------------
 #  common rules under inc/
 
-include 'carmap_polygons';
+include '../inc/carmap_polygons';
 include '../inc/water_polygons';
 
 

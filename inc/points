@@ -162,7 +162,7 @@ tourism=viewpoint & natural!=*                    [0x6600 resolution 24]
 natural=beach                                     [0x6604 resolution 24]
 amenity=bench                                     [0x6605 resolution 24]
 natural=cape                                      [0x6606 resolution 24]
-natural=cliff                                     [0x6607 resolution 24]
+natural=cliff|natural=bare_rock                   [0x6607 resolution 24]
 natural=crater                                    [0x6607 resolution 23]
 landuse=meadow & name=*                           [0x6609 resolution 23 continue]
 #forest 0x660a
