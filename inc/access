@@ -125,8 +125,8 @@ highway=*
 highway=*
     & (maxwidth<1.0 | width<1.0)
                 {
-                  add foot=yes ;
-                  addaccess 'no' ;
+                  add foot=yes;
+                  set vehicle=no;
                 }
 
 ## mkgmap:unpaved=1 is set in pre_lines, here only check for some types of ways
@@ -167,11 +167,10 @@ taxi ~ '.*(designated|permissive|official|allowed).*'                       { se
 emergency ~ '.*(designated|permissive|official|allowed).*'                  { set emergency=yes }
 access ~ '.*(designated|permissive|official|allowed).*'                     { set access=yes }
 
+## some access rules for node objects, this rules would be applied to short part of a way,
+## if the node is a member of this way
 
-
-
-
-
+# add access = yes to enable routing through this barriers
 railway=level_crossing &
     crossing:barrier!=no
           {
