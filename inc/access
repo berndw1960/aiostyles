@@ -90,13 +90,10 @@ access ~ '.*(agricultural|forestry).*'       { add foot=yes ; addaccess 'no' ; }
 # throughroute cannot be handled differently for different vehicle types
 # Therefore we have to choose one vehicle type - and the winner is: motorcar
 
-access ~ '.*(customers|delivery|destination).*'
-                {
-                  set mkgmap:throughroute=no;
-                  set motorcar=yes
-                  }
-
-motorcar ~ '.*(customers|delivery|destination).*'
+access ~ '.*(customers|delivery|destination).*' |
+motor_vehicle ~ '.*(customers|delivery|destination).*' |
+motorcar ~ '.*(customers|delivery|destination).*' |
+vehicle ~ '.*(customers|delivery|destination).*'
                 {
                   set mkgmap:throughroute=no;
                   set motorcar=yes
@@ -123,6 +120,15 @@ highway=*
                 {
                   add foot=yes ;
                   addaccess 'no' ;
+                }
+
+highway=track
+            & (tracktype~'grade[3-6]' |
+               tracktype!=*)
+                {
+                  set motorcar=no ;
+                  set motor_vehicle=no ;
+                  set vehicle=no ;
                 }
 
 highway=track
