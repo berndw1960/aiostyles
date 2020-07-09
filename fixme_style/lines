@@ -20,7 +20,7 @@ highway = * & (fixme = * )
 
 abandoned:highway=* 
        { set name = 'FIXME: ${highway} check if exist?';}       [0x10002 resolution 23]
-       
+
 highway~'.*(:|,|;).*'
        { set name = 'FIXME: ${highway}';}                       [0x10002 resolution 23]
 
@@ -32,7 +32,7 @@ highway=* & construction=minor
        { set name = 'FIXME: ${construction}'}                   [0x10003 resolution 23]
 
 highway=* & access ~ '.*(agricultural|forestry|destination).*'
-        { set name = 'FIXME: access=???' }                      [0x10004 resolution 23]
+        { set name = 'FIXME: vehicle=???' }                     [0x10004 resolution 23]
 
 highway~('.*;.*')
         { set name = 'FIXME: ${highway}'}                       [0x10005 resolution 23]
