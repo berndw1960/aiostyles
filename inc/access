@@ -19,6 +19,11 @@
 highway=* & motorroad=yes                  { add bicycle=no; add foot=no; }
 highway=motorway | highway=motorway_link   { add bicycle=no; add foot=no; }
 
+# ways with 'disused=yes' shouldn't used for routing, sometimes they are really expensive
+highway=*
+  & disused=yes
+    { addaccess 'no'; }
+
 # some access rules with exceptions
 highway=* 
   & access ~ '.*(agricultural|forestry).*'
@@ -107,6 +112,35 @@ highway=*
                   set access=yes;
                  }
 
+## this rule should prevent routing through narrow streets with motorvehicles, 
+
+highway=*
+    & (maxwidth<2.0 | width<2.0)
+                {
+                  set motor_vehicle=no;
+                }
+
+## rules to prevent using small or bad ways with vehicles
+
+highway=*
+    & (maxwidth<1.0 | width<1.0)
+                {
+                  add foot=yes ;
+                  addaccess 'no' ;
+                }
+
+## mkgmap:unpaved=1 is set in pre_lines, here only check for some types of ways
+## this should prevent routing, if there is no special reason
+
+highway=track
+            & mkgmap:unpaved=1
+            & (tracktype~'grade[3-6]' |
+               tracktype!=*)
+                {
+                  add foot=yes ;
+                  addaccess 'no' ;
+                }
+
 #-----------------------------------------------------------------------------
 # Normalize values that indicate a restriction to 'no'
 motorcar ~ '.*(private|agricultural|forestry).*'                            { set motorcar=no }
@@ -133,49 +167,9 @@ taxi ~ '.*(designated|permissive|official|allowed).*'                       { se
 emergency ~ '.*(designated|permissive|official|allowed).*'                  { set emergency=yes }
 access ~ '.*(designated|permissive|official|allowed).*'                     { set access=yes }
 
-# ways with 'disused=yes' shouldn't used for routing, sometimes they are really expensive
-highway=*
-  & disused=yes
-    { addaccess 'no'; }
 
-## this rule should prevent routing routing through narrow streets with motorvehicles, 
 
-highway=*
-    & (maxwidth<2.0 | width<2.0)
-                {
-                  set motor_vehicle=no;
-                }
 
-## rules to prevent using small or bad ways with vehicles
-
-highway=*
-    & (maxwidth<1.0 | width<1.0)
-                {
-                  add foot=yes ;
-                  addaccess 'no' ;
-                }
-
-## this rule isn't needed, if (or while) mkgmap:unpaved=1 is set correct
-#highway=track
-#            & (tracktype~'grade[3-6]' |
-#               tracktype!=*)
-#                {
-#                  set motorcar=no ;
-#                  set motor_vehicle=no ;
-#                  set vehicle=no ;
-#                }
-
-## mkgmap:unpaved=1 is set in pre_lines, here only check for some types of ways
-## this should prevent routing, if there is no special reason
-
-highway=track
-            & mkgmap:unpaved=1
-            & (tracktype~'grade[3-6]' |
-               tracktype!=*)
-                {
-                  add foot=yes ;
-                  addaccess 'no' ;
-                }
 
 
 railway=level_crossing &
