@@ -1,0 +1,47 @@
+# This file contains country specific access restrictions
+# If your country is missing please post your country specific access rules
+# to the mkgmap developers list.
+
+# Germany (DEU)
+
+highway ~ 'motorway.*'
+        & mkgmap:country=DEU            { add bicycle=no; add foot=no }
+
+highway=* & motorroad=yes
+        & mkgmap:country=DEU            { add bicycle=no; add foot=no }
+
+# highway=trunk != motorroad=yes, but for security reasons
+# don't allow routing for bicycles and pedestrians if
+# motorroad isn't set on trunk roads
+
+highway=trunk & motorroad !=*
+        & mkgmap:country=DEU            { add bicycle=no; add foot=no }
+
+highway=bus_guideway
+        & mkgmap:country=DEU            { add bus=yes; add taxi=yes; addaccess 'no' ; }
+
+# Belgium (BEL)
+
+highway=trunk     & mkgmap:country=BEL {add bicycle=no; add foot=no}
+highway=cycleway  & mkgmap:country=BEL {add foot=yes}
+highway=bridleway & mkgmap:country=BEL {add foot=yes}
+
+# The Netherlands (NLD)
+
+highway=trunk     & mkgmap:country=NLD {add bicycle=no; add foot=no}
+highway=cycleway  & mkgmap:country=NLD {add foot=yes}
+highway=bridleway & mkgmap:country=NLD {add foot=yes}
+
+# Spain (ESP)
+
+highway=trunk     & mkgmap:country=ESP {add bicycle=yes; add foot=yes}
+highway=bridleway & mkgmap:country=ESP {add bicycle=yes; add foot=yes}
+
+# United Kingdom (GBR)
+
+highway=cycleway  & mkgmap:country=GBR {add foot=yes}
+highway=bridleway & mkgmap:country=GBR {
+    add bicycle=yes;
+    add foot=yes;
+    add motor_vehicle=private
+    }
