@@ -1,6 +1,5 @@
 
 ## cycle highlights
-highway=*   { set cn_temp='' }
 highway=* & (icn_network=yes|icn=yes|ncn=yes) { set cn_temp='${cn_temp}icn' }
 highway=* & (rcn_network=yes|rcn=yes|tcn=yes) { set cn_temp='${cn_temp}rcn' }
 highway=* & (lcn_network=yes|lcn=yes)         { set cn_temp='${cn_temp}lcn' }

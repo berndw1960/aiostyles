@@ -210,10 +210,6 @@ barrier~'.*(gate)' |
             }
 
 
-# some ways are locally signed with vehicle=no, but are included in a cycle network,
-# we set them to bicycle=yes to allow routing over this ways
-cn_temp ~ '.*cn'        { set bicycle=yes }
-
 # Copy the OSM access tags to the mkgmap internal tags
 foot=*                  { set mkgmap:foot='${foot}' }
 bicycle=*               { set mkgmap:bicycle='${bicycle}' }
@@ -229,3 +225,4 @@ access=*                { addaccess '${access}' }
 
 # Don't route through highway=construction, they are considered unusable
 highway=construction    { setaccess 'no' }
+
