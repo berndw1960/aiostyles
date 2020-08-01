@@ -187,7 +187,7 @@ natural=land                                            [0x27 resolution 10]
 
 #------------------------------------------------------------------------------
 # man_made can be used on areas or lines
-man_made=* & area!=no {add name='${man_made|subst:"_=> "}'} [0x13 resolution 24]
+man_made=* & area!=no                                   [0x13 resolution 24]
 
 
 #------------------------------------------------------------------------------

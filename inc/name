@@ -13,6 +13,12 @@ operator=${brand} { delete operator; }
 operator=${name}  { delete operator; }
 brand=${name}     { delete brand; }
 
+## disabled while a catch_all
+#man_made=* & area!=no 
+#        {
+#        add name='${man_made|subst:"_=> "}'
+#        }
+
 # add ref to some POIs
 (amenity=bus_station |
     public_transport=platform |
