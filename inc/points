@@ -86,7 +86,7 @@ railway=level_crossing |
 # 0x6409        # levee
 # 0x640a        # locale
 military=bunker                                   [0x640b resolution 24]
-man_made=mineshaft                                [0x640c resolution 24]
+man_made=mineshaft | man_made=adit                [0x640c resolution 24]
 man_made=petroleum_well                           [0x640d resolution 24]
 # 0x640e        # park
 
@@ -105,7 +105,6 @@ man_made=tower                                    [0x6411 resolution 24]
           & information=guidepost) |
             (amenity=guidepost |
              amenity=signpost )                   [0x6412 resolution 24]
-man_made=adit                                     [0x6413 resolution 24]
 
 (amenity=drinking_water &
   (drinking_water=yes|drinkable=yes)) |

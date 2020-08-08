@@ -13,11 +13,14 @@ operator=${brand} { delete operator; }
 operator=${name}  { delete operator; }
 brand=${name}     { delete brand; }
 
-## disabled while a catch_all
-#man_made=* & area!=no 
-#        {
-#        add name='${man_made|subst:"_=> "}'
-#        }
+
+# all man_made stuff got a default name except bridges
+# there are many narrow bridges without name
+# ToDo: check if more exceptions are useful
+man_made=* & man_made!=bridge & area!=no
+        {
+        add name='${man_made|subst:"_=> "}'
+        }
 
 # add ref to some POIs
 (amenity=bus_station |
