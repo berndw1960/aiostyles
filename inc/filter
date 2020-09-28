@@ -3,7 +3,7 @@
 razed:railway=* & railway=*
                 {
                   delete railway
-                }
+                 }
 
 razed:highway=* & highway=*
                 {
@@ -19,6 +19,16 @@ razed:man_made=*
                 {
                   deletealltags
                   }
+
+railway=razed
+                {
+                 delete railway
+                 }
+
+highway=razed 
+                { 
+                 delete highway
+                 }
 
 ## only use the first value before ';'
 
