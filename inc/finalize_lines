@@ -13,5 +13,37 @@ mkgmap:synthesised=yes & mkgmap:bicycle=yes { set mkgmap:highest-resolution-only
 # don't add house numbers to unnamed or artifical bicycle ways
 mkgmap:bicycle=yes & (mkgmap:foot=no & mkgmap:car=no & mkgmap:street!=* | mkgmap:synthesised=yes) {set mkgmap:numbers=false}
 
-name=* { name '${name}' }
+#--------------------------------------------------------------------------------------
+# Set highway names to include the reference if there is one
+(highway=motorway | highway=trunk) & ref=*
+    {
+     name '${ref|highway-symbol:hbox}'; 
+     addlabel '${name}'
+     }
+
+highway=primary & ref=* 
+    {
+     name '${ref|highway-symbol:box}';
+     addlabel '${name}'
+     }
+
+(highway=secondary | highway=tertiary) & ref=* 
+    {
+     name '${ref|highway-symbol:oval}'; 
+     addlabel '${name}'
+     }
+
+name=* {name '${name}'}
+
+highway=* &
+    ref=* &
+    highway!=motorway &
+    highway!=trunk &
+    highway!=primary &
+    highway!=secondary &
+    highway!=tertiary
+        {
+         addlabel '${ref}'
+         }
+
 include '../inc/ref_lines' ;

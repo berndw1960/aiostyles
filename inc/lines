@@ -4,44 +4,6 @@
 include '../inc/filter';
 
 
-#--------------------------------------------------------------------------------------
-# Set highway names to include the reference if there is one
-highway=motorway
-                {
-                  name '${name} (${ref})'|
-                       '${ref|highway-symbol:hbox}' |
-                       '${name}';
-                }
-
-highway=trunk
-                {
-                  name '${name} (${ref})'|
-                       '${ref|highway-symbol:hbox}' |
-                       '${name}';
-                  addlabel '${name} (${ref})'
-                }
-
-highway=primary
-                {
-                  name '${name} (${ref})'|
-                       '${ref|highway-symbol:box}' |
-                       '${name}';
-                 addlabel '${name} (${ref})'
-                }
-
-highway=secondary | highway=tertiary
-                {
-                  name '${name} (${ref})'|
-                       '${ref|highway-symbol:oval}' |
-                       '${name}';
-                  addlabel '${name} (${ref})'
-                }
-
-highway=*
-                {
-                  name '${name}' |
-                       '${ref}';
-                }
 
 
 #-----------------------------------------------------------------------------
