@@ -39,7 +39,6 @@ merge-lines
 index
 route
 
-transparent
 # unicode didn't work on some Oregon with newer firmware
 # not tested on other PNAs
 latin1
