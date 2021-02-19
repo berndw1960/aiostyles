@@ -1,5 +1,6 @@
 # cycle_network relations
-(route=bicycle | route=mtb) &
+type=route &
+    (route=bicycle | route=mtb) &
             (
             network=icn |
             icn=yes |
@@ -11,12 +12,13 @@
                     {
                     set icn_network=yes ;
                     set cn_name='$(cn_name),${ref}' |
-                    '$(cn_name),${name}' |
-                    '${ref}' | '${name}'
+                        '$(cn_name),${name}' |
+                        '${ref}' | '${name}'
                     }
                  }
 
-(route=bicycle | route=mtb) &
+type=route &
+    (route=bicycle | route=mtb) &
             (
             network=rcn |
             rcn=yes |
@@ -28,12 +30,13 @@
                     {
                     set rcn_network=yes ;
                     set cn_name='$(cn_name),${ref}' |
-                    '$(cn_name),${name}' |
-                    '${ref}' | '${name}'
+                        '$(cn_name),${name}' |
+                        '${ref}' | '${name}'
                     }
                  }
 
-(route=bicycle | route=mtb) &
+type=route &
+    (route=bicycle | route=mtb) &
             (
             network=lcn |
             lcn=yes
@@ -43,8 +46,8 @@
                     {
                     set lcn_network=yes ;
                     set cn_name='$(cn_name),${ref}' |
-                    '$(cn_name),${name}' |
-                    '${ref}' | '${name}'
+                        '$(cn_name),${name}' |
+                        '${ref}' | '${name}'
                     }
                  }
 
