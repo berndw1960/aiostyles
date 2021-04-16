@@ -27,9 +27,6 @@ preserve-element-order
 process-exits
 process-destination
 housenumbers
-check-roundabouts
-check-roundabout-flares
-report-dead-ends
 make-opposite-cycleways
 min-size-polygon=8
 reduce-point-density=4
