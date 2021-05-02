@@ -1,7 +1,11 @@
 # -------------------------------------------------------------------
 #  common rules under inc/
 
-include '../inc/polygons';
+# reduce the amount of polygons for better visibility
+include '../inc/less_polygons';
+#include '../inc/polygons';
+
+
 include '../inc/water_polygons';
 
 

@@ -227,7 +227,7 @@ military=barracks
 # natural
 
 natural=wood
-            [0x15 resolution 18 continue]
+            [0x15 resolution 22-18 continue]
 natural=wood &
     (wood=coniferous | leaf_type=needleleaved)    
             [0x21 resolution 24-23]
