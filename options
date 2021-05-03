@@ -17,6 +17,7 @@ copyright-message=OpenStreetMap contributors, ODbL. See: https://www.openstreetm
 
 ## experimental options
 dead-ends=fixme,FIXME,noexit,barrier
+x-check-precomp-sea=0
 
 ## official and documented options
 split-name-index
