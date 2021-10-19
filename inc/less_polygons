@@ -116,8 +116,8 @@ highway=pedestrian &
     (area=yes | area=true | area=1)      
             [0x12 resolution 22]
 
-leisure=nature_reserve          
-            [0x0d resolution 18 continue]
+#leisure=nature_reserve          
+#            [0x0d resolution 18 continue]
 
 landuse=forest                  
             [0x20 resolution 22-18 continue]
