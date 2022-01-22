@@ -135,7 +135,7 @@ amenity=fountain                                  [0x6500 resolution 24]
 #natural=sand bar 0x6502
 (natural=bay | natural=fjord | natural=strait) &
    name=* &
-   mkgmap:area2poi=true                            [0x6503 resolution 24]
+   mkgmap:area2poi=true                           [0x6503 resolution 24]
 #natural=bend 0x6504
 #natural=channel 0x6506
 #natural=cove 0x6507
