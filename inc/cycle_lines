@@ -1,8 +1,7 @@
 
 # cycleway overlay
 
-highway=* & (oneway:bicycle=no |
-             bicycle=dismount)           [0x10e07 resolution 24-23 continue]
+highway=* & bicycle=dismount             [0x10e07 resolution 24-23 continue]
 
 highway=*
           & (cycleway=both |
@@ -18,5 +17,5 @@ highway=*
              cycleway:left=lane |
              cycleway=opposite |
              cycleway=opposite_lane |
-             bicycle=opposite)           [0x10e0a resolution 24-23 continue]
+             oneway:bicycle=no)           [0x10e0a resolution 24-23 continue]
 
