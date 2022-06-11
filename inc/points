@@ -160,6 +160,8 @@ tourism=viewpoint & natural!=*                    [0x6600 resolution 24]
 #natural=basin 0x6603
 natural=beach                                     [0x6604 resolution 24]
 amenity=bench                                     [0x6605 resolution 24]
+# amentity=lounger with different color
+amenity=lounger                                   [0x7101 resolution 24]
 natural=cape                                      [0x6606 resolution 24]
 natural=cliff|natural=bare_rock                   [0x6607 resolution 24]
 natural=crater                                    [0x6607 resolution 23]
@@ -690,7 +692,8 @@ amenity=casino                                                            [0x2d0
 (leisure=common | leisure=park) & name=*                                  [0x2c06 resolution 24]
 
 tourism=picnic_site                                                       [0x4a00 resolution 24]
-amenity=bench                                                             [0x4a01 resolution 24]
+#amenity=bench | 
+#    amenity=lounger                                                       [0x4a01 resolution 24]
 # 0x4ass
 
 # Golf Course
