@@ -31,9 +31,13 @@ amenity=grave_yard | landuse=cemetery         [0x1a resolution 22]
 
 amenity=hospital | building=hospital        [0x0b resolution 20]
 
-amenity=school                     [0x0a resolution 23]
-amenity=college                    [0x0a resolution 23]
-amenity=university                 [0x0a resolution 22]
+amenity=school |
+  building=school |
+  amenity=college |
+  building=college                 [0x0a resolution 23]
+
+  amenity=university |
+  building=university              [0x0a resolution 22]
 
 
 #------------------------------------------------------------------------------
