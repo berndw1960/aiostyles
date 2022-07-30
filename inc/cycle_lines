@@ -9,16 +9,18 @@
 
 highway=*
           & (cycleway=both |
-             cycleway=lane |
-             cycleway=track )            [0x10e08 resolution 24-24 continue]
+             cycleway~'.*lane' |
+             cycleway~'.*track' )        [0x10e08 resolution 24-24 continue]
 
 highway=*
           & (cycleway:right=yes |
-             cycleway:right=lane)        [0x10e09 resolution 24-24 continue]
+             cycleway:right~'.*lane' |
+             cycleway:right~'.*track')   [0x10e09 resolution 24-24 continue]
 
 highway=*
           & (cycleway:left=yes |
-             cycleway:left=lane |
+             cycleway:left~'.*lane' |
+             cycleway:left~'.*track' |
              cycleway=opposite |
              cycleway=opposite_lane |
              oneway:bicycle=no)           [0x10e0a resolution 24-24 continue]
