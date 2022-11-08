@@ -19,10 +19,12 @@
 highway=* & motorroad=yes                  { add bicycle=no; add foot=no; }
 highway=motorway | highway=motorway_link   { add bicycle=no; add foot=no; }
 
-# ways with 'disused=yes' shouldn't used for routing, sometimes they are really expensive
+# ways with 'disused=yes' and similar shouldn't used for routing, sometimes they are really expensive
 highway=*
-  & disused=yes
-    { addaccess 'no'; }
+  & (disused=yes |
+     illegal=yes |
+     informal=yes)
+    { setaccess 'no'; }
 
 # some access rules with exceptions
 highway=* 

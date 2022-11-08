@@ -5,7 +5,9 @@
     highway=footway |
     highway=pedestrian) & 
         (bicycle=dismount |
-         bicycle=no)                     [0x10e07 resolution 24-24 continue]
+         bicycle=no |
+         informal=yes |
+         illegal=yes                     [0x10e07 resolution 24-24 continue]
 
 highway=*
           & (cycleway=both |
