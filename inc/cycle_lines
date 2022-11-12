@@ -7,7 +7,7 @@
         (bicycle=dismount |
          bicycle=no |
          informal=yes |
-         illegal=yes                     [0x10e07 resolution 24-24 continue]
+         illegal=yes)                    [0x10e07 resolution 24-24 continue]
 
 highway=*
           & (cycleway=both |
