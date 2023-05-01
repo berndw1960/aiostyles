@@ -25,69 +25,69 @@ brand=${name}     { delete brand; }
 #        }
 
 # add ref to some POIs
-(amenity=bus_station |
-    public_transport=platform |
-    highway=bus_stop |
-    railway=tram_stop |
-    railway=halt |
-    railway=station)
-    & (ref=* | route_ref=*)
-        {
-        set ref='${ref|def:}(${route_ref})';
-        set ref='${ref|subst:;=> |subst:  => }';
-        delete route_ref ;
-        }
+#(amenity=bus_station |
+#    public_transport=platform |
+#    highway=bus_stop |
+#    railway=tram_stop |
+#    railway=halt |
+#    railway=station)
+#    & (ref=* | route_ref=*)
+#        {
+#        set ref='${ref|def:}(${route_ref})';
+#        set ref='${ref|subst:;=> |subst:  => }';
+#        delete route_ref ;
+#        }
 
-(amenity=bus_station |
-  public_transport=platform |
-  highway=bus_stop |
-  railway=tram_stop |
-  railway=halt |
-  railway=station)
-    & lit=yes
-    & (shelter=yes | covered=yes)
-        {
-        set ref='* ${ref|def:}';
-        }
+#(amenity=bus_station |
+#  public_transport=platform |
+#  highway=bus_stop |
+#  railway=tram_stop |
+#  railway=halt |
+#  railway=station)
+#    & lit=yes
+#    & (shelter=yes | covered=yes)
+#        {
+#        set ref='* ${ref|def:}';
+#        }
 
-(amenity=bus_station |
-  public_transport=platform |
-  highway=bus_stop |
-  railway=tram_stop |
-  railway=halt |
-  railway=station)
-    & lit!=yes
-    & (shelter=yes | covered=yes)
-        {
-        set ref='^ ${ref|def:}';
-        }
+#(amenity=bus_station |
+#  public_transport=platform |
+#  highway=bus_stop |
+#  railway=tram_stop |
+#  railway=halt |
+#  railway=station)
+#    & lit!=yes
+#    & (shelter=yes | covered=yes)
+#        {
+#        set ref='^ ${ref|def:}';
+#        }
 
-(amenity=bus_station |
-  public_transport=platform |
-  highway=bus_stop |
-  railway=tram_stop |
-  railway=halt |
-  ailway=station)
-    & (shelter=no | covered=no)
-        {
-        set ref='- ${ref|def:}';
-        }
+#(amenity=bus_station |
+#  public_transport=platform |
+#  highway=bus_stop |
+#  railway=tram_stop |
+#  railway=halt |
+#  railway=station)
+#    & (shelter=no | covered=no)
+#        {
+#        set ref='- ${ref|def:}';
+#        }
 
-(amenity=bus_station |
-  public_transport=platform |
-  highway=bus_stop |
-  railway=tram_stop |
-  railway=halt |
-  railway=station)
-    & (name=* | ref=*)
-        # unnamed bus_stop tram_stops etc. remain unnamed - this triggers
-        # the icon's name from the styles_typ.txt for the POI-list and
-        # also leaves no label on the map
-        {
-        name '${name|def:H} ${ref}' | '${name|def:H}';
-        delete name ;
-        delete ref ;
-        }
+#(amenity=bus_station |
+#  public_transport=platform |
+#  highway=bus_stop |
+#  railway=tram_stop |
+#  railway=halt |
+#  railway=station)
+#    & (name=* | ref=*)
+#        # unnamed bus_stop tram_stops etc. remain unnamed - this triggers
+#        # the icon's name from the styles_typ.txt for the POI-list and
+#        # also leaves no label on the map
+#        {
+#        name '${name|def:H} ${ref}' | '${name|def:H}';
+#        delete name ;
+#        delete ref ;
+#        }
 
 highway=motorway_junction
         {
@@ -115,26 +115,26 @@ amenity=parking & capacity:disabled=no      { set capacity:disabled = 0 ; }
 amenity=parking & fee=no                    { delete fee ; }
 
 
-amenity=parking
-        & ( parking=multi-storey |
-            parking=underground)
-         {
-          name '^ ${name|def:P} (${capacity}/${capacity:disabled})[${fee}]' |
-               '^ ${name|def:P} (${capacity}/${capacity:disabled})' |
-               '^ ${name|def:P} (${capacity})[${fee}]' |
-               '^ ${name|def:P} (${capacity})' |
-               '^ ${name|def:P} [${fee}]' |
-               '^ ${name|def:P}'
-          }
-amenity=parking
-         {
-          name '${name|def:P} (${capacity}/${capacity:disabled})[${fee}]' |
-               '${name|def:P} (${capacity}/${capacity:disabled})' |
-               '${name|def:P} (${capacity})[${fee}]' |
-               '${name|def:P} (${capacity})' |
-               '${name|def:P} [${fee}]'|
-               '${name|def:P}'
-          }
+#amenity=parking
+#        & ( parking=multi-storey |
+#            parking=underground)
+#         {
+#          name '^ ${name|def:P} (${capacity}/${capacity:disabled})[${fee}]' |
+#               '^ ${name|def:P} (${capacity}/${capacity:disabled})' |
+#               '^ ${name|def:P} (${capacity})[${fee}]' |
+#               '^ ${name|def:P} (${capacity})' |
+#               '^ ${name|def:P} [${fee}]' |
+#               '^ ${name|def:P}'
+#          }
+#amenity=parking
+#         {
+#          name '${name|def:P} (${capacity}/${capacity:disabled})[${fee}]' |
+#               '${name|def:P} (${capacity}/${capacity:disabled})' |
+#               '${name|def:P} (${capacity})[${fee}]' |
+#               '${name|def:P} (${capacity})' |
+#               '${name|def:P} [${fee}]'|
+#               '${name|def:P}'
+#          }
 
 amenity=post_office
         {
@@ -171,7 +171,6 @@ amenity=restaurant
 # no default label ${amenity} - Icons are labeled
 amenity=bank |
 amenity=atm |
-amenity=pub |
 amenity=bureau_de_change
         {
         set mkgmap:label:3='${name}' |'${operator}' | '${brand}' ;
@@ -184,6 +183,7 @@ amenity=bureau_de_change
 amenity=cafe |
 amenity=bar |
 amenity=fast_food |
+amenity=pub |
 amenity=car_wash |
 amenity=theatre |
 amenity=boat_storage |
@@ -235,18 +235,18 @@ amenity=social_centre | amenity=social_facility
                '${amenity|subst:_=> }'
     }
 
-shop=*  & name!=*
-        & shop!=hairdresser &
-          shop!=beauty &
-          shop!=solarium &
-          shop!=tanning &
-          shop!=supermarket &
-          shop!=stationery &
-          shop!=books &
-          shop!=general
-    {
-    add name = '${shop|subst:_=> }' ;
-    }
+#shop=*  & name!=*
+#        & shop!=hairdresser &
+#          shop!=beauty &
+#          shop!=solarium &
+#          shop!=tanning &
+#          shop!=supermarket &
+#          shop!=stationery &
+#          shop!=books &
+#          shop!=general
+#    {
+#    add name = '${shop|subst:_=> }' ;
+#    }
 
 power=*
         {
@@ -256,10 +256,10 @@ power=*
         }
 
 
-leisure=* & sport=* & name=*  { name '${name} (${sport})' }
-leisure=* & sport=* & name!=* { add name = '${sport}' }
+#leisure=* & sport=* & name=*  { name '${name} (${sport})' }
+#leisure=* & sport=* & name!=* { add name = '${sport}' }
 
-waterway=* & name!=* { add name = '$(waterway|subst:_=> }' }
+#waterway=* & name!=* { add name = '$(waterway|subst:_=> }' }
 
 highway=speed_camera & maxspeed = *
       { name '${maxspeed}km/h' }
@@ -281,5 +281,5 @@ natural=glacier & ele = *
 disused=yes  { name '${name} (disused)'|'(disused)';}
 
 # fix unnamed standard icons
-leisure=marina & name!=*            { add name = '${leisure}' }
-barrier=border_control & name!=*    { add name = '${barrier}' }
+#leisure=marina & name!=*            { add name = '${leisure}' }
+#barrier=border_control & name!=*    { add name = '${barrier}' }
