@@ -215,10 +215,14 @@ amenity=fuel                                      [0x2f01 resolution 24]
 amenity=car_rental | amenity=car_sharing          [0x2f02 resolution 24]
 
 # Auto Repair
-shop=car_repair                                   [0x2f03 resolution 24]
+shop=car_repair |
+  shop=motorcycle_repair                          [0x2f03 resolution 24]
 
 # Dealer/Auto Parts
-shop=car | shop=car_parts                         [0x2f07 resolution 24]
+shop=car | 
+  shop=car_parts | 
+  shop=motorcycle |
+  shop=motorcycle_parts                           [0x2f07 resolution 24]
 
 # Wrecker Service
 car_service=wrecker                               [0x2f0a resolution 24]
@@ -570,7 +574,7 @@ shop=wine | shop=winery | shop=alcohol                                    [0x2e1
 # Book Store ## ok
 shop=books | shop=stationery                                              [0x2e14 resolution 24]
 
-shop=motorcycle                                                           [0x2e1d resolution 24]
+shop~'.*bicycle.*'                                                           [0x2e1d resolution 24]
 
 #-------------------------------------------------------------------------
 # medical help
