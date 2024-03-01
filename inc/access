@@ -114,6 +114,12 @@ highway=*
                   set access=yes;
                  }
 
+highway=`
+  & ownership ~ '.*(private).*'
+                 {
+                 set mkgmap:throughroute=no;
+                 }
+
 ## this rule should prevent routing through narrow streets with motorvehicles, 
 
 highway=*
