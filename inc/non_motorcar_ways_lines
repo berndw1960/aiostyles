@@ -1,5 +1,6 @@
+
 #------------------------------------------------------------------------------
-# designated ways
+# ways for pedestrian
 
 highway=pedestrian & (area!=yes & area!=true & area!=1)
                 {

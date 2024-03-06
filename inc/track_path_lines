@@ -12,9 +12,7 @@ highway=track & tracktype~'grade[4-6]'       [0x11 resolution 24 road_class=0 ro
 
 highway=track                                [0x1200b resolution 22-22 continue]
 highway=track                                [0x1100b resolution 24-23 continue]
-highway=track  {
-                  add mkgmap:unpaved=1;
-                }                            [0x11 resolution 24 road_class=0 road_speed=0]
+highway=track                                [0x11 resolution 24 road_class=0 road_speed=0]
 
 #------------------------------------------------------------------------------
 # via_ferrata not routable
@@ -24,7 +22,4 @@ highway=via_ferrata                          [0x12012 resolution 24]
 highway=path | highway=trail                 [0x12012 resolution 22-22 continue]
 highway=path | highway=trail                 [0x11012 resolution 24-23 continue]
 
-highway=path | highway=trail
-               {
-                  add mkgmap:unpaved=1;
-                }                            [0x12 resolution 24 road_class=0 road_speed=0]
+highway=path | highway=trail                 [0x12 resolution 24 road_class=0 road_speed=0]
