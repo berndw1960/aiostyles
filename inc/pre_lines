@@ -252,7 +252,8 @@ toll=yes & highway!=motorway                                                    
 # ways with bad conditions
 (highway=path | highway=track)
            & (smoothness~'.*(bad|horrible|impassable)' |
-             trail_visibility~'.*(bad|horrible|no)' )                                   [0x10e0c resolution 24 continue]
+             trail_visibility~'.*(bad|horrible|no)' |
+             informal=yes)                                                              [0x10e0c resolution 24 continue]
 
 highway=via_ferrata                                                                     [0x10e0c resolution 24 continue]
 
