@@ -8842,6 +8842,7 @@ dayxpm="16 8 3 1" colormode=16
 "&&&&&&&&&&&&&&&&"
 [end]
 
+
 [_point]
 Type=0x07102
 String1=0x02,Stolperstein
