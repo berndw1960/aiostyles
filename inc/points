@@ -333,6 +333,8 @@ tourism=theme_park                                [0x2c01 resolution 24]
 # Museum/Historical
 tourism=museum | historic=museum                  [0x2c02 resolution 24]
 historic=archaeological_site | historic=battlefield  [0x2c11 resolution 24]
+
+historic=memorial & memorial=stolperstein         [0x7102 resolution 24]
 historic=memorial                                 [0x2c11 resolution 24]
 
 # Landmark
