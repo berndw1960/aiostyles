@@ -5,16 +5,20 @@
 # filter parts after ';', no way to use this values
 maxspeed~'.*;.*'
                 {
-                set maxspeed='${maxspeed|part:}';
+                  set maxspeed='${maxspeed|part:}';
                 }
 
+# some motorway have variable speedlimits, set maxspeed to a usable value
+maxspeed=signals                { set maxspeed=100 }
+
+
+# british speed limits are difficult ;-)
 # convert from mph tp kmh
 highway=* & maxspeed ~'.*mph'
                 {
                   set maxspeed='${maxspeed|conv:"mph=>kmh"}'
                 }
 
-# british speed limits are difficult ;-)
 maxspeed=national & 
     mkgmap:country=GBR &
     highway=residential         { set maxspeed=48 }
@@ -41,6 +45,8 @@ maxspeed~'.*:rural'             { set maxspeed=90 }
 
 maxspeed~'.*:trunk'             { set maxspeed=100 }
 maxspeed~'.*:motorway'          { set maxspeed=130 }
+
+
 maxspeed=none                   { set maxspeed=130 }
 
 
