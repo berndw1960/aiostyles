@@ -833,9 +833,12 @@ barrier~'.*(gate)' | barrier=cattle_grid | barrier~'.*(stile)'
 
 barrier~'.*(fence)' & mkgmap:area2poi!=true                               [0x2905 resolution 24]
 barrier~'.*(wall)' & mkgmap:area2poi!=true                                [0x2906 resolution 24]
-barrier~'.*(chain)' | barrier~'.*(rope)' & mkgmap:area2poi!=true          [0x2907 resolution 24]
-barrier~'.*(block)' | barrier=jersey_barrier & mkgmap:area2poi!=true      [0x2908 resolution 24]
+(barrier~'.*(chain)' | barrier~'.*(rope)') & mkgmap:area2poi!=true        [0x2907 resolution 24]
+(barrier~'.*(block)' | barrier=jersey_barrier) & mkgmap:area2poi!=true    [0x2908 resolution 24]
 barrier~'.*(hedge)' & mkgmap:area2poi!=true                               [0x2909 resolution 24]
+(obstacle~'.*(fallen_tree)'| obstacle~'.*(vegetation)')
+    & mkgmap:area2poi!=true                                               [0x7103 resolution 24]
+ford=yes  & mkgmap:area2poi!=true                                         [0x7104 resolution 24]
 
 traffic_sign=city_limit                                                   [0x2910 resolution 24]
 #highway=traffic_signals                                                  [0x2911 resolution 24]
