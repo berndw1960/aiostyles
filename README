@@ -12,6 +12,21 @@ https://github.com/flacus/aiostyles
 This map for mobile Garmin devices is made with mkgmap
 http://www.mkgmap.org.uk/
 
+##########################################################
+
+The DACH basemap is currently too big for this
+GARMIN navigation devices used file system.
+
+The other two map variants, Bikemap and Carmap 
+work, but the Bikemap is close at 3.6 GB 
+at the limits of the possible size.
+
+However, if necessary, I can reduce the scope of the DACH 
+or leave out unnecessary data when rendering.
+
+##########################################################
+
+
 Mkgmap uses special style files to map Openstreetmap features to
 internal Garmin types.
 You can find these Stylefiles used with the aio map here.
