@@ -185,6 +185,10 @@ railway=level_crossing &
             addaccess 'yes'
             }
 
+barrier~'.*(log)' &
+    access=yes
+        {delete access}
+
 barrier=bollard |
     barrier=cycle_barrier |
     barrier=block |

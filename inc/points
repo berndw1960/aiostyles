@@ -837,19 +837,20 @@ barrier~'.*(wall)' & mkgmap:area2poi!=true                                [0x290
 (barrier~'.*(block)' | barrier=jersey_barrier) & mkgmap:area2poi!=true    [0x2908 resolution 24]
 barrier~'.*(hedge)' & mkgmap:area2poi!=true                               [0x2909 resolution 24]
 
-## for testing barrier --> obstacle, should prevent routing trouble
-barrier~'.*(log)' & 
-    (access!=no | access!=private)  
+## for testing barrier=log --> obstacle=log, should prevent routing trouble
+## if ways are blocked, access rules on the way should be set correctly
+barrier~'.*(log)' & access!=no  
         {set obstacle=log;
          delete barrier;}
 
 (obstacle~'.*(fallen_tree)'|
     obstacle~'.*(vegetation)'|
-    obstacle~'.*(log)'|
-    barrier~'.*(log)')
-        & mkgmap:area2poi!=true                                           [0x7103 resolution 24]
+    obstacle~'.*(log)')
+          & mkgmap:area2poi!=true                                         [0x7103 resolution 24]
 
-ford=yes  & mkgmap:area2poi!=true                                         [0x7104 resolution 24]
+barrier~'.*(log)' & mkgmap:area2poi!=true                                 [0x7104 resolution 24]
+
+ford=yes  & mkgmap:area2poi!=true                                         [0x7105 resolution 24]
 
 traffic_sign=city_limit                                                   [0x2910 resolution 24]
 #highway=traffic_signals                                                  [0x2911 resolution 24]
