@@ -94,7 +94,8 @@ highway=corridor
 #------------------------------------------------------------------------------                  
 
 # flag paved ways
-highway=* & (surface=asphalt |
+highway=* & (
+    surface=asphalt |
     surface=paved |
     surface=sett |
     surface=concrete |
@@ -108,14 +109,9 @@ highway=* & (surface=asphalt |
     surface=chipseal)
       {set mkgmap:unpaved=0}
 
-highway=* &
-    tracktype=grade1 &
-    surface!=*
-      {set mkgmap:unpaved=0}
 
 # flag unpaved roads.
-highway=*&
-    (surface=cobblestone |
+highway=* & (
      surface=compacted |
      surface=dirt |
      surface=earth |
@@ -129,6 +125,25 @@ highway=*&
      surface=sand |
      surface=unpaved)
        {set mkgmap:unpaved=1}
+
+# mark some partly known highways without surface 
+(highway=track |
+    highway=service |
+    highway=path |
+    highway=footway |
+    highway=cycleway) &
+    tracktype=grade1 &
+    surface!=*
+      {add mkgmap:unpaved=0}
+
+(highway=track |
+    highway=service |
+    highway=path |
+    highway=footway |
+    highway=cycleway) &
+    tracktype~'grade[2-6]' &
+    surface!=* 
+     {add mkgmap:unpaved=1}
 
 highway=* & (
     mtb:scale~'[2-6].' |

@@ -1,9 +1,11 @@
 # -------------------------------------------------------------------
 #  common rules under inc/
 
-# overlays
+# enable overlays for bicycle maps
 #include '../inc/cycle_lines';
 #include '../inc/cycle_highlights';
+
+# mark highways if needed with special flags
 include '../inc/pre_lines' ;
 
 # process exits and destination
