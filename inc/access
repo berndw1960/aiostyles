@@ -193,6 +193,7 @@ barrier=bollard |
     barrier=cycle_barrier |
     barrier=block |
     barrier=gate |
+    barrier=kerb |
     barrier=lift_gate |
     barrier=swing_gate |
     barrier=sally_port
