@@ -1,3 +1,5 @@
+# make key/value usable, if values are separated with ';'
+include '../inc/filter';
 
 #To set the city, region and country values for all elements with housenumbers
 addr:housenumber=* {set mkgmap:execute_finalize_rules=true}
@@ -49,10 +51,10 @@ highway=traffic_signals |
   highway=island |
   highway=centre_line |
   highway=traffic_island |
-  highway=stopline                   {delete highway}
-highway=piste |
-  highway=ski                        {delete highway}
-highway=no |
+  highway=stopline |
+  highway=piste |
+  highway=ski |
+  highway=no |
   highway=none                       {delete highway}
 
 # Hide unaccessible tunnels (removed while overwhelming)
@@ -86,47 +88,81 @@ highway=motorway |
 #------------------------------------------------------------------------------
 
 highway=corridor
-     { set highway=footway;
+       { 
+       set highway=footway;
        add tunnel=yes;
        add covered=yes;
        }
 
 #------------------------------------------------------------------------------                  
+# HINT: only mkgmap:unpaved=1 is handled in the devices, ways with 
+#       an empty or not existent key mkgmap:unpaved are handled as paved way
 
 # flag paved ways
 highway=* & (
     surface=asphalt |
+    surface=bricks |
     surface=paved |
     surface=sett |
     surface=concrete |
     surface=concrete:lanes |
     surface=concrete:plates |
     surface=paving_stones |
+    surface=paving_stones:lanes |
+    surface=grass_paver |
+    surface=grass_paver:lanes |
     surface=cobblestone |
     surface=cobblestone:flattened |
+    surface=unhewn_cobblestone |
     surface=metal |
+    surface=metal_grid |
+    surface=rubber |
+    surface=tiles |
     surface=wood |
     surface=chipseal)
-      {set mkgmap:unpaved=0}
+      {
+      set mkgmap:unpaved=0;
+      }
 
-
-# flag unpaved roads.
+# flag unpaved roads
 highway=* & (
-     surface=compacted |
-     surface=dirt |
-     surface=earth |
-     surface=grass |
-     surface=grass_paver |
-     surface=gravel |
-     surface=grit |
-     surface=ground |
-     surface=mud |
-     surface=pebblestone |
-     surface=sand |
-     surface=unpaved)
-       {set mkgmap:unpaved=1}
+    surface=clay |
+    surface=compacted |
+    surface=dirt |
+    surface=earth |
+    surface=fine_gravel |
+    surface=grass |
+    surface=gravel |
+    surface=grit |
+    surface=ground |
+    surface=mud |
+    surface=pebblestone |
+    surface=rock |
+    surface=sand |
+    surface=soil |
+    surface=unpaved |
+    surface=woodchips)
+      {
+      set mkgmap:unpaved=1;
+      }
 
-# mark some partly known highways without surface 
+# mark some partly known highways without surface
+(highway=motorway |
+    highway=motorway_link |
+    highway=trunk |
+    highway=trunk_link |
+    highway=primary |
+    highway=primary_link |
+    highway=secondary |
+    highway=tertiary |
+    highway=residential |
+    highway=living_street) &
+    mkgmap:unpaved!=* &
+    surface!=* 
+      {
+      set mkgmap:unpaved=0 
+      }
+
 (highway=track |
     highway=service |
     highway=path |
@@ -134,7 +170,9 @@ highway=* & (
     highway=cycleway) &
     tracktype=grade1 &
     surface!=*
-      {add mkgmap:unpaved=0}
+      {
+      add mkgmap:unpaved=0;
+      }
 
 (highway=track |
     highway=service |
@@ -142,30 +180,32 @@ highway=* & (
     highway=footway |
     highway=cycleway) &
     tracktype~'grade[2-6]' &
-    surface!=* 
-     {add mkgmap:unpaved=1}
+    surface!=*
+      {
+      add mkgmap:unpaved=1;
+      }
+
+(highway=bridleway |
+    highway=unsurfaced |
+    highway=via_ferrata) &
+    surface!=*
+      {
+      set mkgmap:unpaved=1
+      }
 
 highway=* & (
     mtb:scale~'[2-6].' |
     sac_scale~'.*(mountain|alpine)_hiking' |
     sport=via_ferrata)
-      {set mkgmap:unpaved=1}
-
-(highway=bridleway |
-    highway=path |
-    highway=track |
-    highway=steps) &
-    mkgmap:unpaved!=0 
-      {add mkgmap:unpaved=1}
-
-(highway=unsurfaced |
-    highway=via_ferrata) 
-      {set mkgmap:unpaved=1}
+      {
+      set mkgmap:unpaved=1;
+      }
 
 highway=* &
-    mkgmap:unpaved!=1 &
     smoothness~'.*(bad|horrible|impassable)'
-      {add mkgmap:road-speed=-2}
+      {
+      add mkgmap:road-speed=-2; 
+      }
 
 ## highway=path are handled in inc/track_path_lines to allow bicycle routing
 
@@ -204,6 +244,8 @@ highway=* &
                         delete mkgmap:fast_road}
 # highway=access == highway=service??
 highway=access {set highway=service}
+
+
 #------------------------------------------------------------------------------
 # overlays
 
@@ -220,7 +262,9 @@ highway=access {set highway=service}
 #    & oneway=yes                                                                       [0x10e10 resolution 24-23 continue]
 
 # Overlay on highways under construction
-highway=* & construction=*                                                             [0x10e02 resolution 24-23 continue]
+highway=* &
+    highway!=construction &
+    construction=*                                                                      [0x10e02 resolution 24-23 continue]
 
 # bridge overlay
 (bridge=* & bridge!=no & bridge!=proposed & bridge!=abandoned)
@@ -286,10 +330,13 @@ highway=* & railway=tram                                                        
 highway~'.*ramp'                                                                        [0x10f00 resolution 24 continue]
 
 # cutting overlay
-(cutting=yes)
-          & (highway=track |
-             highway=path |
-             highway=footway |
-             highway=cycleway)                                                          [0x10f01 resolution 24 continue]
+(cutting=yes) &
+  (highway=track |
+     highway=path |
+     highway=footway |
+     highway=cycleway)                                                                  [0x10f01 resolution 24 continue]
 
-highway=escalator {set highway=footway;}                                                [0x10f01 resolution 24 continue]
+highway=escalator
+       {
+       set highway=footway;
+       }                                                                                [0x10f01 resolution 24 continue]

@@ -30,26 +30,18 @@ highway=*
 highway=* 
   & access ~ '.*(agricultural|forestry).*'
     {
-      add foot=yes; 
-      addaccess 'no'
+      add foot=yes;
       }
 
-# Now fill the access tree (http://wiki.openstreetmap.org/wiki/Key:access) 
-# This is required so that subsequent rules do not add a tag (bicycle) which is already defined by a higher tag (vehicle) 
-access=*             { add foot='${access}'; 
-                       add vehicle='${access}'; }
-vehicle=*            { add bicycle='${vehicle}'; 
-                       add motor_vehicle='${vehicle}'; }
-motor_vehicle=*      { add motorcar='${motor_vehicle}'; 
-                       add goods='${motor_vehicle}'; 
-                       add hgv='${motor_vehicle}'; 
-                       add psv='${motor_vehicle}'; 
-                       add emergency='${motor_vehicle}'; }
-psv=*                { add taxi='${psv}'; 
-                       add bus='${psv}'; }
-
-# Include country specific access rules that are derived from the highway type
-include '../inc/access_country';
+#some parts of bicycle routes are on ways with vehicle=*, set bicycle=yes for routing
+highway=* &
+    bicycle!=* &
+    (rcn_network=yes |
+     ncn_network=yes |
+     lcn_network=yes )
+         {
+         set bicycle=yes ;
+         }
 
 ## limit routing over bad pathes
 highway=path
@@ -94,6 +86,25 @@ highway=cycleway
                   add bicycle=yes ;
                   addaccess 'no' ;
                   }
+
+
+# Now fill the access tree (http://wiki.openstreetmap.org/wiki/Key:access) 
+# This is required so that subsequent rules do not add a tag (bicycle) which is already defined by a higher tag (vehicle) 
+access=*             { add foot='${access}'; 
+                       add vehicle='${access}'; }
+vehicle=*            { add bicycle='${vehicle}'; 
+                       add motor_vehicle='${vehicle}'; }
+motor_vehicle=*      { add motorcar='${motor_vehicle}'; 
+                       add goods='${motor_vehicle}'; 
+                       add hgv='${motor_vehicle}'; 
+                       add psv='${motor_vehicle}'; 
+                       add emergency='${motor_vehicle}'; }
+psv=*                { add taxi='${psv}'; 
+                       add bus='${psv}'; }
+
+# Include country specific access rules that are derived from the highway type
+include '../inc/access_country';
+
 
 # throughroute cannot be handled differently for different vehicle types
 # Therefore we have to choose one vehicle type - and the winner is: motorcar

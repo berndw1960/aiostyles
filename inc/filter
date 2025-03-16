@@ -47,6 +47,11 @@ highway ~ '.*;.*'
                 set highway='${highway|part:}';
                 }
 
+surface ~ '.*;.*'
+                {
+                set surface='${surface|part:}';
+                }
+
 amenity ~ '.*;.*'
                 {
                 set amenity='${amenity|part:}';
