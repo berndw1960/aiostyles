@@ -43,7 +43,7 @@ highway=unbuilt |
   highway=neverbuilt |
   highway=never_built |
   highway=rejected |
-  highway ~ 'x-.*'                 {deletealltags}
+  highway ~ 'x-.*'                  {deletealltags}
 
 # Remove highway tag from ways which are not suitable for routing
 highway=traffic_signals |
@@ -99,30 +99,30 @@ highway=corridor
 #       an empty or not existent key mkgmap:unpaved are handled as paved way
 
 # flag paved ways
-highway=* & (
-    surface=asphalt |
-    surface=bricks |
-    surface=paved |
-    surface=sett |
-    surface=concrete |
-    surface=concrete:lanes |
-    surface=concrete:plates |
-    surface=paving_stones |
-    surface=paving_stones:lanes |
-    surface=grass_paver |
-    surface=grass_paver:lanes |
-    surface=cobblestone |
-    surface=cobblestone:flattened |
-    surface=unhewn_cobblestone |
-    surface=metal |
-    surface=metal_grid |
-    surface=rubber |
-    surface=tiles |
-    surface=wood |
-    surface=chipseal)
-      {
-      set mkgmap:unpaved=0;
-      }
+#highway=* & (
+#    surface=asphalt |
+#    surface=bricks |
+#    surface=paved |
+#    surface=sett |
+#    surface=concrete |
+#    surface=concrete:lanes |
+#    surface=concrete:plates |
+#    surface=paving_stones |
+#    surface=paving_stones:lanes |
+#    surface=grass_paver |
+#    surface=grass_paver:lanes |
+#    surface=cobblestone |
+#    surface=cobblestone:flattened |
+#    surface=unhewn_cobblestone |
+#    surface=metal |
+#    surface=metal_grid |
+#    surface=rubber |
+#    surface=tiles |
+#    surface=wood |
+#    surface=chipseal)
+#      {
+#      set mkgmap:unpaved=0;
+#      }
 
 # flag unpaved roads
 highway=* & (
@@ -147,32 +147,32 @@ highway=* & (
       }
 
 # mark some partly known highways without surface
-(highway=motorway |
-    highway=motorway_link |
-    highway=trunk |
-    highway=trunk_link |
-    highway=primary |
-    highway=primary_link |
-    highway=secondary |
-    highway=tertiary |
-    highway=residential |
-    highway=living_street) &
-    mkgmap:unpaved!=* &
-    surface!=* 
-      {
-      set mkgmap:unpaved=0 
-      }
+#(highway=motorway |
+#    highway=motorway_link |
+#    highway=trunk |
+#    highway=trunk_link |
+#    highway=primary |
+#    highway=primary_link |
+#    highway=secondary |
+#    highway=tertiary |
+#    highway=residential |
+#    highway=living_street) &
+#    mkgmap:unpaved!=* &
+#    surface!=* 
+#      {
+#      set mkgmap:unpaved=0 
+#      }
 
-(highway=track |
-    highway=service |
-    highway=path |
-    highway=footway |
-    highway=cycleway) &
-    tracktype=grade1 &
-    surface!=*
-      {
-      add mkgmap:unpaved=0;
-      }
+#(highway=track |
+#    highway=service |
+#    highway=path |
+#    highway=footway |
+#    highway=cycleway) &
+#    tracktype=grade1 &
+#    surface!=*
+#      {
+#      add mkgmap:unpaved=0;
+#      }
 
 (highway=track |
     highway=service |
@@ -201,14 +201,7 @@ highway=* & (
       set mkgmap:unpaved=1;
       }
 
-highway=* &
-    smoothness~'.*(bad|horrible|impassable)'
-      {
-      add mkgmap:road-speed=-2; 
-      }
-
 ## highway=path are handled in inc/track_path_lines to allow bicycle routing
-
 man_made=pier & area!=yes
               {
                 add highway=footway;

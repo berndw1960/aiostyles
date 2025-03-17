@@ -34,6 +34,11 @@ highway=* & construction=* & maxspeed!=*
           add mkgmap:road-speed = '-1'
           }
 
+# reduce maxspeed for bad ways
+highway=* & smoothness~'.*(bad|horrible|impassable)' 
+        { 
+         add mkgmap:road-speed = '-2' 
+         }
 #--------------------------------------------------------------------------------------
 
 # motorway
