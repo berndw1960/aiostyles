@@ -21,8 +21,9 @@ highway=*
 highway=* 
   & access ~ '.*(agricultural|forestry).*'
     {
-      add foot=yes;
-      add vehicle='${access}' ; delete access ; 
+      add foot=yes ;
+      add vehicle='${access}' ;
+      delete access ; 
       }
 
 # Include country specific access rules that are derived from the highway type
@@ -42,7 +43,10 @@ highway=* &
     bicycle!=* &
     (rcn_network=yes |
      ncn_network=yes |
-     lcn_network=yes )
+     lcn_network=yes |
+     rcn=yes |
+     ncn=yes |
+     lcn=yes )
          {
          set bicycle=yes ;
          }
