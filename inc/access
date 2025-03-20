@@ -10,15 +10,6 @@
 # mkgmap:delivery
 # A class is not allowed to use the way if its tag is set to 'no'
 
-# First set access settings with high priority.
-#
-# In case a way is tagged with 
-#    highway=motorway;access=yes 
-# we assume that foot and bikes are not allowed anyhow.
-
-highway=* & motorroad=yes                  { add bicycle=no; add foot=no; }
-highway=motorway | highway=motorway_link   { add bicycle=no; add foot=no; }
-
 # ways with 'disused=yes' and similar shouldn't used for routing, sometimes they are really expensive
 highway=*
   & (disused=yes |
@@ -31,7 +22,20 @@ highway=*
   & access ~ '.*(agricultural|forestry).*'
     {
       add foot=yes;
+      add vehicle='${access}' ; delete access ; 
       }
+
+# Include country specific access rules that are derived from the highway type
+include '../inc/access_country';
+
+# First set access settings with high priority.
+#
+# In case a way is tagged with 
+#    highway=motorway;access=yes 
+# we assume that foot and bikes are not allowed anyhow.
+
+highway=* & motorroad=yes                  { add bicycle=no; add foot=no; }
+highway=motorway | highway=motorway_link   { add bicycle=no; add foot=no; }
 
 #some parts of bicycle routes are on ways with vehicle=*, set bicycle=yes for routing
 highway=* &
@@ -102,8 +106,7 @@ motor_vehicle=*      { add motorcar='${motor_vehicle}';
 psv=*                { add taxi='${psv}'; 
                        add bus='${psv}'; }
 
-# Include country specific access rules that are derived from the highway type
-include '../inc/access_country';
+
 
 
 # throughroute cannot be handled differently for different vehicle types

@@ -20,6 +20,15 @@ highway=trunk & motorroad !=*
 highway=bus_guideway
         & mkgmap:country=DEU            { add bus=yes; add taxi=yes; addaccess 'no' ; }
 
+# highway=track in public areas are allowed to use by law, if they are usable 
+# most times of the year, so hw=track with vehicle=agricultural|forestry get an 
+# additional bicycle=yes, to make routing over this ways possible.
+
+highway=track & tracktype~'grade[1-3]'
+        & vehicle ~ '.*(agricultural|forestry)'
+        & bicycle!=*
+        & mkgmap:country=DEU            { add bicycle=yes; }
+
 # Belgium (BEL)
 
 highway=trunk     & mkgmap:country=BEL {add bicycle=no; add foot=no}
