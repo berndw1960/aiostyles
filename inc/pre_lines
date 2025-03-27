@@ -98,31 +98,33 @@ highway=corridor
 # HINT: only mkgmap:unpaved=1 is handled in the devices, ways with 
 #       an empty or not existent key mkgmap:unpaved are handled as paved way
 
-# flag paved ways
-#highway=* & (
-#    surface=asphalt |
-#    surface=bricks |
-#    surface=paved |
-#    surface=sett |
-#    surface=concrete |
-#    surface=concrete:lanes |
-#    surface=concrete:plates |
-#    surface=paving_stones |
-#    surface=paving_stones:lanes |
-#    surface=grass_paver |
-#    surface=grass_paver:lanes |
-#    surface=cobblestone |
-#    surface=cobblestone:flattened |
-#    surface=unhewn_cobblestone |
-#    surface=metal |
-#    surface=metal_grid |
-#    surface=rubber |
-#    surface=tiles |
-#    surface=wood |
-#    surface=chipseal)
-#      {
-#      set mkgmap:unpaved=0;
-#      }
+# flag paved ways without tracktype
+highway=track & tracktype!=* &
+    (
+    surface=asphalt |
+    surface=bricks |
+    surface=paved |
+    surface=sett |
+    surface=concrete |
+    surface=concrete:lanes |
+    surface=concrete:plates |
+    surface=paving_stones |
+    surface=paving_stones:lanes |
+    surface=grass_paver |
+    surface=grass_paver:lanes |
+    surface=cobblestone |
+    surface=cobblestone:flattened |
+    surface=unhewn_cobblestone |
+    surface=metal |
+    surface=metal_grid |
+    surface=rubber |
+    surface=tiles |
+    surface=wood |
+    surface=chipseal
+    )
+      {
+      set tracktype=grade1;
+      }
 
 # flag unpaved roads
 highway=* & (

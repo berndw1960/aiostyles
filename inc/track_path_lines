@@ -10,9 +10,9 @@ highway=track & tracktype~'grade[4-6]'       [0x12011 resolution 22-22 continue]
 highway=track & tracktype~'grade[4-6]'       [0x11011 resolution 24-23 continue]
 highway=track & tracktype~'grade[4-6]'       [0x11 resolution 24 road_class=0 road_speed=0]
 
-highway=track                                [0x1200b resolution 22-22 continue]
-highway=track                                [0x1100b resolution 24-23 continue]
-highway=track                                [0x11 resolution 24 road_class=0 road_speed=0]
+highway=track & tracktype!=*                 [0x1200b resolution 22-22 continue]
+highway=track & tracktype!=*                 [0x1100b resolution 24-23 continue]
+highway=track & tracktype!=*                 [0x11 resolution 24 road_class=0 road_speed=0]
 
 #------------------------------------------------------------------------------
 # via_ferrata not routable
