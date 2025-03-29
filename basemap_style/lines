@@ -7,6 +7,7 @@
 
 # mark highways if needed with special flags
 include '../inc/pre_lines' ;
+include '../inc/overlays';
 
 # process exits and destination
 include '../inc/exit_dest' ;
@@ -15,6 +16,7 @@ include '../inc/exit_dest' ;
 include '../inc/lines';
 include '../inc/non_motorcar_ways_lines';
 include '../inc/track_path_lines';
+
 
 # rendering options of nonroutable ways
 include '../inc/boundary_lines' ;

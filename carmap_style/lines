@@ -8,6 +8,7 @@
 
 # mark highways if needed with special flags
 include '../inc/pre_lines' ;
+include '../inc/overlays';
 
 # process exits and destination
 include '../inc/exit_dest' ;
