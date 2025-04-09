@@ -1,40 +1,40 @@
 # overlays on track and path ways
 
-highway=via_ferrata                                                                     [0x10e0c resolution 24 continue]
+highway=via_ferrata                                   [0x10e0c resolution 24 continue]
 
 # embankment overlay
 (man_made=dyke | embankment=yes)
           & (highway=track |
              highway=path |
              highway=footway |
-             highway=cycleway)                                                          [0x10f00 resolution 24 continue]
+             highway=cycleway)                        [0x10f00 resolution 24 continue]
 
-highway~'.*ramp'                                                                        [0x10f00 resolution 24 continue]
+highway~'.*ramp'                                      [0x10f00 resolution 24 continue]
 
 # cutting overlay
 (cutting=yes) &
   (highway=track |
      highway=path |
      highway=footway |
-     highway=cycleway)                                                                  [0x10f01 resolution 24 continue]
+     highway=cycleway)                                [0x10f01 resolution 24 continue]
 
 # bridleway overlay
 # only if it is allowed by signs
-(horse=designated |
-  horse=official |
-  horse=permissive)
-          & (highway=track |
-             highway=path |
-             highway=footway |
-             highway=cycleway)                                                          [0x10e0b resolution 24 continue]
+(highway=track |
+   highway=path |
+   highway=footway |
+   highway=cycleway)  &
+     (horse=designated |
+      horse=official |
+      horse=permissive)                               [0x10e0b resolution 24 continue]
 
 # ways with bad conditions
-(highway=path | highway=track)
-           & (smoothness~'.*(bad|horrible|impassable)' |
-             trail_visibility~'.*(bad|horrible|no)' |
-             informal=yes)                                                              [0x10e0c resolution 24 continue]
+(highway=path | highway=track) &
+    (smoothness~'.*(bad|horrible|impassable)' |
+     trail_visibility~'.*(bad|horrible|no)' |
+     informal=yes)                                    [0x10e0c resolution 24 continue]
 
 highway=escalator
        {
        set highway=footway;
-       }                                                                                [0x10f01 resolution 24 continue]
+       }                                              [0x10f01 resolution 24 continue]
