@@ -5,40 +5,40 @@ power=generator &
       ( power_source=wind |
         generator:source=wind )                                           [0x6416 resolution 24]
 #0x7202
-power=generator &
-      ( power_source=hydro |
-        power_source=tidal |
-        power_source=wave |
-        power_source=geothermal |
-        generator:source=hydro |
-        generator:source=tidal |
-        generator:source=wave |
-        generator:source=geothermal )                                     [0x7203 resolution 24]
+#power=generator &
+#      ( power_source=hydro |
+#        power_source=tidal |
+#        power_source=wave |
+#        power_source=geothermal |
+#        generator:source=hydro |
+#        generator:source=tidal |
+#        generator:source=wave |
+#        generator:source=geothermal )                                     [0x7203 resolution 24]
 
-power=generator &
-      ( power_source=nuclear |
-        power_source=fusion |
-        generator:source=nuclear |
-        generator:source=fusion )                                         [0x7204 resolution 24]
+#power=generator &
+#      ( power_source=nuclear |
+#        power_source=fusion |
+#        generator:source=nuclear |
+#        generator:source=fusion )                                         [0x7204 resolution 24]
 
-power=generator &
-      ( power_source=biofuel |
-        power_source=oil |
-        power_source=coal |
-        power_source=gas |
-        power_source=waste |
-        generator:source=biofuel |
-        generator:source=oil |
-        generator:source=coal |
-        generator:source=gas |
-        generator:source=waste )                                          [0x7205 resolution 24]
+#power=generator &
+#      ( power_source=biofuel |
+#        power_source=oil |
+#        power_source=coal |
+#        power_source=gas |
+#        power_source=waste |
+#        generator:source=biofuel |
+#        generator:source=oil |
+#        generator:source=coal |
+#        generator:source=gas |
+#        generator:source=waste )                                          [0x7205 resolution 24]
 
-power=generator &
-      ( power_source=photovoltaic |
-        power_source=solar-thermal |
-        generator:source=photovoltaic |
-        generator:source~'solar.*' )                                      [0x7206 resolution 24]
+#power=generator &
+#      ( power_source=photovoltaic |
+#        power_source=solar-thermal |
+#        generator:source=photovoltaic |
+#        generator:source~'solar.*' )                                      [0x7206 resolution 24]
 
-power=generator                                                           [0x7200 resolution 24]
+#power=generator                                                           [0x7200 resolution 24]
 
 # 0x72ss
