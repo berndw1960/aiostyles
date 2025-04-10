@@ -1074,9 +1074,9 @@ ExtendedLabels=N
 String1=0x02,Nadelwald
 String2=0x04,coniferous
 Xpm="32 32 4 1"
-"0 c #BDFF8B"
+"0 c none"
 "1 c #00BB00"
-"2 c #007800"
+"2 c none"
 "3 c #00C000"
 "00000000000000000000000000000000"
 "00000000000000000000000000000000"
@@ -1119,9 +1119,9 @@ ExtendedLabels=N
 String1=0x02,Laubwald
 String2=0x04,deciduous
 Xpm="32 32 4 1"
-"0 c #BDFF8B"
+"0 c none"
 "1 c #00BB00"
-"2 c #007800"
+"2 c none"
 "3 c #00C000"
 "00000000000000000000000000000000"
 "00000000000000000000000000000000"
@@ -1164,9 +1164,9 @@ ExtendedLabels=N
 String1=0x02,Mischwald
 String2=0x04,mixed
 Xpm="32 32 4 1"
-"0 c #BDFF8B"
+"0 c none"
 "1 c #00BB00"
-"2 c #007800"
+"2 c none"
 "3 c #00C000"
 "00000000000000000000000000000000"
 "00000000000000000000000000000000"
