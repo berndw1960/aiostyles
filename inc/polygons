@@ -79,7 +79,7 @@ highway=pedestrian &
 
 leisure=nature_reserve                          [0x0d resolution 18 continue]
 
-landuse=forest                                  [0x20 resolution 22-18 continue]
+landuse=forest                                  [0x20 resolution 22-18]
 landuse=forest &
   (wood=coniferous | leaf_type=needleleaved)    [0x21 resolution 24-23]
 landuse=forest &
@@ -161,15 +161,7 @@ military=barracks                                          [0x04 resolution 22]
 #------------------------------------------------------------------------------
 # natural
 
-natural=wood                                            [0x15 resolution 18 continue]
-natural=wood &
-          (wood=coniferous | leaf_type=needleleaved)    [0x21 resolution 24-23]
-natural=wood &
-          (wood=deciduous | leaf_type=broadleaved)      [0x22 resolution 24-23]
-natural=wood &
-          (wood=mixed | leaf_type=mixed)                [0x23 resolution 24-23]
-natural=wood                                            [0x15 resolution 24-23]
-
+natural=wood                                            [0x15 resolution 20]
 natural=scree                                           [0x24 resolution 20]
 natural=scrub                                           [0x4f resolution 20]
 natural=heath                                           [0x14 resolution 20]

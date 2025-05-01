@@ -87,9 +87,9 @@ amenity=university
 amenity=parking & 
     (parking=multi-storey | parking=underground)     
             [0x06 resolution 24]
-amenity=parking                 
+amenity=parking
             [0x05 resolution 24]
-amenity=car_sharing             
+amenity=car_sharing
             [0x05 resolution 24]
 
 
@@ -100,9 +100,9 @@ aeroway=aerodrome |
     aeroway=airport |
     aeroway=airfield |
     aeroway=apron |
-    aeroway=helipad                    
+    aeroway=helipad
             [0x07 resolution 18]
-aeroway=runway                  
+aeroway=runway
             [0x0e resolution 20]
 
 #------------------------------------------------------------------------------
@@ -113,25 +113,14 @@ place=village |
             [0x03 resolution 18]
 
 highway=pedestrian & 
-    (area=yes | area=true | area=1)      
+    (area=yes | area=true | area=1)
             [0x12 resolution 22]
 
 #leisure=nature_reserve          
 #            [0x0d resolution 18 continue]
 
 landuse=forest                  
-            [0x20 resolution 22-18 continue]
-landuse=forest &
-  (wood=coniferous | leaf_type=needleleaved)    
-            [0x21 resolution 24-23]
-landuse=forest &
-  (wood=deciduous | leaf_type=broadleaved)      
-            [0x22 resolution 24-23]
-landuse=forest &
-   (wood=mixed | leaf_type=mixed)         
-            [0x23 resolution 24-23]
-landuse=forest                     
-            [0x20 resolution 24-23]
+            [0x23 resolution 18]
 #landuse=meadow                     
 #            [0x10f10 resolution 21]
 landuse=commercial                 
@@ -227,19 +216,7 @@ military=barracks
 # natural
 
 natural=wood
-            [0x15 resolution 22-18 continue]
-natural=wood &
-    (wood=coniferous | leaf_type=needleleaved)    
-            [0x21 resolution 24-23]
-natural=wood &
-    (wood=deciduous | leaf_type=broadleaved)      
-            [0x22 resolution 24-23]
-natural=wood &
-    (wood=mixed | leaf_type=mixed)                
-            [0x23 resolution 24-23]
-natural=wood
-            [0x15 resolution 24-23]
-
+            [0x15 resolution 20]
 #natural=scree
 #           [0x24 resolution 20]
 #natural=scrub
