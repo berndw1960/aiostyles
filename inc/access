@@ -83,6 +83,14 @@ highway=path
                   set vehicle=no ;
                   }
 
+## rule to prevent using small or bad ways with vehicles
+
+highway=*
+    & (maxwidth<1.0 | width<1.0)
+                {
+                  set vehicle=no;
+                  }
+
 ## this rule should prevent routing through narrow streets with motorvehicles, 
 
 highway=*
@@ -91,15 +99,7 @@ highway=*
                   set motor_vehicle=no;
                 }
 
-## rules to prevent using small or bad ways with vehicles
-
-highway=*
-    & (maxwidth<1.0 | width<1.0)
-                {
-                  set vehicle=no;
-                }
-
-# change motorcar to motor_vehicle if needed
+ # change motorcar to motor_vehicle if needed
 
 highway=* & motorcar=* & motor_vehicle!=*
                  { 
@@ -167,7 +167,6 @@ barrier=bollard |
 
 barrier=bus_trap
           {
-            add bus=yes;
             add foot=yes;
             add bicycle=yes;
             set mkgmap:road-speed=1;
