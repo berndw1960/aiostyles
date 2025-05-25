@@ -26,6 +26,12 @@ highway=*
 access=designated
     { delete access }
 
+# access=yes is the default value and does not usually need to be set.
+# We will set the access rules later in this file
+
+access=yes
+    { delete access }
+
 # Include country specific access rules that are derived from the highway type
 include '../inc/access_country';
 
