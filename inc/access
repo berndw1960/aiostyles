@@ -225,8 +225,8 @@ highway=*
         set mkgmap:throughroute=no;
         }
 
-## mkgmap:unpaved=1 is set in pre_lines, here only check for some types of ways
-## this should prevent routing through bad ways, if there is no special reason
+## mkgmap:unpaved=1 is set in pre_lines 
+## this rule should prevent routing through bad ways, if there is no special reason
 
 highway=track
             & mkgmap:unpaved=1
