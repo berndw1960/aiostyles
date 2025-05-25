@@ -3,18 +3,13 @@
 # mkgmap:bicycle
 # mkgmap:foot
 # mkgmap:car
-# mkgmap:truck
-# mkgmap:taxi
-# mkgmap:bus
-# mkgmap:emergency
-# mkgmap:delivery
+
 # A class is not allowed to use the way if its tag is set to 'no'
 
 # some access rules with exceptions
 highway=* 
   & access ~ '.*(agricultural|forestry).*'
       {
-      add foot=yes ;
       add vehicle='${access}' ;
       delete access ; 
       }
@@ -58,6 +53,25 @@ highway=* &
          set bicycle=yes ;
          }
 
+# ways with 'disused=yes' and similar shouldn't used for routing, sometimes they are really expensive
+
+highway=*
+    & (disused=yes |
+       illegal=yes |
+       informal=yes)
+           { 
+            set foot=no ; 
+            set vehicle=no
+            }
+
+# Don't route through highway=construction, they are considered unusable
+
+highway=construction
+           { 
+            set foot=no ; 
+            set vehicle=no
+            }
+
 ## limit routing over bad pathes
 
 highway=path
@@ -65,10 +79,8 @@ highway=path
               sac_scale~'.*(mountain|alpine)_hiking' |
               mtb:scale>0 |
               mtb:scale:imba>0)
-                {
-                  add foot=yes ;
-                  add bicycle=no ;
-                  addaccess 'no' ;
+                { 
+                  set vehicle=no ;
                   }
 
 ## this rule should prevent routing through narrow streets with motorvehicles, 
@@ -84,24 +96,28 @@ highway=*
 highway=*
     & (maxwidth<1.0 | width<1.0)
                 {
-                  add foot=yes;
                   set vehicle=no;
                 }
+
+# change motorcar to motor_vehicle if needed
+
+highway=* & motorcar=* & motor_vehicle!=*
+                 { 
+                  set motor_vehicle='${motorcar}' ;
+                  delete motorcar ;
+                  } 
 
 # Add common access rules that are derived from the highway type
 
 highway=path
-                { add foot=yes ;
-                  add bicycle=yes ;
-                  addaccess 'no' ;
+                { 
+                  set motor_vehicle=no;
                   }
 
-highway=steps|
-  highway=footway |
-  railway=platform
+highway=steps |
+  highway=footway 
                 {
-                  add foot=yes ;
-                  addaccess 'no' ;
+                  set vehicle=no;
                   }
 
 highway=pedestrian & area!=*
@@ -117,8 +133,7 @@ highway=bridleway
 
 highway=cycleway
                 {
-                  add bicycle=yes ;
-                  addaccess 'no' ;
+                  add motor_vehicle=no;
                   }
 
 ## some access rules for node objects, this rules would be applied to short part of a way,
@@ -168,23 +183,6 @@ barrier~'.*(gate)' |
             set mkgmap:road-speed=0;
             }
 
-# ways with 'disused=yes' and similar shouldn't used for routing, sometimes they are really expensive
-
-highway=*
-    & (disused=yes |
-       illegal=yes |
-       informal=yes)
-           { 
-           setaccess 'no'; 
-           }
-
-# Don't route through highway=construction, they are considered unusable
-
-highway=construction
-           { 
-           setaccess 'no' 
-           }
-
 # Now fill the access tree (http://wiki.openstreetmap.org/wiki/Key:access) 
 # This is required so that subsequent rules do not add a tag (bicycle),
 # which is already defined by a higher tag (vehicle) 
@@ -192,89 +190,59 @@ highway=construction
 access=*
     {
     add foot='${access}'; 
-    add vehicle='${access}'; 
+    add vehicle='${access}';
     }
+
 vehicle=*
     {
     add bicycle='${vehicle}'; 
-    add motor_vehicle='${vehicle}'; 
-    }
-motor_vehicle=*
-    {
-    add motorcar='${motor_vehicle}'; 
-    add goods='${motor_vehicle}'; 
-    add hgv='${motor_vehicle}'; 
-    add psv='${motor_vehicle}'; 
-    add emergency='${motor_vehicle}'; 
-    }
-psv=*
-    { 
-    add taxi='${psv}'; 
-    add bus='${psv}'; 
+    add motor_vehicle='${vehicle}';
     }
 
-# throughroute cannot be handled differently for different vehicle types
-# Therefore we have to choose one vehicle type - and the winner is: motorcar
+# throughroute for some ways
 
 highway=*
-    & motorcar ~ '.*(customers|delivery|destination|employees|residents|visitors).*'
+    & motor_vehicle ~ '.*(customers|delivery|destination|employees|residents|visitors).*'
         {
-        set mkgmap:throughroute=no;
-        set motorcar=yes;
-        }
+         set mkgmap:throughroute=no;
+         }
 
 # ways with ownership shouldn't use to pass through if there is no special reason
 
 highway=*
     & ownership ~ '.*(private).*'
         {
-        set mkgmap:throughroute=no;
-        }
+         set mkgmap:throughroute=no;
+         }
 
 ## mkgmap:unpaved=1 is set in pre_lines 
 ## this rule should prevent routing through bad ways, if there is no special reason
 
 highway=track
-            & mkgmap:unpaved=1
-            & (tracktype~'grade[4-6]' |
-               tracktype!=*)
-                {
-                 set mkgmap:throughroute=no ;
-                }
+    & mkgmap:unpaved=1
+    & (tracktype~'grade[4-6]' |
+       tracktype!=*)
+           {
+            set mkgmap:throughroute=no ;
+            }
 
 # Normalize values that indicate a restriction to 'no'
 # https://taginfo.openstreetmap.org/keys/access#values
-# set motorcar only if prior rules passed without change to motorcar=yes
+# set motor_vehicle only if prior rules passed without change to motor_vehicle=yes
 
-motorcar ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                  { add motorcar=no }
-foot ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                      { set foot=no }
-bicycle ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                   { set bicycle=no }
-goods ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                     { set goods=no }
-hgv ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                       { set hgv=no }
-bus ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                       { set bus=no }
-taxi ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                      { set taxi=no }
-emergency ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                 { set emergency=no }
+foot ~ '.*(private|employees|residents|visitors|customers|agricultural|forestry|use_sidepath).*'                      { set foot=no }
+bicycle ~ '.*(private|employees|residents|destination|visitors|customers|agricultural|forestry|use_sidepath).*'       { set bicycle=no }
+motor_vehicle ~ '.*(private|employees|residents|destination|visitors|customers|agricultural|forestry).*'              { add motor_vehicle=no }
 
-# Normalize values that indicate a restriction to 'yes'
+# Remove values that indicate a restriction to 'yes'
+# yes is default if empty
 
-motorcar ~ '.*(designated|permissive|permit|official|allowed).*'                   { set motorcar=yes }
-foot ~ '.*(designated|permissive|permit|official|allowed).*'                       { set foot=yes }
-bicycle ~ '.*(designated|permissive|permit|official|allowed|dismount).*'           { set bicycle=yes }
-goods ~ '.*(designated|permissive|permit|official|allowed).*'                      { set goods=yes }
-hgv ~ '.*(designated|permissive|permit|official|allowed).*'                        { set hgv=yes }
-bus ~ '.*(designated|permissive|permit|official|allowed).*'                        { set bus=yes }
-taxi ~ '.*(designated|permissive|permit|official|allowed).*'                       { set taxi=yes }
-emergency ~ '.*(designated|permissive|permit|official|allowed).*'                  { set emergency=yes }
-
+highway=* & foot!=no                                       { delete foot }
+highway=* & bicycle!=no                                    { delete bicycle }
+highway=* & motor_vehicle!=no                              { delete motor_vehicle }
 
 # Copy the OSM access tags to the mkgmap internal tags
 
 foot=*                  { set mkgmap:foot='${foot}' }
-bicycle=*               { set mkgmap:bicycle='${bicycle}' }
-motorcar=*              { set mkgmap:car='${motorcar}' }
-goods=*                 { set mkgmap:delivery='${goods}' }
-hgv=*                   { set mkgmap:truck='${hgv}' }
-bus=*                   { set mkgmap:bus='${bus}' }
-taxi=*                  { set mkgmap:taxi='${taxi}' }
-emergency=*             { set mkgmap:emergency='${emergency}' }
-
+bicycle=*               { set mkgmap:bicycle='${bicycle}'}
+motor_vehicle=*         { set mkgmap:car='${motor_vehicle}' }
