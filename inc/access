@@ -19,6 +19,13 @@ highway=*
       delete access ; 
       }
 
+# The exact key/value combination access=designated should never appear on an object. 
+# The value designated must be used with a specific mode of transport. 
+# Examples: bicycle=designated or foot=designated.
+
+access=designated
+    { delete access }
+
 # Include country specific access rules that are derived from the highway type
 include '../inc/access_country';
 
@@ -184,7 +191,6 @@ highway=construction
            setaccess 'no' 
            }
 
-
 # Now fill the access tree (http://wiki.openstreetmap.org/wiki/Key:access) 
 # This is required so that subsequent rules do not add a tag (bicycle),
 # which is already defined by a higher tag (vehicle) 
@@ -231,26 +237,27 @@ highway=*
 
 
 # Normalize values that indicate a restriction to 'no'
+# https://taginfo.openstreetmap.org/keys/access#values
 
-motorcar ~ '.*(private|agricultural|forestry).*'                            { set motorcar=no }
-foot ~ '.*(private|agricultural|forestry).*'                                { set foot=no }
-bicycle ~ '.*(private|agricultural|forestry).*'                             { set bicycle=no }
-goods ~ '.*(private|agricultural|forestry).*'                               { set goods=no }
-hgv ~ '.*(private|agricultural|forestry).*'                                 { set hgv=no }
-bus ~ '.*(private|agricultural|forestry).*'                                 { set bus=no }
-taxi ~ '.*(private|agricultural|forestry).*'                                { set taxi=no }
-emergency ~ '.*(private|agricultural|forestry).*'                           { set emergency=no }
+motorcar ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                  { set motorcar=no }
+foot ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                      { set foot=no }
+bicycle ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                   { set bicycle=no }
+goods ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                     { set goods=no }
+hgv ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                       { set hgv=no }
+bus ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                       { set bus=no }
+taxi ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                      { set taxi=no }
+emergency ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                 { set emergency=no }
 
 # Normalize values that indicate a restriction to 'yes'
 
-motorcar ~ '.*(designated|permissive|official|allowed).*'                   { set motorcar=yes }
-foot ~ '.*(designated|permissive|official|allowed).*'                       { set foot=yes }
-bicycle ~ '.*(designated|permissive|official|allowed|dismount).*'           { set bicycle=yes }
-goods ~ '.*(designated|permissive|official|allowed).*'                      { set goods=yes }
-hgv ~ '.*(designated|permissive|official|allowed).*'                        { set hgv=yes }
-bus ~ '.*(designated|permissive|official|allowed).*'                        { set bus=yes }
-taxi ~ '.*(designated|permissive|official|allowed).*'                       { set taxi=yes }
-emergency ~ '.*(designated|permissive|official|allowed).*'                  { set emergency=yes }
+motorcar ~ '.*(designated|permissive|permit|official|allowed).*'                   { set motorcar=yes }
+foot ~ '.*(designated|permissive|permit|official|allowed).*'                       { set foot=yes }
+bicycle ~ '.*(designated|permissive|permit|official|allowed|dismount).*'           { set bicycle=yes }
+goods ~ '.*(designated|permissive|permit|official|allowed).*'                      { set goods=yes }
+hgv ~ '.*(designated|permissive|permit|official|allowed).*'                        { set hgv=yes }
+bus ~ '.*(designated|permissive|permit|official|allowed).*'                        { set bus=yes }
+taxi ~ '.*(designated|permissive|permit|official|allowed).*'                       { set taxi=yes }
+emergency ~ '.*(designated|permissive|permit|official|allowed).*'                  { set emergency=yes }
 
 
 # Copy the OSM access tags to the mkgmap internal tags
