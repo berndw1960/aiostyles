@@ -82,18 +82,6 @@ highway=*
                   set vehicle=no;
                 }
 
-## mkgmap:unpaved=1 is set in pre_lines, here only check for some types of ways
-## this should prevent routing, if there is no special reason
-
-highway=track
-            & mkgmap:unpaved=1
-            & (tracktype~'grade[3-6]' |
-               tracktype!=*)
-                {
-                  add foot=yes ;
-                  addaccess 'no' ;
-                }
-
 # Add common access rules that are derived from the highway type
 
 highway=path
@@ -223,11 +211,13 @@ psv=*
 # Therefore we have to choose one vehicle type - and the winner is: motorcar
 
 highway=*
-    & motorcar ~ '.*(customers|delivery|destination).*'
+    & motorcar ~ '.*(customers|delivery|destination|employees|residents|visitors).*'
         {
         set mkgmap:throughroute=no;
         set motorcar=yes;
         }
+
+# ways with ownership shouldn't use to pass through if there is no special reason
 
 highway=*
     & ownership ~ '.*(private).*'
@@ -235,11 +225,22 @@ highway=*
         set mkgmap:throughroute=no;
         }
 
+## mkgmap:unpaved=1 is set in pre_lines, here only check for some types of ways
+## this should prevent routing through bad ways, if there is no special reason
+
+highway=track
+            & mkgmap:unpaved=1
+            & (tracktype~'grade[4-6]' |
+               tracktype!=*)
+                {
+                 set mkgmap:throughroute=no ;
+                }
 
 # Normalize values that indicate a restriction to 'no'
 # https://taginfo.openstreetmap.org/keys/access#values
+# set motorcar only if prior rules passed without change to motorcar=yes
 
-motorcar ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                  { set motorcar=no }
+motorcar ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                  { add motorcar=no }
 foot ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                      { set foot=no }
 bicycle ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                   { set bicycle=no }
 goods ~ '.*(private|employees|residents|visitors|agricultural|forestry).*'                     { set goods=no }

@@ -57,13 +57,6 @@ highway=traffic_signals |
   highway=no |
   highway=none                       {delete highway}
 
-# Hide unaccessible tunnels (removed while overwhelming)
-# highway=* & tunnel=yes &
-#  (access=private|access=no) &
-#  foot!=* &
-#  bicycle!=*                        {echotags ''}
-#  bicycle!=*                        {delete highway;delete junction}
-
 # Disable dead-end-checks for unaccessible oneways
 highway=* & oneway=yes &
   (access=private|access=no)        {add mkgmap:dead-end-check=false}
@@ -82,9 +75,6 @@ highway=* & oneway=yes &
 #               {
 #                 echo "motorway_link lacks oneway"
 #               }
-highway=motorway |
-  highway=motorway_link   { add oneway=yes; add mkgmap:numbers=false }
-
 #------------------------------------------------------------------------------
 
 highway=corridor
@@ -148,34 +138,6 @@ highway=* & (
       set mkgmap:unpaved=1;
       }
 
-# mark some partly known highways without surface
-#(highway=motorway |
-#    highway=motorway_link |
-#    highway=trunk |
-#    highway=trunk_link |
-#    highway=primary |
-#    highway=primary_link |
-#    highway=secondary |
-#    highway=tertiary |
-#    highway=residential |
-#    highway=living_street) &
-#    mkgmap:unpaved!=* &
-#    surface!=* 
-#      {
-#      set mkgmap:unpaved=0 
-#      }
-
-#(highway=track |
-#    highway=service |
-#    highway=path |
-#    highway=footway |
-#    highway=cycleway) &
-#    tracktype=grade1 &
-#    surface!=*
-#      {
-#      add mkgmap:unpaved=0;
-#      }
-
 (highway=track |
     highway=service |
     highway=path |
@@ -209,7 +171,6 @@ man_made=pier & area!=yes
                 add highway=footway;
                 add bicycle=dismount
                 }
-
 
 #------------------------------------------------------------------------------
 # Convert some rules
