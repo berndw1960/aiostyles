@@ -16,5 +16,5 @@ highway=road                         [0x0b resolution 24 road_class=0 road_speed
 # highway=track & area!=yes            {echo ' ${highway} ${tracktype}'}
 
 # test for unusual highways
-highway=* & area!=yes            {echo ' ${highway}'}
+# highway=* & area!=yes            {echo ' ${highway}'}
 
