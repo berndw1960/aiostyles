@@ -1,4 +1,4 @@
-# make key/value usable, if values are separated with ';'
+# make key/value usable, if values are separated or unusual
 include '../inc/filter';
 
 #To set the city, region and country values for all elements with housenumbers

@@ -4,15 +4,12 @@
 # mkgmap:foot
 # mkgmap:car
 
-# A class is not allowed to use the way if its tag is set to 'no'
+## A class is not allowed to use the way if its tag is set to 'no'
+## The aim is to enable cycling without violating serious rules
 
-# some access rules with exceptions
-highway=* 
-  & access ~ '.*(agricultural|forestry).*'
-      {
-      add vehicle='${access}' ;
-      delete access ; 
-      }
+
+## change rules order if access is set.
+## access --> vehicle --> motor_vehicle (only DEU)
 
 # The exact key/value combination access=designated should never appear on an object. 
 # The value designated must be used with a specific mode of transport. 
@@ -27,8 +24,48 @@ access=designated
 access=yes
     { delete access }
 
-# Include country specific access rules that are derived from the highway type
+# some access rules with exceptions
+highway=* 
+  & access ~ '.*(agricultural|forestry).*'
+      {
+      add vehicle='${access}' ;
+      delete access ; 
+      }
+
+# highway=track (>= 2m) in rural areas are allowed to use with bicycle by law, 
+# if they are usable most times of the year, so 
+#
+#     hw=track; vehicle=agricultural|forestry 
+#
+# are changed to motor_vehicle='${vehicle}', width will be checked later
+
+highway=track 
+        & tracktype~'grade[1-3]'
+        & vehicle ~ '.*(agricultural|forestry)'
+        & bicycle!=*
+        & mkgmap:country=DEU
+            { add motor_vehicle='${vehicle}';
+              delete vehicle ;
+              }
+
+# some parts of bicycle routes are on ways with vehicle=*, change the key to motor_vehicle
+
+highway=* &
+    bicycle!=* &
+    vehicle=* &
+    (rcn_network=yes |
+     ncn_network=yes |
+     lcn_network=yes |
+     rcn=yes |
+     ncn=yes |
+     lcn=yes )
+            { add motor_vehicle='${vehicle}';
+              delete vehicle ;
+              }
+
+## Include country specific access rules that are derived from the highway type
 include '../inc/access_country';
+
 
 # First set access settings with high priority.
 #
@@ -39,19 +76,6 @@ include '../inc/access_country';
 highway=* & motorroad=yes                  { add bicycle=no; add foot=no; }
 highway=motorway | highway=motorway_link   { add bicycle=no; add foot=no; }
 
-#some parts of bicycle routes are on ways with vehicle=*, set bicycle=yes for routing
-
-highway=* &
-    bicycle!=* &
-    (rcn_network=yes |
-     ncn_network=yes |
-     lcn_network=yes |
-     rcn=yes |
-     ncn=yes |
-     lcn=yes )
-         {
-         set bicycle=yes ;
-         }
 
 # ways with 'disused=yes' and similar shouldn't used for routing, sometimes they are really expensive
 
@@ -190,15 +214,17 @@ access=*
     {
     add foot='${access}'; 
     add vehicle='${access}';
+    delete access ;
     }
 
 vehicle=*
     {
     add bicycle='${vehicle}'; 
     add motor_vehicle='${vehicle}';
+    delete vehicle
     }
 
-# throughroute for some ways
+# Prevent passage through some ways, but some devices may ignore this rule(s) 
 
 highway=*
     & motor_vehicle ~ '.*(customers|delivery|destination|employees|residents|visitors).*'
@@ -227,11 +253,11 @@ highway=track
 
 # Normalize values that indicate a restriction to 'no'
 # https://taginfo.openstreetmap.org/keys/access#values
-# set motor_vehicle only if prior rules passed without change to motor_vehicle=yes
+
 
 foot ~ '.*(private|employees|residents|visitors|customers|agricultural|forestry|use_sidepath).*'                      { set foot=no }
 bicycle ~ '.*(private|employees|residents|destination|visitors|customers|agricultural|forestry|use_sidepath).*'       { set bicycle=no }
-motor_vehicle ~ '.*(private|employees|residents|destination|visitors|customers|agricultural|forestry).*'              { add motor_vehicle=no }
+motor_vehicle ~ '.*(private|employees|residents|destination|visitors|customers|agricultural|forestry).*'              { set motor_vehicle=no }
 
 # Remove values that indicate a restriction to 'yes'
 # yes is default if empty

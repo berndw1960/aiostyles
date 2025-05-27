@@ -7,6 +7,14 @@ highway=road                         [0x1100c resolution 24 continue]
 highway=road                         [0x0b resolution 24 road_class=0 road_speed=0]
 
 
-# are there any usable ways?
-#highway=* & area!=yes            {echo ' ${highway}'}
+## are there any usable ways?
+
+# first remove nonroutable highways, disable to show them in other tests
+(highway=services | highway=busway | highway=rest_area) {delete highway}
+
+# test for unusual hw=track
+# highway=track & area!=yes            {echo ' ${highway} ${tracktype}'}
+
+# test for unusual highways
+highway=* & area!=yes            {echo ' ${highway}'}
 

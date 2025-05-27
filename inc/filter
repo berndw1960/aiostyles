@@ -82,6 +82,60 @@ historic~'.*;.*'
                 set historic='${historic|part:}';
                 }
 
+## hw=track are often tagged with unusual values for tracktype
+## trying to get them under control
+## to check enable the tests in inc/unknown_ways_lines
+
+tracktype~'.*;.*'
+                {
+                set tracktype='${tracktype|part:}';
+                }
+
+# if grade1-5 is set, use only the last value
+tracktype~'.*-.*'
+                {
+                set tracktype='${tracktype|part:"-:-1}';
+                }
+
+# if the value is 1 to 5 without grade, also needed for the previous rule
+tracktype=1
+                {
+                set tracktype=grade1 ;
+                 }
+
+tracktype=2
+                 {
+                set tracktype=grade2 ;
+                 }
+
+tracktype=3
+                {
+                set tracktype=grade3 ;
+                 }
+
+tracktype=4
+                {
+                set tracktype=grade4 ;
+                }
+
+tracktype=5
+                {
+                set tracktype=grade5 ;
+                }
+
+# remove unknown values
+highway=track &
+    (
+     tracktype!=grade1 |
+     tracktype!=grade2 |
+     tracktype!=grade3 |
+     tracktype!=grade4 |
+     tracktype!=grade5 
+     )
+         {
+          delete tracktype
+          }
+
 # check width and maxwidth
 highway=* & width ~'.*,.*'
                 {
