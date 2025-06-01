@@ -47,6 +47,24 @@ highway ~ '.*;.*'
                 set highway='${highway|part:}';
                 }
 
+highway = * 
+    & access ~ '.*;.*'
+                {
+                set access='${access|part:}';
+                }
+
+highway = * 
+    & vehicle ~ '.*;.*'
+                {
+                set vehicle='${vehicle|part:}';
+                }
+
+highway = * 
+    & motor_vehicle ~ '.*;.*'
+                {
+                set motor_vehicle='${motor_vehicle|part:}';
+                }
+
 surface ~ '.*;.*'
                 {
                 set surface='${surface|part:}';
@@ -176,3 +194,5 @@ highway=* & maxwidth ~'.*,.*'
                 {
                   set maxwidth='${maxwidth|subst:",=>."}'
                   }
+
+
