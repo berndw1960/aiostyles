@@ -4,7 +4,11 @@ power=tower | power=pole                                                  [0x720
 power=generator &
       ( power_source=wind |
         generator:source=wind )                                           [0x6416 resolution 24]
-#0x7202
+
+power=substation |
+       building=transformer_tower                                         [0x7202 resolution 24]
+
+
 #power=generator &
 #      ( power_source=hydro |
 #        power_source=tidal |

@@ -2869,6 +2869,16 @@ xpm="0 0 1 0"
 
 [_polygon]
 Type=0x10F1C
+String1=0x02,Trafostation
+String2=0x04,Substation
+ExtendedLabels=Y
+FontStyle=SmallFont
+xpm="0 0 1 0"
+"0 c #FF1144"
+[end]
+
+[_polygon]
+Type=0x10F1D
 ExtendedLabels=N
 String1=0x02,FIXME
 String2=0x04,FIXME
@@ -8990,6 +9000,24 @@ dayxpm="7 7 2 1" colormode=32
 "$%$%$%$"
 "$$%%%$$"
 "$$$$$$$"
+[end]
+
+
+[_point]
+Type=0x07202
+String1=0x02,Trafostation
+String2=0x04,Substation
+dayxpm="8 8 2 1" colormode=32
+"$ c #FF1144" alpha=0
+"% c none"
+"$$$$$$$$"
+"$$$$$$$$"
+"$$%%%%$$"
+"$$%%%%$$"
+"$$%%%%$$"
+"$$%%%%$$"
+"$$$$$$$$"
+"$$$$$$$$"
 [end]
 
 
