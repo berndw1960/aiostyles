@@ -141,19 +141,6 @@ tracktype=5
                 set tracktype=grade5 ;
                 }
 
-# remove unknown values
-highway=track &
-    (
-     tracktype!=grade1 |
-     tracktype!=grade2 |
-     tracktype!=grade3 |
-     tracktype!=grade4 |
-     tracktype!=grade5 
-     )
-         {
-          delete tracktype
-          }
-
 # check width and maxwidth
 highway=* & width ~'.*,.*'
                 {
