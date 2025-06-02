@@ -53,6 +53,8 @@ building=church |
   building=school
             [0x10f1b resolution 23 continue with_actions]
 
+building=transformer_tower |
+  power=substation                               [0x10f1c resolution 23]
 
 # platforms, if they are an area or closed polygons
 (railway=platform | public_transport=platform) & area=yes    

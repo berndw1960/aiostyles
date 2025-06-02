@@ -221,6 +221,9 @@ building=church |
   building=public_building |
   building=civic                                 [0x10f1b resolution 23]
 
+building=transformer_tower |
+  power=substation                               [0x10f1c resolution 23]
+
 building=* &
   building!=no &
   building!=proposed &

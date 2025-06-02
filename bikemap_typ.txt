@@ -82,6 +82,7 @@ Type=0x10F18,6
 Type=0x10F19,6
 Type=0x13,7
 Type=0x10F1B,7
+Type=0x10F1C,7
 [end]
 
 [_polygon]
@@ -2874,7 +2875,7 @@ String2=0x04,Substation
 ExtendedLabels=Y
 FontStyle=SmallFont
 xpm="0 0 1 0"
-"0 c #FF1144"
+"0 c #c3c3c3"
 [end]
 
 [_polygon]
@@ -4336,7 +4337,6 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FF306A"
 "1 c #000000"
-
 [end]
 
 [_line]
@@ -4349,7 +4349,6 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FF9520"
 "1 c #000000"
-
 [end]
 
 [_line]
@@ -4362,7 +4361,6 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFCA00"
 "1 c #000000"
-
 [end]
 
 [_line]
@@ -4375,7 +4373,6 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFFF00"
 "1 c #000000"
-
 [end]
 
 [_line]
@@ -4388,7 +4385,6 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFFF00"
 "1 c #000000"
-
 [end]
 
 [_line]
@@ -4401,7 +4397,6 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #FFFFFF"
 "1 c #000000"
-
 [end]
 
 [_line]
@@ -4415,7 +4410,6 @@ BorderWidth=0
 ExtendedLabels=N
 Xpm="0 0 1 0"
 "0 c #A4A4A4"
-
 [end]
 
 [_line]
@@ -4428,7 +4422,6 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "0 c #00FF00"
 "1 c #000000"
-
 [end]
 
 [_line]

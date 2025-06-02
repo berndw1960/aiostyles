@@ -5,9 +5,7 @@ power=generator &
       ( power_source=wind |
         generator:source=wind )                                           [0x6416 resolution 24]
 
-power=substation |
-       building=transformer_tower                                         [0x7202 resolution 24]
-
+power=substation                                                          [0x7202 resolution 24]
 
 #power=generator &
 #      ( power_source=hydro |

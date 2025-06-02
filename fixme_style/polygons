@@ -3,12 +3,12 @@
     ( fixme = * |
       FIXME=* )
         {set name = '${fixme}' |
-                    '${FIXME}' }                        [0x10f1c resolution 22]
+                    '${FIXME}' }                        [0x10f1d resolution 22]
 
 building=* &
   building!=public &
   amenity=public_building
-    {set name = 'FIXME: building function unclear'}     [0x10f1c resolution 23]
+    {set name = 'FIXME: building function unclear'}     [0x10f1d resolution 23]
 
 <finalize>
 # The finalizer section is executed for each element when a rule with an element type matches
