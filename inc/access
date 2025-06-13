@@ -78,11 +78,14 @@ highway=track
 highway=* 
    & bicycle!=* 
    & vehicle=* 
-   & (rcn_network=yes |
+   & (network ~ '.*(icn|ncn|rcn|lcn)' |
+      icn_network=yes |
       ncn_network=yes |
+      rcn_network=yes |
       lcn_network=yes |
-      rcn=yes |
+      icn=yes |
       ncn=yes |
+      rcn=yes |
       lcn=yes )
             { add motor_vehicle='${vehicle}';
               delete vehicle ;
@@ -91,7 +94,8 @@ highway=*
 highway=*
        & vehicle=no
        & (bicycle=yes |
-          bicycle=designated)
+          bicycle=designated |
+          bicycle=dismount)
           { add motor_vehicle='${vehicle}';
             delete vehicle ;
             }
