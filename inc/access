@@ -207,7 +207,11 @@ railway=level_crossing &
 
 barrier~'.*(log)' &
     access=yes
-        {delete access}
+        {
+          add foot=yes;
+          add vehicle=no;
+          delete access;
+          }
 
 barrier=bollard |
     barrier=cycle_barrier |
@@ -228,6 +232,7 @@ barrier=bus_trap
           {
             add foot=yes;
             add bicycle=yes;
+            add motor_vehicle=no;
             set mkgmap:road-speed=1;
             }
 
@@ -272,7 +277,7 @@ highway=*
 highway=*
     & ownership ~ '.*(private).*'
         {
-         set mkgmap:throughroute=no;
+         add mkgmap:throughroute=no;
          }
 
 ## mkgmap:unpaved=1 is set in pre_lines 
