@@ -2,6 +2,18 @@
 # Sets the road speed based on the maxspeed tag.
 #
 
+# maxspeed has to be a numeric value, other value wll be 
+# changed if possible
+#
+# there are at least four different ways of capturing values
+# in OSM, some of these values can be converted to numeric values
+#
+# - maxspeed
+# - maxspeed:type
+# - zone:maxspeed
+# - zone:traffic
+#
+
 # filter parts after ';', no way to use this values
 
 maxspeed~'.*;.*'
@@ -9,10 +21,11 @@ maxspeed~'.*;.*'
                   add maxspeed='${maxspeed|part:}';
                 }
 
-# implicit is a unusual value, but often used,
+# delete unusual values, but often used,
 # delete it and try to set a better value later from type of way
 
-maxspeed=implicit               { delete maxspeed } 
+maxspeed=implicit               { delete maxspeed }
+maxspeed:type=sign              { delete maxspeed:type }
 
 
 # imperial speed limits are difficult ;-)
@@ -41,19 +54,28 @@ maxspeed=signals                { set maxspeed=100 }
 maxspeed=variable               { set maxspeed=100 }
 
 # maxspeed from type
-maxspeed=DE:walk                { set maxspeed=7 }
+
 maxspeed=DE:urban               { set maxspeed=50 }
 maxspeed=DE:rural               { set maxspeed=100 }
+maxspeed=DE:motorway            { add maxspeed=130 }
 
 maxspeed:type=DE:urban          { add maxspeed=50 }
 maxspeed:type=DE:rural          { add maxspeed=100 }
 maxspeed:type=DE:motorway       { add maxspeed=130 }
 
-zone:maxspeed=DE:urban          { add maxspeed=50 }
-
 zone:traffic=DE:urban           { add maxspeed=50 }
 zone:traffic=DE:rural           { add maxspeed=100 }
 zone:traffic=DE:motorway        { add maxspeed=130 }
+
+zone:traffic=CH:urban           { add maxspeed=50 }
+zone:traffic=CH:rural  
+    & motorroad=yes             { add maxspeed=100 }
+zone:traffic=CH:rural           { add maxspeed=80 }
+zone:traffic=CH:motorway        { add maxspeed=120 }
+
+zone:traffic=AT:urban           { add maxspeed=50 }
+zone:traffic=AT:rural           { add maxspeed=100 }
+zone:traffic=AT:motorway        { add maxspeed=130 }
 
 zone:traffic=FR:urban           { add maxspeed=50 }
 zone:traffic=FR:rural           { add maxspeed=80 }
@@ -86,6 +108,16 @@ zone:traffic=BE-BRU:rural       { add maxspeed=70 }
 
 zone:traffic=BE:motorway        { add maxspeed=120 }
 
+# set usuable values per default
+
+zone:traffic~'.*:urban'         { add maxspeed=50 }
+zone:traffic~'.*:rural'         { add maxspeed=80 }
+zone:traffic~'.*:motorway'      { add maxspeed=120 }
+
+maxspeed:type~'.*:urban'        { add maxspeed=50 }
+maxspeed:type~'.*:rural'        { add maxspeed=80 }
+maxspeed:type~'.*:motorway'     { add maxspeed=120 }
+
 # add maxspeed from area signs (aka zone)
 
 maxspeed~'.*:zone10'            { set maxspeed=10 }
@@ -95,6 +127,13 @@ maxspeed~'.*:zone40'            { set maxspeed=40 }
 maxspeed~'.*:zone50'            { set maxspeed=50 }
 maxspeed~'.*:zone60'            { set maxspeed=60 }
 
+maxspeed:type~'.*:zone10'       { set maxspeed=10 }
+maxspeed:type~'.*:zone20'       { set maxspeed=20 }
+maxspeed:type~'.*:zone30'       { set maxspeed=30 }
+maxspeed:type~'.*:zone40'       { set maxspeed=40 }
+maxspeed:type~'.*:zone50'       { set maxspeed=50 }
+maxspeed:type~'.*:zone60'       { set maxspeed=60 }
+
 zone:maxspeed~'.*:10'           { set maxspeed=10 }
 zone:maxspeed~'.*:20'           { set maxspeed=20 }
 zone:maxspeed~'.*:30'           { set maxspeed=30 }
@@ -102,27 +141,34 @@ zone:maxspeed~'.*:40'           { set maxspeed=40 }
 zone:maxspeed~'.*:50'           { set maxspeed=50 }
 zone:maxspeed~'.*:60'           { set maxspeed=60 }
 
-highway=living_street           { set maxspeed=7 }
+zone:traffic~'.*:zone10'        { set maxspeed=10 }
+zone:traffic~'.*:zone20'        { set maxspeed=20 }
+zone:traffic~'.*:zone30'        { set maxspeed=30 }
+zone:traffic~'.*:zone40'        { set maxspeed=40 }
+zone:traffic~'.*:zone50'        { set maxspeed=50 }
+zone:traffic~'.*:zone60'        { set maxspeed=60 }
+
+# this key/value is often used in Germany
+
+zone:maxspeed=DE:urban          { add maxspeed=50 }
 
 # some other rules
-maxspeed=walk                   { set maxspeed=7 }
-maxspeed~'.*:living_street'     { set maxspeed=7 }
 
-maxspeed~'.*:urban'             { set maxspeed=50 }
-
-maxspeed~'.*:rural'             { set maxspeed=90 }
-
-highway=trunk_link              { add maxspeed=50 }
-maxspeed~'.*:trunk'             { set maxspeed=100 }
-
-highway=motorway_link           { add maxspeed=50 }
-maxspeed~'.*:motorway'          { set maxspeed=130 }
-
+highway=living_street           { set maxspeed=7 }
+maxspeed~'.*walk'               { set maxspeed=7 }
+maxspeed~'.*living_street'      { set maxspeed=7 }
+maxspeed~'.*urban'              { set maxspeed=50 }
+maxspeed~'.*rural'              { set maxspeed=80 }
+maxspeed~'.*trunk'              { set maxspeed=100 }
+maxspeed~'.*motorway'           { set maxspeed=120 }
 maxspeed=none                   { set maxspeed=130 }
 
+highway=trunk_link              { add maxspeed=50 }
+highway=motorway_link           { add maxspeed=50 }
 
 # delete maxspeed if we still cannot convert it to km/h
-highway=* & maxspeed=* & maxspeedkmh()!=*   { delete maxspeed }
+
+highway=* & maxspeed=* & maxspeedkmh()!=*   {echo '${maxspeed}'; delete maxspeed }
 
 
 # set the maxspeed classes
