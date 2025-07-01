@@ -21,8 +21,8 @@ maxspeed~'.*;.*'
                   add maxspeed='${maxspeed|part:}';
                 }
 
-# delete unusual values, but often used,
-# delete it and try to set a better value later from type of way
+# delete unusual but often used values
+# try to set a better value later from type of way
 
 maxspeed=implicit               { delete maxspeed }
 maxspeed:type=sign              { delete maxspeed:type }
