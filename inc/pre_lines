@@ -17,33 +17,33 @@ highway=* & mkgmap:mp_created=true {add area=yes}
 highway=proposed |
   highway=proposal |
   highway=planned |
-  highway ~ '.*proposed.*'         {deletealltags}
+  highway ~ '.*proposed.*'         {delete highway; delete junction}
 
 # Hide removed ways
 highway=razed |
-  highway=dismantled               {deletealltags}
+  highway=dismantled               {delete highway; delete junction}
 
 #Hide historic ways
-highway=historic                    {deletealltags}
+highway=historic                   {delete highway; delete junction}
 
 # Hide abandoned ways.
 # Abandoned highways have some evidence of their former
 # existence but are no longer used. These
 # abandoned highways could be useful in topographical maps.
 # https://wiki.openstreetmap.org/wiki/Key:abandoned:
-abandoned:highway=* & highway!=*    {deletealltags}
-highway=abandoned                   {deletealltags}
-highway=disused                     {deletealltags}
-highway=demolished                  {deletealltags}
-highway=removed                     {deletealltags}
-highway=informal_path               {deletealltags}
+abandoned:highway=* & highway!=*    {delete highway; delete junction}
+highway=abandoned |
+highway=disused |
+highway=demolished |
+highway=removed |
+highway=informal_path               {delete highway; delete junction}
 
 # Hide other non-existent ways
 highway=unbuilt |
   highway=neverbuilt |
   highway=never_built |
   highway=rejected |
-  highway ~ 'x-.*'                  {deletealltags}
+  highway ~ 'x-.*'                  {delete highway; delete junction}
 
 # Remove highway tag from ways which are not suitable for routing
 highway=traffic_signals |
@@ -52,8 +52,12 @@ highway=traffic_signals |
   highway=centre_line |
   highway=traffic_island |
   highway=stopline |
+  highway=bus_stop |
+  highway=bus_guideway |
+  highway=emergency_access_point |
   highway=piste |
   highway=ski |
+  highway=via_ferrata |
   highway=no |
   highway=none                       {delete highway}
 
@@ -150,8 +154,7 @@ highway=* & (
       }
 
 (highway=bridleway |
-    highway=unsurfaced |
-    highway=via_ferrata) &
+    highway=unsurfaced) &
     surface!=*
       {
       set mkgmap:unpaved=1
@@ -163,6 +166,7 @@ highway=* & (
     sport=via_ferrata)
       {
       set mkgmap:unpaved=1;
+      set bicycle=no
       }
 
 ## highway=path are handled in inc/track_path_lines to allow bicycle routing
@@ -198,7 +202,8 @@ highway=* &
    oneway=reversible) { set mkgmap:road-class=-2;
                         set mkgmap:road-speed=-2;
                         delete mkgmap:fast_road}
-# highway=access == highway=service??
+
+# highway=access == highway=service?? really rare ;-)
 highway=access {set highway=service}
 
 

@@ -12,9 +12,12 @@ highway=road                         [0x0b resolution 24 road_class=0 road_speed
 # first remove nonroutable highways, disable to show them in other tests
 (highway=services | highway=busway | highway=rest_area) {delete highway}
 
+# Mop up any unrecognised highway types
+# highway=* & tmp:stopMopUp!=yes         {echo ' ${highway} mop-up highway'}  # mostly actual road names
+
 # test for unusual hw=track
 # highway=track & area!=yes            {echo ' ${highway} ${tracktype}'}
 
 # test for unusual highways
-# highway=* & area!=yes            {echo ' ${highway}'}
+# highway=* & area!=yes                 {echo ' ${highway}'}
 
