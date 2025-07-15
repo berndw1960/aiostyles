@@ -1,28 +1,41 @@
+## set *cn_network for highlighting ways, we use three types, icn, rcn and lcn
+## ncn and tcn are added to other types
 
-# there is a problem while cn_temp is not set or empty
 # only the highest type of route network active!
+# lcn = local cycle network
+# rcn = region cycle network
+# tcn = touristic cycle network only a few ways in Austria
+# ncn = national cycle network
+# icn = international cycle network
 
-## cycle highlights
-highway=* & (icn_network=yes|icn=yes|ncn=yes) { set cn_temp='icn' }
-highway=* & (rcn_network=yes|rcn=yes|tcn=yes) { set cn_temp='rcn' }
-highway=* & (lcn_network=yes|lcn=yes)         { set cn_temp='lcn' }
+highway=* & lcn=yes              { set lcn_network=yes;
+                                   delete lcn;
+                                   }
 
-cn_temp=lcn                          [0x10108 resolution 24-23 continue]
-cn_temp=rcn                          [0x10109 resolution 24-23 continue]
-cn_temp=rcn                          [0x1010f resolution 22-21 continue]
-cn_temp=icn                          [0x1010a resolution 24-23 continue]
-cn_temp=icn                          [0x10110 resolution 22-18 continue]
-cn_temp=icnrcn                       [0x1010b resolution 24-21 continue]
-cn_temp=icnrcn                       [0x10110 resolution 20-18 continue]
-cn_temp=rcnlcn                       [0x1010c resolution 24-23 continue]
-cn_temp=rcnlcn                       [0x1010f resolution 23-21 continue]
-cn_temp=icnlcn                       [0x1010d resolution 24-23 continue]
-cn_temp=icnlcn                       [0x10110 resolution 22-18 continue]
-cn_temp=icnrcnlcn                    [0x1010e resolution 24-23 continue]
-cn_temp=icnrcnlcn                    [0x10111 resolution 22-21 continue]
-cn_temp=icnrcnlcn                    [0x10110 resolution 20-18 continue]
+highway=* & (rcn=yes|tcn=yes)    { set rcn_network=yes;
+                                   delete rcn;
+                                   delete tcn;
+                                   delete lcn_network;
+                                   }
 
-highway=* & cn_temp=* {delete cn_temp}
+highway=* & (icn=yes|ncn=yes)    { set icn_network=yes;
+                                   delete icn;
+                                   delete ncn;
+                                   delete rcn_network;
+                                   delete lcn_network;
+                                   }
+# orange lines
+highway=* & lcn_network=yes                                  [0x10108 resolution 24-23 continue]
+
+# red lines
+highway=* & rcn_network=yes                                  [0x10109 resolution 24-23 continue]
+highway=* & rcn_network=yes                                  [0x1010a resolution 22-21 continue]
+
+# purple lines
+highway=* & icn_network=yes                                  [0x1010b resolution 24-23 continue]
+highway=* & icn_network=yes                                  [0x1010c resolution 22-18 continue]
+
+
 
 (highway=cycleway | (highway=path & bicycle=designated)) & cn_name=*
                 { set name='${cn_name}' }

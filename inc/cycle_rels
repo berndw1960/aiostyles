@@ -1,4 +1,13 @@
-# cycle_network relations
+## cycle_network relations
+
+# set the values from the cycle networks to the ways
+# lcn = local cycle network
+# rcn = region cycle network
+# tcn = touristic cycle network only a few ways in Austria
+# ncn = national cycle network
+# icn = international cycle network
+
+
 type=route &
     (route=bicycle | route=mtb) &
             (
