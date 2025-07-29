@@ -1,17 +1,7 @@
 #------------------------------------------------------------------------------
 # overlays
 
-# oneway overlay
-#highway=* &
-# highway!=motorway &
-# highway!=trunk &
-# highway!=motorway_link &
-# highway!=trunk_link &
-# highway!=primary_link &
-# highway!=secondary_link &
-# highway!=tertiary_link &
-# highway!=track
-#    & oneway=yes                                                                       [0x10e10 resolution 24-23 continue]
+# last one, wins!
 
 # Overlay on highways under construction
 highway=* &
@@ -21,6 +11,12 @@ highway=* &
 # bridge overlay
 (bridge=* & bridge!=no & bridge!=proposed & bridge!=abandoned)
     { set bridge=yes; }
+
+# man_made=bridge should also be displayed as a bridge, if tagged as open way
+man_made=bridge & 
+    (highway=* | railway=*) &
+     bridge!=* & is_closed()=false
+        {set bridge=yes}
 
 bridge=yes & highway=motorway                                                           [0x10101 resolution 24-23 continue]
 bridge=yes & highway=motorway_link                                                      [0x10101 resolution 24-23 continue]
@@ -32,7 +28,7 @@ bridge=yes & highway=secondary                                                  
 bridge=yes & highway=secondary_link                                                     [0x10102 resolution 24-23 continue]
 bridge=yes & highway=tertiary                                                           [0x10102 resolution 24-23 continue]
 bridge=yes & highway=tertiary_link                                                      [0x10102 resolution 24-23 continue]
-bridge=yes & ( highway=* | railway=* )                                                  [0x10103 resolution 24-23 continue]
+bridge=yes & (highway=* | railway=*)                                                    [0x10103 resolution 24-23 continue]
 
 # toll overlay
 toll=yes & highway!=motorway                                                            [0x10e03 resolution 24-22 continue]
@@ -52,4 +48,16 @@ toll=yes & highway!=motorway                                                    
 
 # tram overlay
 highway=* & railway=tram                                                                [0x10e0d resolution 24-23 continue]
+
+# oneway overlay
+highway=* &
+    highway!=motorway &
+    highway!=trunk &
+    highway!=motorway_link &
+    highway!=trunk_link &
+    highway!=primary_link &
+    highway!=secondary_link &
+    highway!=tertiary_link &
+    highway!=track
+        & oneway=yes                                                                    [0x10e10 resolution 24-23 continue]
 

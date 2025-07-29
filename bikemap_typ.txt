@@ -3891,7 +3891,7 @@ String2=0x04,One way
 Useorientation=Y
 ExtendedLabels=N
 Xpm="32 7 2 1"
-"0 c #101010"
+"0 c #0000FF"
 "1 c none"
 "11111111111001111111111111111111"
 "11111111111000011111111111111111"
@@ -4281,7 +4281,7 @@ Xpm="0 0 2 0"
 [_line]
 Type=0x11006
 Useorientation=N
-String1=0x02,Ortststraße
+String1=0x02,Ortsstraße
 String2=0x04,Residential
 LineWidth=2
 BorderWidth=1

@@ -35,6 +35,14 @@ highway=* & maxspeed ~'.*mph'
                 {
                   set maxspeed='${maxspeed|conv:"mph=>kmh"}'
                 }
+highway=* & maxspeed:forward ~'.*mph'
+                {
+                  set maxspeed:forward='${maxspeed:forward|conv:"mph=>kmh"}'
+                }
+highway=* & maxspeed:backward ~'.*mph'
+                {
+                  set maxspeed:backward='${maxspeed:backward|conv:"mph=>kmh"}'
+                }
 
 maxspeed=national & 
     mkgmap:country=GBR &
@@ -53,12 +61,26 @@ maxspeed:type=GB:nsl_single     { add maxspeed=60 }
 maxspeed=signals                { set maxspeed=100 }
 maxspeed=variable               { set maxspeed=100 }
 
+# maxspeed based on advisory speed limit
+# https://wiki.openstreetmap.org/wiki/Key:maxspeed:advisory
+
+maxspeed:advisory=* & maxspeed!=*
+                                { set maxspeed='${maxspeed:advisory}' ;
+                                  delete maxspeed:advisory }
+
+# maxspeed estimated from maxspeed:forward or maxspeed:backward
+#highway=* &
+#    maxspeed!=* &
+#    (maxspeed:forward=* | maxspeed:backward=*)
+#                                 {echo '${maxspeed:forward} ${maxspeed:backward}'}
+
 # maxspeed from type
 
 maxspeed=DE:urban               { set maxspeed=50 }
 maxspeed=DE:rural               { set maxspeed=100 }
 maxspeed=DE:motorway            { add maxspeed=130 }
 
+maxspeed:type=DE:bicycle_road   { add maxspeed=30 }
 maxspeed:type=DE:urban          { add maxspeed=50 }
 maxspeed:type=DE:rural          { add maxspeed=100 }
 maxspeed:type=DE:motorway       { add maxspeed=130 }
@@ -168,8 +190,7 @@ highway=motorway_link           { add maxspeed=50 }
 
 # delete maxspeed if we still cannot convert it to km/h
 
-highway=* & maxspeed=* & maxspeedkmh()!=*   {echo '${maxspeed}'; delete maxspeed }
-
+highway=* & maxspeed=* & maxspeedkmh()!=*   { delete maxspeed }
 
 # set the maxspeed classes
 highway=* & maxspeed=* & mkgmap:road-speed-max!=* & maxspeedkmh() <=  10 { set mkgmap:road-speed-max = 0 }

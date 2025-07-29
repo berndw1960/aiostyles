@@ -7,11 +7,13 @@
 
 # mark highways if needed with special flags
 include '../inc/pre_lines' ;
-include '../inc/overlays';
-include '../inc/track_overlays';
 
 # process exits and destination
 include '../inc/exit_dest' ;
+
+# overlays like oneway, bridge ...
+include '../inc/overlays';
+include '../inc/track_overlays';
 
 # rendering options of routable ways
 include '../inc/lines';

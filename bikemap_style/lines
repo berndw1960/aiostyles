@@ -3,13 +3,11 @@
 #  common rules under inc/
 
 # enable overlays for bicycle maps
-include '../inc/cycle_lines';
+# for cycle routes, below other lines
 include '../inc/cycle_highlights';
 
 # mark highways if needed with special flags
 include '../inc/pre_lines' ;
-include '../inc/overlays';
-include '../inc/track_overlays';
 
 # process exits and destination
 include '../inc/exit_dest' ;
@@ -18,6 +16,11 @@ include '../inc/exit_dest' ;
 include '../inc/lines';
 include '../inc/non_motorcar_ways_lines';
 include '../inc/track_path_lines';
+
+# overlays like oneway, bridge ...
+include '../inc/overlays';
+include '../inc/cycle_lines';
+include '../inc/track_overlays';
 
 # rendering options of nonroutable ways
 include '../inc/boundary_lines' ;
