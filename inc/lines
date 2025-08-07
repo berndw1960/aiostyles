@@ -78,16 +78,16 @@ highway=trunk_link                                  [0x09 resolution 24 road_cla
 #--------------------------------------------------------------------------------------
 # primary
 
-highway=primary                                  [0x12003 resolution 21-18 continue]
-highway=primary                                  [0x11003 resolution 24-22 continue]
+highway=primary                                     [0x12003 resolution 21-18 continue]
+highway=primary                                     [0x11003 resolution 24-22 continue]
 highway=primary &
   junction=roundabout &
-  mkgmap:fast_road=yes                           [0x0c resolution 24 road_class=4 road_speed=2 continue]
+  mkgmap:fast_road=yes                              [0x0c resolution 24 road_class=4 road_speed=2 continue]
 highway=primary &
-  junction=roundabout                            [0x0c resolution 24 road_class=3 road_speed=2 continue]
+  junction=roundabout                               [0x0c resolution 24 road_class=3 road_speed=2 continue]
 highway=primary &
-  mkgmap:fast_road=yes                           [0x0c resolution 24 road_class=4 road_speed=4 continue]
-highway=primary                                  [0x03 resolution 24 road_class=3 road_speed=4 continue]
+  mkgmap:fast_road=yes                              [0x0c resolution 24 road_class=4 road_speed=4 continue]
+highway=primary                                     [0x03 resolution 24 road_class=3 road_speed=4 continue]
 
 highway=primary_link                                [0x12003 resolution 22-21 continue]
 highway=primary_link                                [0x11003 resolution 24-23 continue]

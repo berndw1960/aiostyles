@@ -7,9 +7,21 @@
 ## A class is not allowed to use the way if its tag is set to 'no'
 ## The aim is to enable cycling without violating serious rules
 
+## Include country specific access rules that are derived from the highway type
+include '../inc/access_country';
+
+# First set access settings with high priority.
+#
+# In case a way is tagged with 
+#    highway=motorway;access=yes 
+# we assume that foot and bikes are not allowed anyhow.
+
+highway=* & motorroad=yes                  { add bicycle=no; add foot=no; }
+highway=motorway | highway=motorway_link   { add bicycle=no; add foot=no; }
+
 
 ## change rules order if access is set.
-## access --> vehicle --> motor_vehicle (only DEU)
+## access --> vehicle --> motor_vehicle
 
 # The exact key/value combination access=designated should never appear on an object. 
 # The value designated must be used with a specific mode of transport. 
@@ -23,58 +35,62 @@ access=designated
 
 access=yes
     { delete access }
+ 
+# access=no with bicycle=yes and/or foot=yes are to indifferent, try to
+# make them more usable
+
+highway=* 
+    & access=no
+    & (foot=yes | bicycle=yes)
+        { 
+         add motor_vehicle='${access}';
+         delete access
+         }
 
 # some access rules with exceptions
 highway=* 
-  & access ~ '.*(agricultural|forestry).*'
-      {
-      add vehicle='${access}' ;
-      delete access ; 
-      }
+    & access ~ '.*(agricultural|forestry).*'
+    & vehicle!=*
+        {
+         set vehicle='${access}' ;
+         delete access ; 
+         }
+
+highway=* 
+    & access ~ '.*(agricultural|forestry).*'
+    & motor_vehicle!=*
+        {
+         set motor_vehicle='${access}' ;
+         delete access ; 
+         }
+
+# if both keys are set, use motor_vehicle
+highway=*
+     & vehicle=*
+     & motor_vehicle=*
+         { delete vehicle ;
+          }
+
+highway=*
+    & motor_vehicle=*
+    & motorcar=*
+        {
+         delete motorcar;
+         delete motorcycle;
+         }
 
 # change motorcar to motor_vehicle if needed
 highway=* 
     & motorcar=* 
     & motor_vehicle!=* 
     & vehicle!=*
-                 { 
-                  set motor_vehicle='${motorcar}' ;
-                  delete motorcar ;
-                  delete motorcycle ;
-                  }
-
-# if both keys are set, use motor_vehicle
-highway=*
-       & vehicle=*
-       & motor_vehicle=*
-           { delete vehicle ;
-            }
-
-# highway=track (>= 2m) in rural areas are allowed to use with bicycle by law, 
-# if they are usable most times of the year, so 
-#
-#     hw=track; vehicle=agricultural|forestry 
-#
-# are changed to motor_vehicle='${vehicle}', width will be checked later
-
-highway=track 
-        & tracktype~'grade[1-3]'
-        & vehicle ~ '.*(agricultural|forestry)'
-        & mkgmap:country=DEU
-            { add motor_vehicle='${vehicle}';
-              delete vehicle ;
-              }
-
-highway=track 
-        & tracktype~'grade[1-3]'
-        & vehicle=no
-        & motor_vehicle ~ '.*(agricultural|forestry)'
-        & mkgmap:country=DEU
-            { delete vehicle ;
-              }
+        { 
+         set motor_vehicle='${motorcar}' ;
+         delete motorcar ;
+         delete motorcycle ;
+         }
 
 # some parts of bicycle routes are on ways with vehicle=*, change the key to motor_vehicle
-
 highway=* 
    & bicycle!=* 
    & vehicle=* 
@@ -87,9 +103,10 @@ highway=*
       ncn=yes |
       rcn=yes |
       lcn=yes )
-            { add motor_vehicle='${vehicle}';
-              delete vehicle ;
-              }
+            { 
+             add motor_vehicle='${vehicle}';
+             delete vehicle ;
+             }
 
 highway=*
        & vehicle=no
@@ -100,73 +117,9 @@ highway=*
             delete vehicle ;
             }
 
-## Include country specific access rules that are derived from the highway type
-include '../inc/access_country';
-
-
-# First set access settings with high priority.
-#
-# In case a way is tagged with 
-#    highway=motorway;access=yes 
-# we assume that foot and bikes are not allowed anyhow.
-
-highway=* & motorroad=yes                  { add bicycle=no; add foot=no; }
-highway=motorway | highway=motorway_link   { add bicycle=no; add foot=no; }
-
-
-# ways with 'disused=yes' and similar shouldn't used for routing, sometimes they are really expensive
-
-highway=*
-    & (disused=yes |
-       illegal=yes |
-       informal=yes)
-           { 
-            set foot=no ;
-            delete bicycle ;
-            delete motor_vehicle ;
-            set vehicle=no
-            }
-
-# Don't route through highway=construction, they are considered unusable
-
-highway=construction
-           { 
-            set foot=no ;
-            delete bicycle ;
-            delete motor_vehicle ;
-            set vehicle=no
-            }
-
-## limit routing over bad pathes
-
-highway=path
-           & (smoothness~'.*(bad|horrible|impassable)' |
-              sac_scale~'.*(mountain|alpine)_hiking' |
-              mtb:scale>0 |
-              mtb:scale:imba>0)
-                { 
-                  set vehicle=no ;
-                  }
-
-## rule to prevent using small or bad ways with vehicles
-
-highway=*
-    & (maxwidth<1.0 | width<1.0)
-                {
-                  delete bicycle ;
-                  delete motor_vehicle ;
-                  set vehicle=no;
-                  }
-
-## this rule should prevent routing through narrow streets with motorvehicles, 
-
-highway=*
-    & (maxwidth<2.0 | width<2.0)
-                {
-                  set motor_vehicle=no;
-                  }
-
 # Add common access rules that are derived from the highway type
+# if there are exceptions like agricultural=yes, forestry=yes, destination=* or other,
+# they will be ignored
 
 highway=path
                 { 
@@ -176,7 +129,7 @@ highway=path
 highway=steps |
   highway=footway 
                 {
-                  set vehicle=no;
+                  add vehicle=no;
                   }
 
 highway=pedestrian & area!=*
@@ -185,14 +138,14 @@ highway=pedestrian & area!=*
                   add bicycle=no
                   }
 
-highway=bridleway
-                {
-                  addaccess 'no'
-                  }
-
 highway=cycleway
                 {
                   add motor_vehicle=no;
+                  }
+
+highway=bridleway
+                {
+                  add vehicle=no;
                   }
 
 ## some access rules for node objects, this rules would be applied to short part of a way,
@@ -245,6 +198,54 @@ barrier~'.*(gate)' |
             add foot=yes;
             set mkgmap:road-speed=0;
             }
+
+# Don't route through highway=construction, they are considered unusable
+highway=construction
+           {
+            set foot=no ;
+            delete bicycle ;
+            delete motor_vehicle ;
+            set vehicle=no
+            }
+
+# ways with 'disused=yes' and similar shouldn't used for routing, sometimes they are really expensive
+highway=*
+    & (disused=yes |
+       illegal=yes |
+       informal=yes)
+           { 
+            set foot=no ;
+            delete bicycle ;
+            delete motor_vehicle ;
+            set vehicle=no
+            }
+
+## limit routing over bad pathes
+highway=path
+   & (smoothness~'.*(bad|horrible|impassable)' |
+      sac_scale~'.*(mountain|alpine)_hiking' |
+      mtb:scale>0 |
+      mtb:scale:imba>0)
+          { 
+           set bicycle=no ;
+           }
+
+## this rule should prevent routing through narrow streets with motorvehicles, 
+highway=*
+   & (maxwidth<2.0 | width<2.0)
+       { 
+        delete vehicle;
+        set motor_vehicle=no;
+        }
+
+## rule to prevent using small ways with vehicles
+highway=*
+   & (maxwidth<1.0 | width<1.0)
+       {
+        delete bicycle ;
+        delete motor_vehicle ;
+        set vehicle=no;
+        }
 
 # Now fill the access tree (http://wiki.openstreetmap.org/wiki/Key:access) 
 # This is required so that subsequent rules do not add a tag (bicycle),
