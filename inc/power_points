@@ -3,7 +3,7 @@ power=tower | power=pole                                                  [0x720
 
 power=generator &
       ( power_source=wind |
-        generator:source=wind )                                           [0x6416 resolution 24]
+        generator:source=wind )                                           [0x720c resolution 24]
 
 power=substation                                                          [0x7202 resolution 24]
 

@@ -224,8 +224,8 @@
 0x6616  Summit
 0x6617  Valley
 0x6618  Woods
-0x7100-?        visible in Map
-0x7200-?        visible in Map
+0x7100-711F        visible in Map
+0x7200-721F        visible in Map
 0x1C00  unclassified Obstruction
 0x1C01  Wreck
 0x1C02  submerged Wreck, dangerous

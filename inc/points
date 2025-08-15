@@ -59,7 +59,6 @@ place=locality  & name=*                          [0x2800 resolution 24]
 
 barrier=no {delete barrier}
 
-
 # replace or delete some Key/value pairs to prevent listing in POI list
 leisure=swimming_pool { deletealltags }
 amenity=swimming_pool { deletealltags }
@@ -68,7 +67,7 @@ amenity=swimming_pool { deletealltags }
 emergency=phone | amenity=emergency_phone         [0x5101 resolution 24]
 
 highway=emergency_access_point |
-  emergency=access_point                          [0x5102 resolution 24]
+  emergency=access_point                          [0x7106 resolution 24]
 
 # Man Made
 # 0x6401        # bridge
@@ -77,10 +76,9 @@ highway=emergency_access_point |
 amenity=grave_yard & mkgmap:area2poi!=true        [0x6404 resolution 24]
 landuse=cemetery & mkgmap:area2poi!=true          [0x6404 resolution 24]
 # 0x6405        # civil
-
 # 0x6406        # crossing
 railway=level_crossing |
-  railway=crossing                                [0x6406 resolution 24]
+  railway=crossing                                [0x7108 resolution 24]
 # 0x6407        # dam
 # 0x6408        # hospital
 # 0x6409        # levee
@@ -89,45 +87,39 @@ military=bunker                                   [0x640b resolution 24]
 man_made=mineshaft | man_made=adit                [0x640c resolution 24]
 man_made=petroleum_well                           [0x640d resolution 24]
 # 0x640e        # park
-
 amenity=post_box                                  [0x640f resolution 24]
 
-amenity=clock                                     [0x6410 resolution 24]
+# Trail                                           [0x6412 resolution 24]
+# Tunnel                                          [0x6413 resolution 24]
+amenity=drinking_water &
+  (drinking_water=yes|drinkable=yes)              [0x6414 resolution 24]
 
-(man_made=mast | man_made=tower)
-              & tower:type=communication          [0x5103 resolution 24]
-man_made=tower & tower:type=observation           [0x6600 resolution 24]
+# man_made with own symbols
+man_made=water_tower                              [0x720b resolution 24]
+amenity=hunting_stand                             [0x720d resolution 24]
 
-man_made=tower & tower:type=bell_tower            [0x5b0c resolution 24]
-man_made=tower                                    [0x6411 resolution 24]
-
-(tourism=information
-          & information=guidepost) |
-            (amenity=guidepost |
-             amenity=signpost )                   [0x6412 resolution 24]
-
-(amenity=drinking_water &
-  (drinking_water=yes|drinkable=yes)) |
-  (amenity=water_well & water_well=drinking_water)[0x6414 resolution 24]
-man_made=water_tower                              [0x6415 resolution 24]
-amenity=hunting_stand                             [0x6417 resolution 24]
-man_made=survey_point                             [0x6418 resolution 24]
-man_made=flagpole                                 [0x6419 resolution 24]
-man_made=reservoir_covered &
-  mkgmap:area2poi!=true                           [0x641a resolution 24]
 man_made=observatory |
   man_made=telescope |
-  landuse=observatory                             [0x641b resolution 24]
+  landuse=observatory                             [0x720e resolution 24]
 man_made=water_mill  &
-  mkgmap:area2poi!=true                           [0x641c resolution 24]
+  mkgmap:area2poi!=true                           [0x720f resolution 24]
 man_made=gasometer |
   man_made=storage_tank &
-  mkgmap:area2poi!=true                           [0x641d resolution 24]
-man_made=works & mkgmap:area2poi!=true            [0x641e resolution 24]
-man_made=windmill & mkgmap:area2poi!=true         [0x641f resolution 24]
+  mkgmap:area2poi!=true                           [0x7210 resolution 24]
+man_made=works & mkgmap:area2poi!=true            [0x7211 resolution 24]
+man_made=windmill & mkgmap:area2poi!=true         [0x7212 resolution 24]
+(man_made=mast | man_made=tower)
+              & tower:type=communication          [0x7213 resolution 24]
+man_made=tower & tower:type=observation           [0x7217 resolution 24]
+tourism=viewpoint & natural!=*                    [0x7214 resolution 24]
+man_made=tower & tower:type=bell_tower            [0x7215 resolution 24]
+man_made=lighthouse                               [0x7216 resolution 24]
+man_made=tower                                    [0x6411 resolution 24]
+amenity=shelter & shelter_type!=public_transport  [0x7107 resolution 24]
 
-# 0x64ss
-
+# benches
+amenity=bench                                     [0x7100 resolution 24]
+amenity=lounger                                   [0x7101 resolution 24]
 
 # Water Features
 amenity=fountain                                  [0x6500 resolution 24]
@@ -150,18 +142,15 @@ landuse=reservoir                                 [0x650f resolution 24]
 #natural=sea 0x6510
 natural=spring                                    [0x6511 resolution 24]
 #natural=stream 0x6512
-natural=wetland & mkgmap:area2poi!=true          [0x6513 resolution 23]
+natural=wetland & mkgmap:area2poi!=true           [0x6513 resolution 23]
 # 0x65ss
 
 # Land Features
-tourism=viewpoint & natural!=*                    [0x6600 resolution 24]
+
 #natural=arch 0x6601
 #area 0x6602
 #natural=basin 0x6603
 natural=beach                                     [0x6604 resolution 24]
-amenity=bench                                     [0x6605 resolution 24]
-# amentity=lounger with different color
-amenity=lounger                                   [0x7101 resolution 24]
 natural=cape                                      [0x6606 resolution 24]
 natural=cliff|natural=bare_rock                   [0x6607 resolution 24]
 natural=crater                                    [0x6607 resolution 23]
@@ -248,6 +237,8 @@ amenity=car_wash                                  [0x2f0e resolution 24]
 amenity=truck_stop                                [0x2f16 resolution 24]
 
 # 0x4css        # information
+tourism=information
+          & information=guidepost                 [0x7209 resolution 24]
 tourism=information                               [0x4c00 resolution 24]
 
 # 0x4ess        # restroom
@@ -321,7 +312,6 @@ tourism=hostel                                    [0x2b05 resolution 24]
 # Other
 tourism~'.*(hut)'                                 [0x2b06 resolution 24]
 tourism=lean_to                                   [0x2b06 resolution 24]
-amenity=shelter & shelter_type!=public_transport  [0x2b06 resolution 24]
 #tourism=chalet                                   [0x2b09 resolution 24]
 
 #------------------------------------------------------------------------------
@@ -332,7 +322,8 @@ tourism=theme_park                                [0x2c01 resolution 24]
 
 # Museum/Historical
 tourism=museum | historic=museum                  [0x2c02 resolution 24]
-historic=archaeological_site | historic=battlefield  [0x2c11 resolution 24]
+historic=archaeological_site | 
+    historic=battlefield                          [0x2c11 resolution 24]
 
 historic=memorial & memorial=stolperstein         [0x7102 resolution 24]
 historic=memorial                                 [0x2c11 resolution 24]
@@ -351,7 +342,6 @@ historic=wayside_shrine                           [0x5207 resolution 24]
 # Park/Garden
 leisure=garden & name=*                           [0x2c06 resolution 24]
 
-
 # Zoo/Aquarium
 tourism=zoo | tourism=aquarium                    [0x2c07 resolution 24]
 
@@ -364,12 +354,7 @@ amenity=concert_hall                              [0x2c09 resolution 24]
 # Winery
 tourism=wine_cellar                               [0x2c0a resolution 24]
 
-# Hot Spring
-# 0x2c0c
-
-# 0x2c13
-# 0x2c16
-
+amenity=clock                                     [0x720a resolution 24]
 
 #-------------------------------------------------------------------------
 # Food and Drink
@@ -754,8 +739,7 @@ leisure=fishing                                                           [0x410
 # Navigation Aid
 fog_signal=*                                                              [0x1601 resolution 24]
 # 0x16ss
-man_made=lighthouse                                                       [0x5b01 resolution 24]
-seamark=beacon | man_made=beacon                                          [0x5b02 resolution 24]
+#seamark=beacon | man_made=beacon                                         [0x5b02 resolution 24]
 # 0x5bss
 # 0x5dss and 0x5ess
 # 0x6ess and 0x6fss
