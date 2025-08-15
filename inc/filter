@@ -30,6 +30,20 @@ highway=razed
                  delete highway
                  }
 
+building=razed
+                {
+                 delete building
+                 }
+
+# barrier=no is useless
+
+barrier=no {delete barrier}
+
+# replace or delete some Key/value pairs to prevent listing in POI list
+
+leisure=swimming_pool { deletealltags }
+amenity=swimming_pool { deletealltags }
+
 ## only use the first value before ';'
 
 landuse~'.*;.*'
