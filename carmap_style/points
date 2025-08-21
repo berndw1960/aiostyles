@@ -1,7 +1,7 @@
 # -------------------------------------------------------------------
 # common rules under inc/
 
-include '../inc/points';
+include '../inc/carmap_points';
 #include '../inc/power_points';
 
 # last line is the finalize section!

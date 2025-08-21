@@ -166,7 +166,6 @@ highway=* & (
     sport=via_ferrata)
       {
       set mkgmap:unpaved=1;
-      set bicycle=no
       }
 
 ## highway=path are handled in inc/track_path_lines to allow bicycle routing
