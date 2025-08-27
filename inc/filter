@@ -56,35 +56,35 @@ natural~'.*;.*'
                 set natural='${natural|part:}';
                 }
 
-highway ~ '.*;.*'
+highway~'.*;.*'
                 {
                 set highway='${highway|part:}';
                 }
 
 highway = * 
-    & access ~ '.*;.*'
+    & access~'.*;.*'
                 {
                 set access='${access|part:}';
                 }
 
 highway = * 
-    & vehicle ~ '.*;.*'
+    & vehicle~'.*;.*'
                 {
                 set vehicle='${vehicle|part:}';
                 }
 
 highway = * 
-    & motor_vehicle ~ '.*;.*'
+    & motor_vehicle~'.*;.*'
                 {
                 set motor_vehicle='${motor_vehicle|part:}';
                 }
 
-surface ~ '.*;.*'
+surface~'.*;.*'
                 {
                 set surface='${surface|part:}';
                 }
 
-amenity ~ '.*;.*'
+amenity~'.*;.*'
                 {
                 set amenity='${amenity|part:}';
                 }

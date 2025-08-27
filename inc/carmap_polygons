@@ -251,7 +251,7 @@ natural=wood
 #           [0x35 resolution 20]
 #natural=sand
 #           [0x10f14 resolution 20]
-natural=land
-            [0x27 resolution 10]
+#natural=land
+#            [0x27 resolution 10]
 
 

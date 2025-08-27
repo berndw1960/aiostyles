@@ -41,38 +41,31 @@ access=yes
 
 highway=* 
     & access=no
-    & (foot=yes | bicycle=yes)
+    & bicycle=yes
         { 
          add motor_vehicle='${access}';
          delete access
          }
 
-# some access rules with exceptions
 highway=* 
-    & access ~ '.*(agricultural|forestry).*'
-    & vehicle!=*
-        {
-         set vehicle='${access}' ;
-         delete access ; 
+    & access=no
+    & foot=yes 
+        { 
+         add vehicle='${access}';
+         delete access
          }
 
+# change acccess to more usable keys
 highway=* 
-    & access ~ '.*(agricultural|forestry).*'
-    & motor_vehicle!=*
+    & access~'.*(agricultural|forestry).*'
+    & (motor_vehicle!=* | vehicle!=*)
         {
          set motor_vehicle='${access}' ;
          delete access ; 
          }
 
-# if both keys are set, use motor_vehicle
 highway=*
-     & vehicle=*
-     & motor_vehicle=*
-         { delete vehicle ;
-          }
-
-highway=*
-    & motor_vehicle=*
+    & (motor_vehicle=* | vehicle=*)
     & motorcar=*
         {
          delete motorcar;
@@ -90,11 +83,18 @@ highway=*
          delete motorcycle ;
          }
 
+# if both keys are set, use motor_vehicle
+highway=*
+     & vehicle=*
+     & motor_vehicle=*
+         { delete vehicle ;
+          }
+
 # some parts of bicycle routes are on ways with vehicle=*, change the key to motor_vehicle
 highway=* 
    & bicycle!=* 
    & vehicle=* 
-   & (network ~ '.*(icn|ncn|rcn|lcn)' |
+   & (network~'.*(icn|ncn|rcn|lcn)' |
       icn_network=yes |
       ncn_network=yes |
       rcn_network=yes |
@@ -268,7 +268,7 @@ vehicle=*
 # Prevent passage through some ways, but some devices may ignore this rule(s) 
 
 highway=*
-    & motor_vehicle ~ '.*(customers|delivery|destination|employees|residents|visitors).*'
+    & motor_vehicle~'.*(customers|delivery|destination|employees|residents|visitors).*'
         {
          set mkgmap:throughroute=no;
          }
@@ -276,7 +276,7 @@ highway=*
 # ways with ownership shouldn't use to pass through if there is no special reason
 
 highway=*
-    & ownership ~ '.*(private).*'
+    & ownership~'.*(private).*'
         {
          add mkgmap:throughroute=no;
          }
@@ -296,9 +296,9 @@ highway=track
 # https://taginfo.openstreetmap.org/keys/access#values
 
 
-foot ~ '.*(private|employees|residents|visitors|customers|agricultural|forestry|use_sidepath).*'                      { set foot=no }
-bicycle ~ '.*(private|employees|residents|destination|visitors|customers|agricultural|forestry|use_sidepath).*'       { set bicycle=no }
-motor_vehicle ~ '.*(private|employees|residents|destination|visitors|customers|agricultural|forestry).*'              { set motor_vehicle=no }
+foot~'.*(private|employees|residents|visitors|customers|agricultural|forestry|use_sidepath).*'                      { set foot=no }
+bicycle~'.*(private|employees|residents|destination|visitors|customers|agricultural|forestry|use_sidepath).*'       { set bicycle=no }
+motor_vehicle~'.*(private|employees|residents|destination|visitors|customers|agricultural|forestry).*'              { set motor_vehicle=no }
 
 # Remove values that indicate a restriction to 'yes'
 # yes is default if empty

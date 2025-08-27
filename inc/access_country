@@ -10,7 +10,7 @@ highway ~ 'motorway.*'
 highway=* & motorroad=yes
         & mkgmap:country=DEU           { add bicycle=no; add foot=no }
 
-# highway=trunk != motorroad=yes, but for security reasons
+# highway=trunk!=motorroad=yes, but for security reasons
 # don't allow routing for bicycles and pedestrians if
 # motorroad isn't set on trunk roads
 
@@ -28,8 +28,8 @@ highway=bus_guideway
 # are changed to motor_vehicle='${vehicle}'
 
 highway=track 
-   & tracktype~'grade[1-3]'
-   & vehicle ~ '.*(agricultural|forestry)'
+   & tracktype ~ 'grade[1-3]'
+   & vehicle~'.*(agricultural|forestry)'
    & mkgmap:country=DEU
        { 
         add motor_vehicle='${vehicle}';

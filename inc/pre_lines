@@ -17,7 +17,7 @@ highway=* & mkgmap:mp_created=true {add area=yes}
 highway=proposed |
   highway=proposal |
   highway=planned |
-  highway ~ '.*proposed.*'         {delete highway; delete junction}
+  highway~'.*proposed.*'         {delete highway; delete junction}
 
 # Hide removed ways
 highway=razed |

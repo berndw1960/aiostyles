@@ -217,8 +217,8 @@ military=barracks
 #------------------------------------------------------------------------------
 # natural
 
-natural=wood
-            [0x15 resolution 20]
+#natural=wood
+ #           [0x15 resolution 20]
 #natural=scree
 #           [0x24 resolution 20]
 #natural=scrub
