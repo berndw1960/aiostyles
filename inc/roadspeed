@@ -80,6 +80,9 @@ maxspeed=DE:urban               { set maxspeed=50 }
 maxspeed=DE:rural               { set maxspeed=100 }
 maxspeed=DE:motorway            { add maxspeed=130 }
 
+(highway=residential | highway=unclassified) &
+    bicycle_road=yes            { add maxspeed=30 }
+
 maxspeed:type=DE:bicycle_road   { add maxspeed=30 }
 maxspeed:type=DE:urban          { add maxspeed=50 }
 maxspeed:type=DE:rural          { add maxspeed=100 }
@@ -179,11 +182,11 @@ zone:maxspeed=DE:urban          { add maxspeed=50 }
 highway=living_street           { set maxspeed=10 }
 maxspeed~'.*walk'               { set maxspeed=10 }
 maxspeed~'.*living_street'      { set maxspeed=10 }
-maxspeed~'.*urban'              { set maxspeed=50 }
-maxspeed~'.*rural'              { set maxspeed=80 }
-maxspeed~'.*trunk'              { set maxspeed=100 }
-maxspeed~'.*motorway'           { set maxspeed=120 }
-maxspeed=none                   { set maxspeed=130 }
+maxspeed~'.*urban'              { add maxspeed=50 }
+maxspeed~'.*rural'              { add maxspeed=80 }
+maxspeed~'.*trunk'              { add maxspeed=100 }
+maxspeed~'.*motorway'           { add maxspeed=120 }
+maxspeed=none                   { add maxspeed=130 }
 
 highway=trunk_link              { add maxspeed=50 }
 highway=motorway_link           { add maxspeed=50 }

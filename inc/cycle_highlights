@@ -24,18 +24,21 @@ highway=* & (icn=yes|ncn=yes)    { set icn_network=yes;
                                    delete rcn_network;
                                    delete lcn_network;
                                    }
-# orange lines
+# orange background
 highway=* & lcn_network=yes                                  [0x10108 resolution 24-23 continue]
 
-# red lines
+# red background
 highway=* & rcn_network=yes                                  [0x10109 resolution 24-23 continue]
 highway=* & rcn_network=yes                                  [0x1010a resolution 22-21 continue]
 
-# purple lines
+# purple background
 highway=* & icn_network=yes                                  [0x1010b resolution 24-23 continue]
 highway=* & icn_network=yes                                  [0x1010c resolution 22-18 continue]
 
-
+# blue lines parallel for bicycle roads without cycle network
+(highway=residential | highway=unclassified) &
+    (icn_network!=yes|rcn_network!=yes|lcn_network!=yes) &
+    bicycle_road=yes                                         [0x1010D resolution 24-23 continue]
 
 (highway=cycleway | (highway=path & bicycle=designated)) & cn_name=*
                 { set name='${cn_name}' }
