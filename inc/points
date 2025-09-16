@@ -294,7 +294,7 @@ highway=bus_stop                                  [0x7208 resolution 24]
 #[0x2b00]
 
 # Hotel/Motel
-tourism=hotel | tourism=motel                     [0x2b01 resolution 24]
+tourism=hotel | tourism=motel                     [0x2b01 resolution 24 continue]
 
 # Bed & Breakfast Inn
 tourism=guest_house |
@@ -527,6 +527,7 @@ shop=deli                                         [0x2e0a resolution 24]
 
 # Computer/Software ## ok
 shop=computer | 
+shop=telecommunication |
 shop=mobile_phone                                 [0x2e0b resolution 24]
 
 # 0x2e0c = 0x2e0a = Speciality Retail

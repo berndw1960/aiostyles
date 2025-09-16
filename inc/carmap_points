@@ -530,7 +530,8 @@ shop=sea_food |
 shop=deli                                         [0x2e0a resolution 24]
 
 # Computer/Software ## ok
-shop=computer | 
+shop=computer |
+shop=telecommunication |
 shop=mobile_phone                                 [0x2e0b resolution 24]
 
 # 0x2e0c = 0x2e0a = Speciality Retail

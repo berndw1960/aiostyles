@@ -183,13 +183,12 @@ highway=living_street           { set maxspeed=10 }
 maxspeed~'.*walk'               { set maxspeed=10 }
 maxspeed~'.*living_street'      { set maxspeed=10 }
 maxspeed~'.*urban'              { add maxspeed=50 }
+highway=trunk_link              { add maxspeed=50 }
+highway=motorway_link           { add maxspeed=50 }
 maxspeed~'.*rural'              { add maxspeed=80 }
 maxspeed~'.*trunk'              { add maxspeed=100 }
 maxspeed~'.*motorway'           { add maxspeed=120 }
 maxspeed=none                   { add maxspeed=130 }
-
-highway=trunk_link              { add maxspeed=50 }
-highway=motorway_link           { add maxspeed=50 }
 
 # delete maxspeed if we still cannot convert it to km/h
 
